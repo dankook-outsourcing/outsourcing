@@ -87,7 +87,7 @@ html {
 	margin-right:50px;
 	margin-bottom:30px;
 }
-.before_screen {
+/*.before_screen {
 	background-color:#000000;
 	opacity:0.6;
 		
@@ -102,23 +102,75 @@ html {
 	text-align:center;
 	
 	padding-top:20%;
-}
+}*/
 
-/*  page 1   */
-#robot {
-	margin : 0 auto;
+/*  page 21   */
+#page21 {
+	
+	
+}
+#body21 {
+	position:absolute;
+	margin-left:66.3%;
+	margin-top:16.8%;
+	width:180px;
+	height:85px;
+}
+#body22 {
+	position:absolute;
+	margin-left:71.3%;
+	margin-top:43.8%;
+	width:85px;
+	height:85px;
+}
+#body23 {
+	position:absolute;
+	margin-left:40%;
+	width:600px;
+	height:760px;
+}
+#body24 {
+	position:absolute;
+	margin-left:40%;
+	width:500px;
+	height:760px;
+
+}
+#body25 {
+	position:absolute;
+	margin-left:67.2%;
+	width:185px;
+	height:750px;
+	z-index:-1;
+}
+#body26 {
+	position:absolute;
+	margin-left:39.9%;
+	width:380px;
+	height:820px;
+	z-index:-1;
+
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script>
+<!--script>
 $(document).ready(function(){
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
 	$(".before_screen").click(function(){
-		$(".before_screen").hide();
+		$(".before_screen").fadeOut(1000);
 	});
 })
 </script>
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_AMI<br>
+	2016.05.26<br>
+	---<br>
+	Hold click to stop<br>
+	the people from falling<br>
+	</p>
+</div-->
 <html>
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -133,18 +185,19 @@ $(document).ready(function(){
 	<div id="nav_tracklist" class="nav"></div>
 </div>
 
-<div id="robot">
+
+
+<div id="page21">
+	
+	<img id="body21" class="page21_body" src="source/INTERACTION/1/1_layer_1.png">
+	<img id="body22" class="page21_body" src="source/INTERACTION/1/1_layer_2.png">
+	<img id="body23" class="page21_body" src="source/INTERACTION/1/1_layer_3.png">
+	<!-- <img id="body24" class="page21_body" src="source/INTERACTION/1/1_layer_4.png"> -->
+	<img id="body25" class="page21_body" src="source/INTERACTION/1/1_layer_5.png">
+	<img id="body26" class="page21_body" src="source/INTERACTION/1/1_layer_6.png">
 	
 </div>
-<div class="before_screen">
-	<p class="before_letter">
-	BINO_AMI<br>
-	2016.05.26<br>
-	---<br>
-	Hold click to stop<br>
-	the people from falling<br>
-	</p>
-</div>
+
 
 
 <p id="info">
