@@ -241,21 +241,29 @@ transform-style: preserve-3D;
 		<script>
 		
 		 $(function() {
-			 var myVar;
+			 var timeoutHandle;
 		    $('.world').hover(function() {
 		    	var istrue=true;
 		    	var pics = [ "5s", "4s", "3s",  "1s"];
 		    	var el = document.getElementById("cd2");  // el doesn't change
-		    	document.getElementById("cd2").style.WebkitAnimation = "spin1 10s infinite linear";
-		    	   
-		    	myVar = setTimeout(myFunction, 3000);
-		    	function myFunction() {
-		    	    alert('Hello');
+		    	el.style.WebkitAnimation = "spin1 6s infinite linear";
+		    	
+		    	if(timeoutHandle){
+		    	    clearTimeout(timeoutHandle);
+		    	    timeoutHandle = null;
 		    	}
+		    	timeoutHandle = setTimeout(function () {
+		    		el.style.WebkitAnimationDuration = "2s";
+		    	}, 3000);
 		    }).mouseout(function() {
-		    	clearTimeout(myVar);
+		    	if(timeoutHandle){
+		    	    clearTimeout(timeoutHandle);
+		    	    timeoutHandle = null;
+		    	}
+		    	
 		    	istrue=false;
 		    	document.getElementById("cd2").style.WebkitAnimation = "mynewmove 100s infinite linear";
+		    	clearTimeout(myVar);
 		    	});
 		});  
 		
