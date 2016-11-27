@@ -3,7 +3,7 @@
 html {
 	width:100%;
 	height:100%;
-	/*background-image: url("source/INTERACTION/1/bg_1.jpg");*/
+	background-image: url("source/INTERACTION/1/bg_1.jpg");
 	background-color:#666666;
 	background-size:cover;
 	overflow-y:hidden;
@@ -105,51 +105,68 @@ html {
 }*/
 
 /*  page 21   */
+body {
+	margin-top:0px;
+}
 #page21 {
 	
 	
 }
 #body21 {
 	position:absolute;
-	margin-left:66.3%;
-	margin-top:16.8%;
+	/* margin-left:54.3%; */
+	margin-left:781.906px;
+	/* margin-top:16.8%; */
+	margin-top:241.906px;
 	width:180px;
 	height:85px;
 }
 #body22 {
 	position:absolute;
-	margin-left:71.3%;
-	margin-top:43.8%;
+	/* margin-left:59.3%; */
+	margin-left:853.906px;
+	/* margin-top:43.8%; */
+	margin-top:630.719px;
 	width:85px;
 	height:85px;
 }
 #body23 {
 	position:absolute;
-	margin-left:40%;
+	/* margin-left:28%; */
+	margin-left:403.188px;
 	width:600px;
 	height:760px;
 }
 #body24 {
 	position:absolute;
-	margin-left:40%;
-	width:500px;
-	height:760px;
+	/* margin-top:5%; */
+	margin-top:72px;
+	/* margin-left:30%; */
+	margin-left:432px;
+	width:400px;
+	height:700px;
 
 }
 #body25 {
 	position:absolute;
-	margin-left:67.2%;
+	/* margin-left:55.2%; */
+	margin-left:794.875px;
 	width:185px;
 	height:750px;
 	z-index:-1;
 }
 #body26 {
 	position:absolute;
-	margin-left:39.9%;
+	/* margin-left:27.9%; */
+	margin-left:401.75px;
 	width:380px;
 	height:820px;
 	z-index:-1;
 
+}
+.page21_body {
+	-webkit-transition: 3s ease-in-out;
+    transition: 3s ease-in-out;    
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -185,6 +202,57 @@ $(document).ready(function(){
 	<div id="nav_tracklist" class="nav"></div>
 </div>
 
+<script>
+$(document).ready(function(){
+	
+	$("#body21").css("-webkit-transform","translate(0,40em) rotate(-90deg)");
+	$("#body21").css("transform","translate(0,40em) rotate(-90deg)");
+	$("#body22").css("-webkit-transform","translate(0,47em) rotate(-190deg)");
+	$("#body22").css("transform","translate(0,47em) rotate(-190deg)");
+	$("#body23").css("-webkit-transform","translate(0,50em) rotate(90deg)");
+	$("#body23").css("transform","translate(0,50em) rotate(90deg)");
+	$("#body24").css("-webkit-transform","translate(10em,40em) rotate(-90deg)");
+	$("#body24").css("transform","translate(10em,40em) rotate(-90deg)");
+	$("#body25").css("-webkit-transform","translate(0,40em) rotate(-90deg)");
+	$("#body25").css("transform","translate(0,40em) rotate(-90deg)");
+	$("#body26").css("-webkit-transform","translate(0,40em) rotate(-90deg)");
+	$("#body26").css("transform","translate(0,40em) rotate(-90deg)");
+	$(this).mousedown(function(){
+		$(".page21_body").css("-webkit-transition","0.5s ease-in-out");
+		$(".page21_body").css("transition","0.5s ease-in-out");
+		$("#body21").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body21").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body22").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body22").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body23").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body23").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body24").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body24").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body25").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body25").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body26").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body26").css("transform","translate(0,0em) rotate(0deg)");
+		$(".page21_body").css("-webkit-transition","0.7s ease-in-out");
+		$(".page21_body").css("transition","0.7s ease-in-out");
+	}).mouseup(function(){
+		$(".page21_body").css("-webkit-transition","3s ease-in-out");
+		$(".page21_body").css("transition","3s ease-in-out");
+		$("#body21").css("-webkit-transform","translate(0,40em) rotate(-90deg)");
+		$("#body21").css("transform","translate(0,40em) rotate(-90deg)");
+		$("#body22").css("-webkit-transform","translate(0,47em) rotate(-190deg)");
+		$("#body22").css("transform","translate(0,47em) rotate(-190deg)");
+		$("#body23").css("-webkit-transform","translate(0,50em) rotate(90deg)");
+		$("#body23").css("transform","translate(0,50em) rotate(90deg)");
+		$("#body24").css("-webkit-transform","translate(10em,40em) rotate(-90deg)");
+		$("#body24").css("transform","translate(10em,40em) rotate(-90deg)");
+		$("#body25").css("-webkit-transform","translate(0,40em) rotate(-90deg)");
+		$("#body25").css("transform","translate(0,40em) rotate(-90deg)");
+		$("#body26").css("-webkit-transform","translate(0,40em) rotate(-90deg)");
+		$("#body26").css("transform","translate(0,40em) rotate(-90deg)");
+		
+	});
+});
+</script>
 
 
 <div id="page21">
@@ -192,7 +260,7 @@ $(document).ready(function(){
 	<img id="body21" class="page21_body" src="source/INTERACTION/1/1_layer_1.png">
 	<img id="body22" class="page21_body" src="source/INTERACTION/1/1_layer_2.png">
 	<img id="body23" class="page21_body" src="source/INTERACTION/1/1_layer_3.png">
-	<!-- <img id="body24" class="page21_body" src="source/INTERACTION/1/1_layer_4.png"> -->
+	<img id="body24" class="page21_body" src="source/INTERACTION/1/1_layer_4.png">
 	<img id="body25" class="page21_body" src="source/INTERACTION/1/1_layer_5.png">
 	<img id="body26" class="page21_body" src="source/INTERACTION/1/1_layer_6.png">
 	

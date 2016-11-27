@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <style>
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/HOME/bg.jpg");
+	/*background-image: url("source/HOME/bg.jpg");*/
+	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
 	
@@ -13,8 +15,7 @@ html {
 	 background-size:cover;
 	 width:150px;
 	 height:50px;
-	 margin-top:60px;
-	 margin-left:25px;
+	 margin-bottom:24px;
 }
 
 #nav_interaction {
@@ -22,8 +23,8 @@ html {
 	background-size:cover;
 	width:250px;
 	height:50px;
-	margin-top:5px;
-	margin-left:25px;
+	margin-bottom:24px;
+	
 	
 }
 #nav_tracklist {
@@ -31,35 +32,39 @@ html {
 	background-size:cover;
 	width:250px;
 	height:50px;
-	margin-top:5px;
-	margin-left:25px;
+	
 	
 }
 #nav {
-	width:300px;
+	width:254px;
+	height:156px;
+	padding:0px;
+	margin-left:70px;
+	margin-top:70px;	
 	float:left;
 }
 .nav {
 	cursor:pointer;
+	
 }
-.nav :hover {
-	opacity:0.8;
+.nav:hover {
+	opacity:0.1;
+	transform:scale(1.1);
 }
+
 #content_area {
 	margin:auto;
 	position:absolute;
-	margin-left:380px;	
+	margin-left:405.3px;	
 	overflow:scroll;
-	width:1080px;
+	width:966px;
 	
-	padding-bottom:80px;
-	padding-top:80px;
+	
 	margin-bottom:80px;
 	color:#FFFFFF;
 	height:100%;
 	
-	font-size:26px;
-	line-height:160%;
+	
 	
 }
 #content_area::-webkit-scrollbar {
@@ -83,29 +88,35 @@ html {
 	z-index:-1;
 }
 #content_body {
-	background-color:#000000; 
+	background-color:#000000;
+	
 	opacity:0.8;
 	padding:30px;
-	border-radius:20px;
+	border-radius:10px;
+	margin:71px;
+	margin-top:58px;
 	margin-bottom:150px;
 	padding-bottom:-10px;
+	font-size:17px;
+	line-height:2em;
+	
 }
 #info {
 	position:absolute;
 	bottom:0;
 	left:0;
 	color:#FFFFFF;
-	margin-left:50px;
-	margin-bottom:30px;
+	margin-left:70px;
+	margin-bottom:50px;
 }
 #logo {
-	width:250px;
-	height:130px;
+	width:180px;
+	height:128px;
 	position:absolute;
 	bottom:0;
 	right:0;
-	margin-right:50px;
-	margin-bottom:30px;
+	margin-right:70px;
+	margin-bottom:50px;
 }
 </style>
 <html>
@@ -120,6 +131,12 @@ html {
 	<div id="nav_interaction" class="nav"></div>
 	<div id="nav_tracklist" class="nav"></div>
 </div>
+<script>
+$(document).ready(function(){
+	/* alert(window.innerWidth); */
+	/* alert($("#content_body").css("margin-right")); */
+});
+</script>
 
 
 <div id="content_area" class="content">
