@@ -36,6 +36,7 @@ mousedown() :
 	- 코딩 : 안개 opacity 0이 되며 사라지고, 눈은 멈춘다.
 	- 사운드 : stop() interact_3.mp3 & play() JH.mp3
 
+
 ##4. 울렁울렁
 
 원하는 인터렉션:
@@ -57,7 +58,6 @@ mouseup() :
 mousedown() :
 	- 코딩 : 천천히 가속이 붙으며 회전한다
 	- 사운드 : stop() interact_5.mp3 & play() YE.mp3
-
 
 
 ##6. 규연

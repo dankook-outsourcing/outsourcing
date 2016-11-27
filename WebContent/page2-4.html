@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=1200, user-scalable=no">
-<title>p3</title>
+<title>p2-5</title>
 <link rel="stylesheet" href="css/my.css">
 <style>
 html {
@@ -58,7 +58,9 @@ html {
 
 /* 컨테이너 높이는  결과적으로 100%가 되도록 컨테이너수로 나눈다. */
 .box1 {
-	background-image: url("source/INTERACTION/2/bg_2.jpg");
+	/* 	background-image: url("source/INTERACTION/2/bg_2.jpg");
+	background-size:cover; */
+	
 }
 
 .box2 {
@@ -140,8 +142,10 @@ html {
 }
 
 .bg img {
-	width: 500px;
+	position: absolute;
+	width: 900px;
 	height: auto;
+	margin-left: -30%;
 }
 
 .nav_play {
@@ -155,29 +159,57 @@ html {
 .nav_play img {
 	width: 50px;
 }
+
+img.rotate {
+	width: 900px;
+	transform: translateZ(0) perspective(1px) rotate(45deg);
+	transform-style: preserve-3D;
+	transform-origin: bottom;
+	transition-timing-function: linear;
+	transition-duration: .2s, 1s;
+	transition: transform .8s ease-in-out;
+}
+
+img.rotate:hover {
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+img.box2 {
+	width: 600px;
+	margin-left: -20%;
+}
+
+.world
+{
+transform-style: preserve-3D;
+}
+@-webkit-keyframes spin1 {
+  from   { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes mynewmove {
+0% { -webkit-transform: rotate(0);}
+100% { -webkit-transform: rotate(360deg);}
+}
+	
 </style>
+
 </head>
 <body>
 	<div>
-
 		<div class="layout" id="layout">
 			<div class="bg">
 				<div id="box1" class="box1 active">
-					<img class="cd" src="source/TRACKLIST/cd1.png">
-					<div class="nav_play">
-						<img src="source/TRACKLIST/play.png"> <img
-							src="source/TRACKLIST/pause.png"> <img
-							src="source/TRACKLIST/stop.png">
-					</div>
-				</div>
-				<div id="box2" class="box2">
-					<img src="source/TRACKLIST/cd2.png">
-				</div>
-				<div id="box3" class="box3">
-					<img src="source/TRACKLIST/cd3.png">
+					<img class="cd" src="source/INTERACTION/4/4_layer_4.png"> <img
+						class="cd" src="source/INTERACTION/4/4_layer_1.png"> <img
+						class="cd" src="source/INTERACTION/4/4_layer_3.png"> <img
+						src="source/INTERACTION/4/4_layer_2.png" class="rotate">
 				</div>
 			</div>
 		</div>
+
 		<header class="header">
 			<ol>
 				<li><img class="nav_home" src="source/TRACKLIST/nav_home.png"
@@ -186,21 +218,30 @@ html {
 					src="source/TRACKLIST/nav_interaction.png" height="50" width="150"></li>
 				<li><img class="nav_home"
 					src="source/TRACKLIST/nav_tracklist.png" height="50" width="150"></li>
-
 			</ol>
 			<p id="info">
 				sbyoon92@gmail.com<br> 010.9182.6193
 			</p>
-
 		</header>
 		<header class="header2">
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
 		</header>
-		<script
-			src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		 <script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/mousewheel.js"></script>
 		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/rotation.js"></script>
 		<script>
+		
+		 $(function() {
+		    $('.world').hover(function() {
+		    	var istrue=true;
+		    	document.getElementById("cd2").style.WebkitAnimation = "spin1 2s infinite linear";
+		    }).mouseout(function() {
+		    	istrue=false;
+		    	document.getElementById("cd2").style.WebkitAnimation = "mynewmove 20s infinite linear";
+		    	});
+		});  
+		
         // 콘텐츠 보이기
         var contShow = {
             init: function () {
@@ -299,13 +340,11 @@ html {
                     });
                 }
             }
-
         pageRoll.mousewheel();
         pageRoll.touchstart();
         pageRoll.touchend();
         pageRoll.resize();
     </script>
-
 	</div>
 </body>
 </html>
