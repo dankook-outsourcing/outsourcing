@@ -12,7 +12,7 @@
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/INTERACTION/2/bg_2.jpg");
+	background-image: url("source/INTERACTION/8/bg_8.jpg"); 
 	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
@@ -125,7 +125,7 @@ body {
 
 .box img{
 	position:absolute;
-	/* margin-top:105px; */
+	margin-top:105px;
 	margin-left:-29%;
 	height:783px;
 }
@@ -163,10 +163,7 @@ audio {
 	0% {-webkit-transform: rotate(0deg);}
 	100% { -webkit-transform:rotate(360deg);}
 }
-@keyframes spin2 {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
+
 /* 모달창 */
 a{color:#000;}
 .mask{width:100%; height:100%; position:fixed; left:0; top:0; z-index:10; background:#000; opacity:.5; filter:alpha(opacity=50);}
@@ -178,7 +175,7 @@ a{color:#000;}
 	position:fixed; 
 	top: 50px;
 	right: 0px;
-	z-index:1002; 
+	z-index:1001; 
 	background:#696969;
 	text-align:center;
 	border-radius: 30px;
@@ -198,13 +195,13 @@ a{color:#000;}
 </style>
 <script>
 function Play(id){
-		document.getElementById(id).style.WebkitAnimation = "spin1 3s infinite linear alternate"; 
+		document.getElementById(id).style.WebkitAnimation = "spin1 2s infinite linear";
 		var myAudio = document.getElementById("music");
 		myAudio.play();
 }
 
 function Pause(id) {
-    document.getElementById(id).style.WebkitAnimationPlayState = "paused"; // Code for Chrome, Safari, and Opera
+    document.getElementById(id).style.WebkitAnimationPlayState = "paused";
     document.getElementById(id).style.animationPlayState = "paused";
     var myAudio = document.getElementById("music");
     myAudio.pause();
@@ -226,7 +223,7 @@ function Stop(id){
 	<div id="nav_tracklist" class="nav"></div>
 </div>
 	<div id="box" class="box">
-				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd1.png" >
+				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd6.png" >
 	</div>
 	<div class="nav_play">
 						<img src="source/TRACKLIST/play.png" onclick="Play('cd1')">
@@ -240,51 +237,54 @@ function Stop(id){
 			</a>
 				<div id="modalLayer">
 				  <div class="modalContent">
-				    <div class="ly">
-				    	  <br> 선경 <br>
-					<br>멍하니 누워있다
-					<br>우연히 바라본 하늘
-					<br>희미한 보라색 불빛이
-					<br>창문을 두드려
-					<br>
-					<br>침묵을 깨는 너의
-					<br>숨소리가 날 부를때
-					<br>너의 속삭임에 가만히
-					<br>뺨을 대곤 해
-					<br>
-					<br>잠이 오지 않는 이유엔
-					<br>어쩌면 너도 있을까
-					<br>잠들지 못하는 이유는
-					<br>너의 걱정 때문인가
-					<br>
-					<br>울리는 냉장고 소리
-					<br>익숙한 향기밴 이불
-					<br>잠이 든 너를 보며
-					<br>따라 눈을 감아
-					<br>
-					<br>어떤 이유에서인지
-					<br>잠에 들지 못할땐
-					<br>곤히 잠든 너의 얼굴에
-					<br>나의 시선이 닿아
-					<br>
-					<br>잠이 오지 않는 이유엔
-					<br>어쩌면 너도 있을까
-					<br>잠들지 못하는 이유는
-					<br>너의 걱정 때문인가
-					<br>
-					<br>파란색 한숨이 바람에 흩어져가
-					<br>발목을 스치는 서늘한 밤이구나
-					<br>				     
+				    	<div>
+				    	<br>태정
+<br>
+<br>언제부턴가 누굴 만나는 일이,
+<br>불편하고 처리해야할 일이 되었더라.
+<br>어떤 행동과 말을 해야하는지,
+<br>생각하는 내 자신이 어이 없더라.
+<br>만남이 사치가 되고,
+<br>이미 우선순위에서 밀려나있더라.
+<br>가끔, 만남을 고민해.
+<br>그새 잊어버릴 생각을 말야.
+<br>
+<br>무채색 인간인듯, 색이없는 회색으로,
+<br>물들지 않는 거리를 방황해
+<br>굳어가는 돌처럼, 무뎌버린 회색으로,
+<br>흘러가는 시간에 아주 가끔 서글퍼
+<br>
+<br>모두 쉬운데, 나만 어려운 걸까,
+<br>풀수 없는 시험문제를 푸는 것 같더라.
+<br>만남의 느낌을 잊어버려서,
+<br>간절하지 않은 내가 어이 없더라.
+<br>쉬워질때도 됐는데,
+<br>나는 풀지 않은 숙제를 또 미루더라.
+<br>가끔, 만남을 고민해.
+<br>그새 잊어버릴 생각을 말야.
+<br>no affection, nor lonesome,
+<br>or passion, and emotion,
+<br>
+<br>무채색 인간인듯, 색이없는 회색으로,
+<br>물들지 않는 거리를 방황해
+<br>굳어가는 돌처럼, 무뎌버린 회색으로,
+<br>흘러가는 시간에 아주 가끔 서글퍼
+<br>
+<br>무채색 인간인듯, 색이없는 회색으로,
+<br>물들지 않는 거리를 방황해
+<br>굳어가는 돌처럼, 무뎌버린 회색으로,
+<br>흘러가는 시간에 아주 가끔 서글퍼
+
+				    	</div>  
+
 				    <img class="lyricsbtn" src="source/TRACKLIST/lyrics_close.png">
-					</div>
 				  </div>
-				  
 				</div>
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
 	</div>
 
 <p id="info">
-	<audio id="music" src="source/TRACKLIST/AUDIO/1.mp3"></audio>
+	<audio id="music" src="source/TRACKLIST/AUDIO/6.mp3"></audio>
 	sbyoon92@gmail.com<br>
 	010.9182.6193
 </p>
@@ -303,13 +303,13 @@ function Stop(id){
 			    modalLayer.fadeIn("fast");
 			    modalCont.css({"margin-top" : -marginTop, "margin-left" : -marginLeft});
 			    $(this).blur();
-			    $(".modalContent > .ly").focus(); 
+			    $(".modalContent > a").focus(); 
 			    return false;
 			  });
 
 			  $(".modalContent > img").click(function(){
 			    modalLayer.fadeOut("fast");
-			    modalLink.focus();
+			     modalLink.focus();
 			  });		
 			});
 		</script>
