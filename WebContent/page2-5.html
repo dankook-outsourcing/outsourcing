@@ -1,54 +1,119 @@
-
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<meta name="viewport" content="width=1200, user-scalable=no">
-<title>p2-5</title>
-<link rel="stylesheet" href="css/my.css">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/mousewheel.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/rotation.js"></script>
+		
 <style>
 html {
+	width:100%;
+	height:100%;
+	background-image: url("source/INTERACTION/5/bg_5.jpg");
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+	
+}
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:150px;
+	 height:50px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	
+	
+}
+#nav {
+	width:254px;
+	height:156px;
+	padding:0px;
+	margin-left:70px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:70px;
+	margin-bottom:50px;
+	color:#B3000000;
+	
+}
+#logo {
+	width:180px;
+	height:128px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:70px;
+	margin-bottom:50px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+body {
+	margin-top:0px;
+}
+.before_screen {
+	background-color:#000000;
+	opacity:0.6;
+	margin-left:-0.46%;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:4;
+	color:#FFFFFF;
+}
+.before_letter{
+	margin-left:0px;
+	margin-top:0px;
+	text-align:center;
+	padding-top:480px;
+}
+
+.box{
+	margin: 0 auto;
+	position: relative;
+	top: 0;
 	width: 100%;
 	height: 100%;
-	/*background-image: url("source/INTERACTION/1/bg_1.jpg");*/
-	background-color: #666666;
-	background-size: cover;
-	overflow-y: hidden;
-}
-
-.layout {
-	margin: 0 auto;
-	overflow: hidden;
-	position: relative;
-	top: 0;
-	height: 100%;
-	top: 0;
-}
-
-#layout {
-	margin-left: -30px;
-}
-
-.bg {
-	overflow: visible;
-	-webkit-overflow-scrolling: touch;
-	position: relative;
-	top: 0;
-	z-index: 10;
-	width: 100%;
-	height: 500%;
-	cursor: pointer
-}
-
-/* 전체높이 설정해준다 (100% * 컨테이너수) */
-.box1, .box2, .box3, .box4, .box5 {
-	margin: 0 auto;
-	position: relative;
-	top: 0;
-	width: 100%;
-	height: 800px;
 	color: #fff;
 	font-size: 3em;
 	text-align: center;
@@ -56,131 +121,24 @@ html {
 	position: relative;
 }
 
-/* 컨테이너 높이는  결과적으로 100%가 되도록 컨테이너수로 나눈다. */
-.box1 {
-	/* 	background-image: url("source/INTERACTION/2/bg_2.jpg");
-	background-size:cover; */
+
+.box img{
+	position:absolute;
+	margin-top:3%;
+	margin-left:-35%;
+	height:950px;
+}
+
+.box img.body3{
+	position:absolute;
+	margin-top: 0%;
+	margin-left:-50%;
+	height:950px;
 	
 }
 
-.box2 {
-	
-}
-
-.box3 {
-	
-}
-
-.box4 {
-	
-}
-
-.box6 {
-	
-}
-
-.box7 {
-	
-}
-
-.box8 {
-	
-}
-
-.box9 {
-	
-}
-
-.header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	width: 300px;
-	height: 100%;
-	opacity: .8;
-	filter: alpha(opacity = 80);
-	text-align: center
-}
-
-.header2 {
-	position: fixed;
-	top: 0;
-	right: 0px;
-	z-index: 1000;
-	width: 300px;
-	height: 100%;
-	opacity: .8;
-	filter: alpha(opacity = 80);
-	text-align: center
-}
-
-#info {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	color: #FFFFFF;
-	margin-left: 50px;
-	margin-bottom: 30px;
-}
-
-#logo {
-	width: 250px;
-	height: 130px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	margin-right: 50px;
-	margin-bottom: 30px;
-}
-
-#nav_home {
-	background-image: url("source/HOME/nav_home.png");
-	width: 300px;
-	height: 50px;
-	margin-top: 60px;
-}
-
-.bg img {
-	position: absolute;
-	width: 900px;
-	height: auto;
-	margin-left: -30%;
-}
-
-.nav_play {
-	position: relative;
-	top: -40px;
-	/* 	width: 150px; */
-	margin: 0 auto;
-	text-align: center;
-}
-
-.nav_play img {
-	width: 50px;
-}
-
-img.rotate {
-	width: 900px;
-	transform: translateZ(0) perspective(1px) rotate(45deg);
-	transform-style: preserve-3D;
-	transform-origin: bottom;
-	transition-timing-function: linear;
-	transition-duration: .2s, 1s;
-	transition: transform .8s ease-in-out;
-}
-
-img.rotate:hover {
-	-webkit-transform: rotate(360deg);
-	transform: rotate(360deg);
-}
-
-img.box2 {
-	width: 600px;
-	margin-left: -20%;
-}
-
-.world
+/* 이미지 회전함수 */
+.rotate
 {
 transform-style: preserve-3D;
 }
@@ -195,181 +153,83 @@ transform-style: preserve-3D;
 }
 
 
-
-	
 </style>
+<title>p2-5</title>
+<script>
+$(function() {
+	 var timeoutHandle;
+  $('.rotate').hover(function() {
+  	var istrue=true;
+  	var pics = [ "5s", "4s", "3s",  "1s"];
+  	var el = document.getElementById("img_rotation");  // el doesn't change
+  	el.style.WebkitAnimation = "spin1 6s infinite linear";
+  	
+  	if(timeoutHandle){
+  	    clearTimeout(timeoutHandle);
+  	    timeoutHandle = null;
+  	}
+  	timeoutHandle = setTimeout(function () {
+  		el.style.WebkitAnimationDuration = "2s";
+  			
+  		timeoutHandle = setTimeout(function () {
+  	  			el.style.WebkitAnimationDuration = "1s";
+  	  				timeoutHandle = setTimeout(function () {
+  	  					el.style.WebkitAnimationDuration = "0.5s";
+  	  			}, 20000);
+  		}, 6000);
+  	}, 3000);
+  }).mouseout(function() {
+  	if(timeoutHandle){
+  	    clearTimeout(timeoutHandle);
+  	    timeoutHandle = null;
+  	}
+  	
+  	istrue=false;
+  	document.getElementById("img_rotation").style.WebkitAnimation = "mynewmove 100s infinite linear";
+  	clearTimeout(myVar);
+  	});
+}); 
 
+</script>
 </head>
 <body>
-	<div>
-		<div class="layout" id="layout">
-			<div class="bg">
-				<div id="box1" class="box1 active">
-				<img id="cd2" class="box2 world" 	src="source/INTERACTION/5/5_layer_1.png">
-				</div>
-				<div id="box2" class="box2">
-					
-				</div>
-				<div id="box3" class="box3"></div>
-				<div id="box4" class="box4"></div>
-				<div id="box5" class="box5"></div>
+<div id="nav">
+	<div id="nav_home" class="nav"></div>
+	<div id="nav_interaction" class="nav"></div>
+	<div id="nav_tracklist" class="nav"></div>
+</div>
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_AMI<br>
+	2016.05.26<br>
+	---<br>
+	Hold click to stop<br>
+	the people from falling<br>
+	</p>
+</div>
+<script>
+
+$(document).ready(function(){
+	$(".before_screen").css("width",window.innerWidth);
+	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").click(function(){
+		$(".before_screen").fadeOut(1000);
+		setTimeout(function(){
+			
+		},1100);
+	});
+});
 
 
-			</div>
+</script>
+	<div id="box" class="box">
+				<img id="img_rotation" class="body1 rotate" src="source/INTERACTION/5/5_layer_1.png" >
 		</div>
 
-		<header class="header">
-			<ol>
-				<li><img class="nav_home" src="source/TRACKLIST/nav_home.png"
-					height="50" width="150"></li>
-				<li><img class="nav_home"
-					src="source/TRACKLIST/nav_interaction.png" height="50" width="150"></li>
-				<li><img class="nav_home"
-					src="source/TRACKLIST/nav_tracklist.png" height="50" width="150"></li>
-			</ol>
-			<p id="info">
-				sbyoon92@gmail.com<br> 010.9182.6193
-			</p>
-		</header>
-		<header class="header2">
-			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
-		</header>
-		 <script src="js/jquery-3.1.1.min.js"></script>
-		<script src="js/mousewheel.js"></script>
-		<script src="js/jquery.easing.1.3.js"></script>
-		<script src="js/rotation.js"></script>
-		<script>
-		
-		 $(function() {
-			 var timeoutHandle;
-		    $('.world').hover(function() {
-		    	var istrue=true;
-		    	var pics = [ "5s", "4s", "3s",  "1s"];
-		    	var el = document.getElementById("cd2");  // el doesn't change
-		    	el.style.WebkitAnimation = "spin1 6s infinite linear";
-		    	
-		    	if(timeoutHandle){
-		    	    clearTimeout(timeoutHandle);
-		    	    timeoutHandle = null;
-		    	}
-		    	timeoutHandle = setTimeout(function () {
-		    		el.style.WebkitAnimationDuration = "2s";
-		    	}, 3000);
-		    }).mouseout(function() {
-		    	if(timeoutHandle){
-		    	    clearTimeout(timeoutHandle);
-		    	    timeoutHandle = null;
-		    	}
-		    	
-		    	istrue=false;
-		    	document.getElementById("cd2").style.WebkitAnimation = "mynewmove 100s infinite linear";
-		    	clearTimeout(myVar);
-		    	});
-		});  
-		
-        // 콘텐츠 보이기
-        var contShow = {
-            init: function () {
-                // START============================
-                var _sec = $('.section'), // 이동 박스 상위 위치
-                    // ==============================END
-                    _leftOff = '0px';
-                _sec.children().animate({
-                    'left': _leftOff
-                }, 0);
-            },
-            cng: function (src) {
-                // START============================
-                var _src = $('.section .' + src), // 이동 박스 위치
-                    _speed = 1000, // 이동속도
-                    _leftOn = '-1000px', // 컨텐츠 너비
-                    _ease = 'easeOutBounce'; // Easing
-                // ==============================END
-                _src.animate({
-                    'left': _leftOn
-                }, _speed, _ease);
-            }
-        }
-        // 휠 슬라이드
-        // START==========================================================================
-        var _div = $('.bg'), // 이동 컨텐츠 박스
-            _active = $('.active'), // 활성화 창
-            _speed = 1000, // 이동속도
-            _ease = 'easeInOutExpo', // Easing
-            _divOff = $('.bg:not(:animated)').index(), // 컨텐츠 박스 멈춰있는지 체크
-            _moveNum = 50, // 스와이프 거리 최소값
-            // ========================================================================END
-            pageRoll = {
-                mousewheel: function () {
-                    _div.on('mousewheel', function (e) {
-                        // START==========================================
-                        _active = $('.active');
-                        _divOff = $('.bg:not(:animated)').index();
-                        // ============================================END
-                        // console.log(e.deltaX, e.deltaY, e.deltaFactor, e.pageX, e.pageY);
-                        if (e.deltaY > 0 && _divOff >= 0 && _active.index() != 0) {
-                            pageRoll.down()
-                        } else if (e.deltaY < 0 && _divOff >= 0 && _active.index() != _div.children().length - 1) {
-                            pageRoll.up()
-                        }
-                    });
-                },
-                touchstart: function () {
-                    _div.on('touchstart mousedown', function (e) {
-                        e.preventDefault();
-                        var _pageY = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
-                        return _pageY1 = parseInt(_pageY);
-                    });
-                },
-                touchend: function () {
-                    _div.on('touchend mouseup', function (e) {
-                        // START==========================================
-                        _active = $('.active');
-                        _divOff = $('.bg:not(:animated)').index();
-                        // ============================================END
-                        e.preventDefault();
-                        var _pageY2 = parseInt(e.originalEvent.touches ? e.originalEvent.changedTouches[0].pageY : e.pageY);
-                        if (_pageY2 - _pageY1 > _moveNum && _divOff >= 0 && _active.index() != 0) {
-                            pageRoll.down();
-                        } else if (_pageY2 - _pageY1 < -_moveNum && _divOff >= 0 && _active.index() != _div.children().length - 1) {
-                            pageRoll.up();
-                        }
-                    });
-                },
-                down: function () {
-                    var _prevHeight = (_div.innerHeight() / _div.children().length) * (_active.index() - 1) // 이동 위치 설정
-                    _div.animate({
-                        'top': -_prevHeight
-                    }, _speed, _ease);
-                    _div.find(_active).removeClass('active').prev().addClass('active');
-                },
-                up: function () {
-                    var _nextHeight = (_div.innerHeight() / _div.children().length) * (_active.index() + 1); // 이동 위치 설정
-                    _div.animate({
-                        'top': -_nextHeight
-                    }, _speed, _ease);
-                    _div.find(_active).removeClass('active').next().addClass('active');
-                },
-                resize: function () {
-                    $(window).resize(function () {
-                        // START====================================
-                        var _active = $('.active'), // 활성화 창
-                            _speed = 0; // 이동속도
-                        // ======================================END
-                        if (_active.offset().top != 0) {
-                            var _nextHeight = _div.innerHeight() / _div.children().length * (_active.index()); // 이동 위치 설정
-                            _div.animate({
-                                'top': -_nextHeight
-                            }, _speed);
-                        }
-                    });
-                }
-            }
-        pageRoll.mousewheel();
-        pageRoll.touchstart();
-        pageRoll.touchend();
-        pageRoll.resize();
-    </script>
-	</div>
+<p id="info">
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+<img src="source/HOME/logo.png" id="logo">
 </body>
 </html>
