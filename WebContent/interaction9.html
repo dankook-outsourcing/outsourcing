@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<style>
+html {
+	width:100%;
+	height:100%;
+	/*background-image: url("source/INTERACTION/9/bg_9.jpg");*/
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+}
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:150px;
+	 height:50px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	
+	
+}
+#nav {
+	width:254px;
+	height:156px;
+	padding:0px;
+	margin-left:70px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:70px;
+	margin-bottom:50px;
+	color:#B3000000;
+	
+}
+#logo {
+	width:180px;
+	height:128px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:70px;
+	margin-bottom:50px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+
+.before_screen {
+	background-color:#000000;
+	opacity:0.6;
+		
+	margin-left:-0.46%;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:4;
+	color:#FFFFFF;
+}
+.before_letter{
+	margin-left:0px;
+	margin-top:0px;
+	text-align:center;
+	
+	padding-top:480px;
+}
+
+	html, body, .content {
+    	height:100%;
+    	width: 100%;
+    	margin: 0;
+    	padding: 0;
+    	border: 0;
+	}
+
+	audio { 
+   		display:none;
+	}
+	
+	#wrapper{
+    	position: fixed;
+    	top: -5%;
+    	z-index:-2;
+ 	}
+ 	#img9_1 {
+    	height: 750px;
+ 		-webkit-transition:-webkit-filter 1.0s ease-in-out;
+ 	}
+	.g {
+		-webkit-filter: grayscale(1);
+	}
+	
+</style>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+
+<style>
+
+	
+
+ 	/*
+	#img9_1{
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	width: 1200px;
+    	height: 800px;
+    	margin-top: -400px;
+    	margin-left: -600px;
+    	z-index:-2;
+ 	}*/
+ 	
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.jrumble.1.3.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	
+	var clickable = false;
+	
+	$(".before_screen").css("width",window.innerWidth);
+	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").mousedown(function(){
+		$(".before_screen").fadeOut(1000);
+		$(".content").addClass("disabled");
+	});
+	$(".before_screen").mouseup(function(){
+		$(".content").removeClass("disabled");
+		clickable = true;
+	});
+	
+	$('#img9_1').jrumble({
+		x: 5,
+		y: 5,
+		rotation: 5
+	});
+	
+	
+	$('.content').bind({
+		'mousedown': function(){
+		
+			if (clickable) {
+				$('#img9_1').trigger('startRumble');
+				$('#img9_1').removeClass("g");
+			}
+			
+			
+		},
+		'mouseup': function(){
+			
+			//if (clickable) {
+				
+				$('#img9_1').trigger('stopRumble');
+				$('#img9_1').addClass("g");
+			//}
+			
+		}
+	});
+	/*
+	$('.content').mousedown(function(){
+		$('#img9_1').animate($('#img9_1').css("-webkit-filter" , "grayscale('0'%)"), 300);
+		$('#img9_1').animate($('#img9_1').css("filter" , "grayscale('0'%)"), 300);
+		$('#img9_1').removeClass("g");
+		$('#img9_1').trigger('startRumble');
+		
+	});
+	$('.content').mouseup(function(){
+		$('#img9_1').addClass("g");
+		$('#img9_1').trigger('stopRumble');
+		$('#img9_1').animate($('#img9_1').css("-webkit-filter" , "grayscale('100'%)"), 300);
+		$('#img9_1').animate($('#img9_1').css("filter" , "grayscale('100'%)"), 300);
+		
+	});*/
+
+});
+
+</script>
+
+<title> 9. KK </title>
+</head>
+<body>
+
+<audio id="music" src="source/INTERACTION/9/KK.mp3" autoplay loop></audio>
+
+<div class="content">
+
+	<div id="nav">
+		<div id="nav_home" class="nav"></div>
+		<div id="nav_interaction" class="nav"></div>
+		<div id="nav_tracklist" class="nav"></div>
+	</div>
+
+
+
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_AMI<br>
+	2016.05.26<br>
+	---<br>
+	Hold click to stop<br>
+	the people from falling<br>
+	</p>
+</div>
+
+<div id="wrapper">
+	<img src="source/INTERACTION/9/9_layer_1.png" id="img9_1">
+</div>
+
+
+<p id="info">
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+<img src="source/HOME/logo.png" id="logo">
+
+
+</div> <!-- End of content -->
+
+</body>
+</html>
