@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<style>
+html {
+	width:100%;
+	height:100%;
+	/*background-image: url("source/HOME/bg.jpg");*/
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+	
+}
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:150px;
+	 height:50px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	
+	
+}
+#nav {
+	width:254px;
+	height:156px;
+	padding:0px;
+	margin-left:70px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:70px;
+	margin-bottom:50px;
+	color:#B3000000;
+	
+}
+#logo {
+	width:180px;
+	height:128px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:70px;
+	margin-bottom:50px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+.before_screen {
+	background-color:#000000;
+	opacity:0.6;
+		
+	margin-left:-0.46%;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:4;
+	color:#FFFFFF;
+}
+.before_letter{
+	margin-left:0px;
+	margin-top:0px;
+	text-align:center;
+	
+	padding-top:480px;
+}
+
+/*  page 21   */
+body {
+	margin-top:0px;
+}
+#page21 {
+	
+	
+}
+#body21 {
+	position:absolute;
+	/* margin-left:54.3%; -- % */ 
+	/* margin-left:781.906px; -- mac air*/
+	margin-left:747.3825px;/* mac air*1.25  */
+	
+	/* margin-top:16.8%; */
+	/* margin-top:241.906px; mac air*/
+	margin-top:302.3825px;
+	
+	/* width:180px; */
+	width:225px;
+	
+	/* height:85px; */
+	height:106.25px;
+}
+#body22 {
+	position:absolute;
+	/* margin-left:59.3%; */
+	/* margin-left:853.906px; */
+	margin-left:837.3825px;
+	
+	/* margin-top:43.8%; */
+	/* margin-top:630.719px; */
+	margin-top:788.39875px;
+	
+	/* width:85px; */
+	width:106.25px;
+	
+	/* height:85px; */
+	height:106.25px;
+}
+#body23 {
+	position:absolute;
+	/* margin-left:28%; */
+	/* margin-left:403.188px; */
+	margin-left:273.985px;
+	
+	/* width:600px; */
+	width:750px;
+	
+	/* height:760px; */
+	height:950px;
+}
+#body24 {
+	position:absolute;
+	/* margin-top:5%; */
+	/* margin-top:72px; */
+	margin-top:90px;
+	
+	/* margin-left:30%; */
+	/* margin-left:432px; */
+	margin-left:310px;
+	
+	/* width:400px; */
+	width:500px;
+	
+	/* height:700px; */
+	height:875px;
+
+}
+#body25 {
+	position:absolute;
+	/* margin-left:55.2%; */
+	/* margin-left:864.875px; */
+	margin-left:781.09375px;
+	
+	
+	/* width:185px; */
+	width:231.25px;
+	
+	/* height:750px; */
+	height:937.5px;
+	z-index:-1;
+}
+#body26 {
+	position:absolute;
+	/* margin-left:27.9%; */
+	/* margin-left:401.75px; */
+	margin-left:272.1875px;
+	
+	/* width:380px; */
+	width:475px;
+	
+	/* height:820px; */
+	height:1025px;
+	z-index:-1;
+
+}
+.page21_body {
+	-webkit-transition: 3s ease-in-out;
+    transition: 3s ease-in-out;    
+}
+</style>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="nav">
+	<div id="nav_home" class="nav"></div>
+	<div id="nav_interaction" class="nav"></div>
+	<div id="nav_tracklist" class="nav"></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_AMI<br>
+	2016.05.26<br>
+	---<br>
+	Hold click to stop<br>
+	the people from falling<br>
+	</p>
+</div>
+<script>
+$(document).ready(function(){
+	$(".before_screen").css("width",window.innerWidth);
+	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").click(function(){
+		$(".before_screen").fadeOut(1000);
+		setTimeout(function(){
+			$("#body21").css("-webkit-transform","translate(0,55em) rotate(-90deg)");
+			$("#body21").css("transform","translate(0,55em) rotate(-90deg)");
+			$("#body22").css("-webkit-transform","translate(0,62em) rotate(-190deg)");
+			$("#body22").css("transform","translate(0,62em) rotate(-190deg)");
+			$("#body23").css("-webkit-transform","translate(0,65em) rotate(90deg)");
+			$("#body23").css("transform","translate(0,65em) rotate(90deg)");
+			$("#body24").css("-webkit-transform","translate(10em,55em) rotate(-90deg)");
+			$("#body24").css("transform","translate(10em,55em) rotate(-90deg)");
+			$("#body25").css("-webkit-transform","translate(0,55em) rotate(-90deg)");
+			$("#body25").css("transform","translate(0,55em) rotate(-90deg)");
+			$("#body26").css("-webkit-transform","translate(0,55em) rotate(-90deg)");
+			$("#body26").css("transform","translate(0,55em) rotate(-90deg)");
+		},1100);
+	});
+	
+	$(this).mousedown(function(){
+		$(".page21_body").css("-webkit-transition","0.5s ease-in-out");
+		$(".page21_body").css("transition","0.5s ease-in-out");
+		$("#body21").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body21").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body22").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body22").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body23").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body23").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body24").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body24").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body25").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body25").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body26").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body26").css("transform","translate(0,0em) rotate(0deg)");
+		$(".page21_body").css("-webkit-transition","0.7s ease-in-out");
+		$(".page21_body").css("transition","0.7s ease-in-out");
+	}).mouseup(function(){
+		$(".page21_body").css("-webkit-transition","3s ease-in-out");
+		$(".page21_body").css("transition","3s ease-in-out");
+		$("#body21").css("-webkit-transform","translate(0,55em) rotate(-90deg)");
+		$("#body21").css("transform","translate(0,55em) rotate(-90deg)");
+		$("#body22").css("-webkit-transform","translate(0,62em) rotate(-190deg)");
+		$("#body22").css("transform","translate(0,62em) rotate(-190deg)");
+		$("#body23").css("-webkit-transform","translate(0,65em) rotate(90deg)");
+		$("#body23").css("transform","translate(0,65em) rotate(90deg)");
+		$("#body24").css("-webkit-transform","translate(10em,55em) rotate(-90deg)");
+		$("#body24").css("transform","translate(10em,55em) rotate(-90deg)");
+		$("#body25").css("-webkit-transform","translate(0,55em) rotate(-90deg)");
+		$("#body25").css("transform","translate(0,55em) rotate(-90deg)");
+		$("#body26").css("-webkit-transform","translate(0,55em) rotate(-90deg)");
+		$("#body26").css("transform","translate(0,55em) rotate(-90deg)");
+		
+	});
+});
+</script>
+
+
+<div id="page21">
+	
+	<img id="body21" class="page21_body" src="source/INTERACTION/1/1_layer_1.png">
+	<img id="body22" class="page21_body" src="source/INTERACTION/1/1_layer_2.png">
+	<img id="body23" class="page21_body" src="source/INTERACTION/1/1_layer_3.png">
+	<img id="body24" class="page21_body" src="source/INTERACTION/1/1_layer_4.png">
+	<img id="body25" class="page21_body" src="source/INTERACTION/1/1_layer_5.png">
+	<img id="body26" class="page21_body" src="source/INTERACTION/1/1_layer_6.png">
+	
+</div>
+
+
+
+<p id="info">
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+<img src="source/HOME/logo.png" id="logo">
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/jquery.transform2d.js"></script>
+
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+$(document).ready(function(){
+	/*  */
+	function animateRotate (object,fromDeg,toDeg,duration,callback){
+        var dummy = $('<span style="margin-left:'+fromDeg+'px;">')
+        $(dummy).animate({
+            "margin-left":toDeg+"px"
+        },
+        {
+            duration:duration,
+            step: function(now,fx){
+                $(object).css('transform','rotate(' + now + 'deg)');
+                if(now == toDeg){
+                    if(typeof callback == "function"){
+                        callback();
+                    }
+                    
+                }
+            }
+        }
+    )};
+    
+    /* $("#gg").mousedown(function(){
+    	animateRotate($("#gg"),270,460,null);
+    }); */
+    
+    $("#touchbar").mousedown(function(){
+    	$("#gg").css("-webkit-transform","translate(0,-10em) rotate(90deg)");
+    	$("#gg").css("transform","translate(0,-10em) rotate(90deg)");
+    	$("#zz").css("-webkit-transform","translate(0,-10em) rotate(90deg)");
+    	$("#zz").css("transform","translate(0,-10em) rotate(90deg)");
+    }).mouseup(function(){
+    	$("#gg").css("-webkit-transform","translate(0,+10em) rotate(-90deg)");
+    	$("#gg").css("transform","translate(0,+10em) rotate(-90deg)");
+    	$("#zz").css("-webkit-transform","translate(0,+10em) rotate(-90deg)");
+    	$("#zz").css("transform","translate(0,+10em) rotate(-90deg)");
+    });
+    	
+    	
+});
+</script>
+<style>
+#gg{
+	margin-top:100px;
+	margin-left:100px;
+	width:50px;
+	height:50px;
+	background-color:#299222;
+	-webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out; 
+}
+#zz {
+margin-top:200px;
+	margin-left:200px;
+	width:50px;
+	height:50px;
+	background-color:#299222;
+	-webkit-transition: 3s ease-in-out;
+    transition: 3s ease-in-out;
+}
+
+#touchbar {
+margin-top:500px;
+	margin-left:500px;
+	width:50px;
+	height:50px;
+	background-color:#299222;
+}
+</style>
+<div id="gg"></div>
+<div id="zz"></div>
+<div id="touchbar"></div>
+</body>
+
+</html>

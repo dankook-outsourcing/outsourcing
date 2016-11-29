@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<style>
+html {
+	width:100%;
+	height:100%;
+	/*background-image: url("source/HOME/bg.jpg");*/
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+	
+}
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:150px;
+	 height:50px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	
+	
+}
+#nav {
+	width:254px;
+	height:156px;
+	padding:0px;
+	margin-left:70px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:70px;
+	margin-bottom:50px;
+	color:#B3000000;
+	
+}
+#logo {
+	width:180px;
+	height:128px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:70px;
+	margin-bottom:50px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+body {
+	margin-top:0px;
+}
+.before_screen {
+	background-color:#000000;
+	opacity:0.6;
+		
+	margin-left:-0.46%;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:4;
+	color:#FFFFFF;
+}
+.before_letter{
+	margin-left:0px;
+	margin-top:0px;
+	text-align:center;
+	
+	padding-top:480px;
+}
+.page28_body {
+	-webkit-transition: 8s ease-in-out;
+    transition: 8s ease-in-out; 
+    position:absolute;
+	/* margin-left:-19%; */
+	margin-left:-556px;
+	
+	/* margin-top:-14%; */
+	margin-top:-235.9999px;
+	
+	/* width:1925px; mac air*/
+	width:2406.25px;
+	
+	/* height:962.5px; */
+	height:1203.125px;
+}
+
+
+
+
+</style>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="nav">
+	<div id="nav_home" class="nav"></div>
+	<div id="nav_interaction" class="nav"></div>
+	<div id="nav_tracklist" class="nav"></div>
+</div>
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_AMI<br>
+	2016.05.26<br>
+	---<br>
+	Hold click to stop<br>
+	the people from falling<br>
+	</p>
+</div>
+
+<script>
+$(document).ready(function(){
+	
+	
+	$(".before_screen").css("width",window.innerWidth);
+	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").click(function(){
+		$(".before_screen").fadeOut(1000);
+		setTimeout(function(){
+			$("#body81").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
+			$("#body81").css("transform","translate(0,-70em) rotate(-90deg)");
+			$("#body82").css("-webkit-transform","translate(0,-77em) rotate(-190deg)");
+			$("#body82").css("transform","translate(0,-77em) rotate(-190deg)");
+			$("#body83").css("-webkit-transform","translate(0,-80em) rotate(90deg)");
+			$("#body83").css("transform","translate(0,-80em) rotate(90deg)");
+			$("#body84").css("-webkit-transform","translate(10em,-70em) rotate(90deg)");
+			$("#body84").css("transform","translate(10em,-70em) rotate(90deg)");
+			$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
+			$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
+		},1100);
+	
+	$(".page28_body").mousedown(function(){
+		$(".page28_body").css("-webkit-transition","0.5s ease-in-out");
+		$(".page28_body").css("transition","0.5s ease-in-out");
+		$("#body81").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body81").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body82").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body82").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body83").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body83").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body84").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body84").css("transform","translate(0,0em) rotate(0deg)");
+		$("#body85").css("-webkit-transform","translate(0,0em) rotate(0deg)");
+		$("#body85").css("transform","translate(0,0em) rotate(0deg)");
+	}).mouseup(function(){
+		$(".page28_body").css("-webkit-transition","8s ease-in-out");
+		$(".page28_body").css("transition","8s ease-in-out");
+		$("#body81").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
+		$("#body81").css("transform","translate(0,-70em) rotate(-90deg)");
+		$("#body82").css("-webkit-transform","translate(0,-77em) rotate(-190deg)");
+		$("#body82").css("transform","translate(0,-77em) rotate(-190deg)");
+		$("#body83").css("-webkit-transform","translate(0,-80em) rotate(90deg)");
+		$("#body83").css("transform","translate(0,-80em) rotate(90deg)");
+		$("#body84").css("-webkit-transform","translate(10em,-70em) rotate(90deg)");
+		$("#body84").css("transform","translate(10em,-70em) rotate(90deg)");
+		$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
+		$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
+		
+		});
+	});
+});
+</script>
+
+
+<div id="page21">
+	
+	<img id="body81" class="page28_body" src="source/INTERACTION/8/8_layer_1.png">
+	<img id="body82" class="page28_body" src="source/INTERACTION/8/8_layer_2.png">
+	<img id="body83" class="page28_body" src="source/INTERACTION/8/8_layer_3.png">
+	<img id="body84" class="page28_body" src="source/INTERACTION/8/8_layer_4.png">
+	<img id="body85" class="page28_body" src="source/INTERACTION/8/8_layer_5.png">
+	
+</div>
+
+
+
+<p id="info">
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+<img src="source/HOME/logo.png" id="logo">
+</body>
+</html>
+

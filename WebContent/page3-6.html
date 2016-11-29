@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<head>
+
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+<script src="js/jquery-3.1.1.min.js"></script>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html {
+	width:100%;
+	height:100%;
+	background-image: url("source/INTERACTION/8/bg_8.jpg"); 
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:150px;
+	 height:50px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:250px;
+	height:50px;
+	
+}
+#nav {
+	width:254px;
+	height:156px;
+	padding:0px;
+	margin-left:70px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:70px;
+	margin-bottom:50px;
+	color:#B3000000;
+	
+}
+#logo {
+	width:180px;
+	height:128px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:70px;
+	margin-bottom:50px;
+	opacity:0.7;
+}
+
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+body {
+	margin-top:0px;
+}
+.before_screen {
+	background-color:#000000;
+	opacity:0.6;
+		
+	margin-left:-0.46%;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:4;
+	color:#FFFFFF;
+}
+.before_letter{
+	margin-left:0px;
+	margin-top:0px;
+	text-align:center;
+	
+	padding-top:480px;
+}
+
+.box{
+	margin: 0 auto;
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 3em;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative;
+}
+
+
+.box img{
+	position:absolute;
+	margin-top:105px;
+	margin-left:-29%;
+	height:783px;
+}
+.box img .nav_play{
+
+}
+.nav_play {
+	position: absolute;
+	text-align: center;
+	margin-top:46%;
+	margin-left:45%;
+}
+.nav_play img {
+	width: 57px;
+}
+
+.lyricsbtn {
+	width: 3%;
+	position: absolute;
+	bottom: 86%;
+	right:0px;
+	margin-right: 3px;
+	margin-top: 49%;
+}
+
+audio { 
+   display:none;
+}
+
+/* ROTATE */
+.rotate {
+}
+
+@-webkit-keyframes spin1 { 
+	0% {-webkit-transform: rotate(0deg);}
+	100% { -webkit-transform:rotate(360deg);}
+}
+
+/* 모달창 */
+a{color:#000;}
+.mask{width:100%; height:100%; position:fixed; left:0; top:0; z-index:10; background:#000; opacity:.5; filter:alpha(opacity=50);}
+#modalLayer{display:none; position:relative;}
+
+#modalLayer .modalContent{
+	width: 435px;
+	height:100%; 
+	position:fixed; 
+	top: 50px;
+	right: 0px;
+	z-index:1001; 
+	background:#696969;
+	text-align:center;
+	border-radius: 30px;
+	color: white;
+	font-size: 20px;
+}
+#modalLayer .modalContent img{
+	width: 57px;
+	top:-20%;
+	right: 100%;
+	margin-bottom: 0%;
+	margin-left:1%;
+	position:absolute; 
+	cursor:pointer;
+}
+
+</style>
+<script>
+function Play(id){
+		document.getElementById(id).style.WebkitAnimation = "spin1 2s infinite linear";
+		var myAudio = document.getElementById("music");
+		myAudio.play();
+}
+
+function Pause(id) {
+    document.getElementById(id).style.WebkitAnimationPlayState = "paused";
+    document.getElementById(id).style.animationPlayState = "paused";
+    var myAudio = document.getElementById("music");
+    myAudio.pause();
+}
+
+function Stop(id){
+	document.getElementById(id).style.WebkitAnimation = "";
+	var myAudio = document.getElementById("music");
+	myAudio.pause();
+	myAudio.currentTime = 0;
+}
+</script>
+<title>TRACK LIST</title>
+</head>
+<body>
+<div id="nav">
+	<div id="nav_home" class="nav"></div>
+	<div id="nav_interaction" class="nav"></div>
+	<div id="nav_tracklist" class="nav"></div>
+</div>
+	<div id="box" class="box">
+				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd6.png" >
+	</div>
+	<div class="nav_play">
+						<img src="source/TRACKLIST/play.png" onclick="Play('cd1')">
+						<img src="source/TRACKLIST/pause.png" onclick="Pause('cd1')">
+						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
+	</div>
+	<div>
+	<img class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
+	<a href="#modalLayer" class="modalLink">
+				<img id="lyrics_open" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
+			</a>
+				<div id="modalLayer">
+				  <div class="modalContent">
+				    	<div>
+				    	<br>태정
+<br>
+<br>언제부턴가 누굴 만나는 일이,
+<br>불편하고 처리해야할 일이 되었더라.
+<br>어떤 행동과 말을 해야하는지,
+<br>생각하는 내 자신이 어이 없더라.
+<br>만남이 사치가 되고,
+<br>이미 우선순위에서 밀려나있더라.
+<br>가끔, 만남을 고민해.
+<br>그새 잊어버릴 생각을 말야.
+<br>
+<br>무채색 인간인듯, 색이없는 회색으로,
+<br>물들지 않는 거리를 방황해
+<br>굳어가는 돌처럼, 무뎌버린 회색으로,
+<br>흘러가는 시간에 아주 가끔 서글퍼
+<br>
+<br>모두 쉬운데, 나만 어려운 걸까,
+<br>풀수 없는 시험문제를 푸는 것 같더라.
+<br>만남의 느낌을 잊어버려서,
+<br>간절하지 않은 내가 어이 없더라.
+<br>쉬워질때도 됐는데,
+<br>나는 풀지 않은 숙제를 또 미루더라.
+<br>가끔, 만남을 고민해.
+<br>그새 잊어버릴 생각을 말야.
+<br>no affection, nor lonesome,
+<br>or passion, and emotion,
+<br>
+<br>무채색 인간인듯, 색이없는 회색으로,
+<br>물들지 않는 거리를 방황해
+<br>굳어가는 돌처럼, 무뎌버린 회색으로,
+<br>흘러가는 시간에 아주 가끔 서글퍼
+<br>
+<br>무채색 인간인듯, 색이없는 회색으로,
+<br>물들지 않는 거리를 방황해
+<br>굳어가는 돌처럼, 무뎌버린 회색으로,
+<br>흘러가는 시간에 아주 가끔 서글퍼
+
+				    	</div>  
+
+				    <img class="lyricsbtn" src="source/TRACKLIST/lyrics_close.png">
+				  </div>
+				</div>
+			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
+	</div>
+
+<p id="info">
+	<audio id="music" src="source/TRACKLIST/AUDIO/6.mp3"></audio>
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+
+<img src="source/HOME/logo.png" id="logo">
+<!-- 스크립트 영역 -->
+		<script type="text/javascript">
+		$(document).ready(function(){
+			  var modalLayer = $("#modalLayer");
+			  var modalLink = $(".modalLink");
+			  var modalCont = $(".modalContent");
+			  var marginLeft = modalCont.outerWidth()/2;
+			  var marginTop = modalCont.outerHeight()/2; 
+
+			  modalLink.click(function(){
+			    modalLayer.fadeIn("fast");
+			    modalCont.css({"margin-top" : -marginTop, "margin-left" : -marginLeft});
+			    $(this).blur();
+			    $(".modalContent > a").focus(); 
+			    return false;
+			  });
+
+			  $(".modalContent > img").click(function(){
+			    modalLayer.fadeOut("fast");
+			     modalLink.focus();
+			  });		
+			});
+		</script>
+</body>
+</html>

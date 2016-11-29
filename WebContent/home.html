@@ -1,9 +1,17 @@
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <style>
+* {
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+}
+div,p {
+
+}
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/HOME/bg.jpg");
+	/*background-image: url("source/HOME/bg.jpg");*/
+	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
 	
@@ -13,8 +21,7 @@ html {
 	 background-size:cover;
 	 width:150px;
 	 height:50px;
-	 margin-top:60px;
-	 margin-left:25px;
+	 margin-bottom:24px;
 }
 
 #nav_interaction {
@@ -22,8 +29,8 @@ html {
 	background-size:cover;
 	width:250px;
 	height:50px;
-	margin-top:5px;
-	margin-left:25px;
+	margin-bottom:24px;
+	
 	
 }
 #nav_tracklist {
@@ -31,81 +38,98 @@ html {
 	background-size:cover;
 	width:250px;
 	height:50px;
-	margin-top:5px;
-	margin-left:25px;
+	
 	
 }
 #nav {
-	width:300px;
+	width:254px;
+	height:156px;
+	padding:0px;
+	margin-left:70px;
+	margin-top:70px;	
 	float:left;
 }
 .nav {
 	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
-.nav :hover {
-	opacity:0.8;
-}
-#content_area {
-	margin:auto;
-	position:absolute;
-	margin-left:380px;	
-	overflow:scroll;
-	width:1080px;
-	
-	padding-bottom:80px;
-	padding-top:80px;
-	margin-bottom:80px;
-	color:#FFFFFF;
-	height:100%;
-	
-	font-size:26px;
-	line-height:160%;
-	
-}
-#content_area::-webkit-scrollbar {
-	display:none;
-}
-#content_area_bg {
-	margin:auto;
-	position:absolute;
-	margin-left:300px;	
-	overflow:scroll;
-	width:1240px;
-	height:100%;
-	background-color:#000000;
-	opacity:0.4;
-	border-radius:10px;
-}
-#ring_master {
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	z-index:-1;
-}
-#content_body {
-	background-color:#000000; 
-	opacity:0.8;
-	padding:30px;
-	border-radius:20px;
-	margin-bottom:150px;
-	padding-bottom:-10px;
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
 }
 #info {
 	position:absolute;
 	bottom:0;
 	left:0;
 	color:#FFFFFF;
-	margin-left:50px;
-	margin-bottom:30px;
+	margin-left:70px;
+	margin-bottom:50px;
+	color:#B3000000;
+	
 }
 #logo {
-	width:250px;
-	height:130px;
+	width:180px;
+	height:128px;
 	position:absolute;
 	bottom:0;
 	right:0;
-	margin-right:50px;
-	margin-bottom:30px;
+	margin-right:70px;
+	margin-bottom:50px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+	
+#content_area {
+	margin:auto;
+	position:absolute;
+	margin-left:405.3px;	
+	overflow:scroll;
+	width:966px;
+	color:#FFFFFF;
+	height:100%;	
+	margin-bottom:0px;
+}
+#video {
+width:965px;
+margin-top:0px;
+margin-bottom:200px;
+
+}
+#content_area::-webkit-scrollbar {
+	display:none;
+}
+
+#ring_master {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	margin-bottom:-80px;
+	z-index:-1;
+}
+#content_body {
+	background-color:#000000;
+	
+	opacity:0.8;
+	padding:30px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	padding:71px;
+	margin-top:58px;
+	
+	padding-bottom:-10px;
+	font-size:17px;
+	line-height:2em;
+	margin-bottom:0px;
+	
+}
+opacity:0.7;
 }
 </style>
 <html>
@@ -120,6 +144,11 @@ html {
 	<div id="nav_interaction" class="nav"></div>
 	<div id="nav_tracklist" class="nav"></div>
 </div>
+<script>
+$(document).ready(function(){
+	
+});
+</script>
 
 
 <div id="content_area" class="content">
@@ -136,9 +165,11 @@ html {
 	
 	그리고 지금 이 아카이빙을 보고 있는 당신은 아직 메카닉병자가 아니었음 한다. 나 또한, 이 시점에서 이 작업을 중단하게 된다면 나 또한 메카닉병자가 될 것을 알기 때문에, 나는 비노 서커스단 운영을 중단할 수가 없다. 자신이 진실된 소통을 하고 있는지 생각해보자. 그렇지 않다면, 당신은 곧 불치병자가 될 것이다. 비노의 서커스단은 항상 열려있으니 망설이지 말고, 문을 두드려주길 바란다. 너와 나 모두를 위해.
 	
-	<br><br><br><br>
+	
 	</p>
-
+	<video id="video" controls>
+	  <source src="source/HOME/movie.mp4" type="video/mp4">
+	</video>
 
 </div>
 
