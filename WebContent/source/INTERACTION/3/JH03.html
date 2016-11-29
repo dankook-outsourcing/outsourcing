@@ -4,23 +4,24 @@
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/INTERACTION/3/3_JH.png");
+	background-image: url("../../../source/INTERACTION/3/3_JH.png");
 	background-color:#666666;
 	background-size:cover;
 	overflow-y:hidden;
 	
 }
 #nav_home {
-	 background-image:url("source/HOME/nav_home.png");
+	 background-image:url("../../../source/HOME/nav_home.png");
 	 background-size:cover;
 	 width:150px;
 	 height:50px;
 	 margin-top:60px;
 	 margin-left:25px;
+	 
 }
 
 #nav_interaction {
-	background-image:url("source/HOME/nav_interaction.png");
+	background-image:url("../../../source/HOME/nav_interaction.png");
 	background-size:cover;
 	width:250px;
 	height:50px;
@@ -29,7 +30,7 @@ html {
 	
 }
 #nav_tracklist {
-	background-image:url("source/HOME/nav_tracklist.png");
+	background-image:url("../../../source/HOME/nav_tracklist.png");
 	background-size:cover;
 	width:250px;
 	height:50px;
@@ -100,12 +101,16 @@ html {
 
 
 <style>
-	#here {
-		margin: 0 auto;
-		/*background-image: url("source/INTERACTION/3/3_JH.jpg");*/
-	}
+	body{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+    }
 	#canvas {
-		display: block;
+		margin-top: 0px; 
+		
 	}
 </style>
 
@@ -138,7 +143,7 @@ window.onload = function(){
 	}
 	
 	//Lets draw the flakes
-	function draw()
+	function drawSnow()
 	{
 		ctx.clearRect(0, 0, W, H);
 		
@@ -151,13 +156,13 @@ window.onload = function(){
 			ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
 		}
 		ctx.fill();
-		update();
+		updateSnow();
 	}
 	
 	//Function to move the snowflakes
 	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
 	var angle = 0;
-	function update()
+	function updateSnow()
 	{
 		angle += 0.01;
 		for(var i = 0; i < mp; i++)
@@ -196,8 +201,18 @@ window.onload = function(){
 		}
 	}
 	
+	
+	
+	
+	
 	//animation loop
-	setInterval(draw, 33);
+	setInterval(drawSnow, 33);
+	
+	
+	
+	
+	
+	
 	
 	/*
 	$("#canvas").mouseUp(function(){
@@ -234,6 +249,6 @@ window.onload = function(){
 	sbyoon92@gmail.com<br>
 	010.9182.6193
 </p>
-<img src="source/HOME/logo.png" id="logo">
+<img src="../../../source/HOME/logo.png" id="logo">
 </body>
 </html>
