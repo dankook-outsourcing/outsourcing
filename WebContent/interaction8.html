@@ -3,7 +3,7 @@
 html {
 	width:100%;
 	height:100%;
-	/*background-image: url("source/HOME/bg.jpg");*/
+	background-image: url("source/INTERACTION/8/bg_8.jpg");
 	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
@@ -12,16 +12,16 @@ html {
 #nav_home {
 	 background-image:url("source/HOME/nav_home.png");
 	 background-size:cover;
-	 width:150px;
-	 height:50px;
+	 width:357px;
+	 height:55px;
 	 margin-bottom:24px;
 }
 
 #nav_interaction {
 	background-image:url("source/HOME/nav_interaction.png");
 	background-size:cover;
-	width:250px;
-	height:50px;
+	width:357px;
+	height:55px;
 	margin-bottom:24px;
 	
 	
@@ -29,16 +29,16 @@ html {
 #nav_tracklist {
 	background-image:url("source/HOME/nav_tracklist.png");
 	background-size:cover;
-	width:250px;
-	height:50px;
+	width:357px;
+	height:55px;
 	
 	
 }
-#nav {
-	width:254px;
-	height:156px;
+#nav { 
+	width:357px;
+	height:239px;
 	padding:0px;
-	margin-left:70px;
+	margin-left:42px;
 	margin-top:70px;	
 	float:left;
 }
@@ -47,7 +47,6 @@ html {
 	opacity:0.7;
 	-webkit-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out;
-    
 }
 .nav:hover {
 	opacity:1;
@@ -58,19 +57,21 @@ html {
 	bottom:0;
 	left:0;
 	color:#FFFFFF;
-	margin-left:70px;
-	margin-bottom:50px;
+	margin-left:42px;
+	margin-bottom:40px;
 	color:#B3000000;
+	font-size:25px;
+	line-height:1.7em;
 	
 }
 #logo {
-	width:180px;
-	height:128px;
+	width:214px;
+	height:158.812px;
 	position:absolute;
 	bottom:0;
 	right:0;
-	margin-right:70px;
-	margin-bottom:50px;
+	margin-right:40px;
+	margin-bottom:42px;
 	opacity:0.7;
 }
 #logo:hover {
@@ -96,24 +97,28 @@ body {
 	margin-left:0px;
 	margin-top:0px;
 	text-align:center;
-	
-	padding-top:480px;
+	font-size:24px;
+	padding-top:612px;
+	line-height:1.3em;
+}
+#music {
+	display:none;
 }
 .page28_body {
 	-webkit-transition: 8s ease-in-out;
     transition: 8s ease-in-out; 
     position:absolute;
 	/* margin-left:-19%; */
-	margin-left:-556px;
+	margin-left:-375px;
 	
 	/* margin-top:-14%; */
-	margin-top:-235.9999px;
+	margin-top:-333px;
 	
 	/* width:1925px; mac air*/
-	width:2406.25px;
+	width:3217.25px;
 	
 	/* height:962.5px; */
-	height:1203.125px;
+	height:1608.125px;
 }
 
 
@@ -125,15 +130,16 @@ body {
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>수빈씨 메렁ㅋ</title>
 </head>
 <body>
-
-<div id="nav">
+<audio id="music" src="source/INTERACTION/8/TJ.mp3"></audio>
+<div id="nav" class="nav_before">
 	<div id="nav_home" class="nav"></div>
 	<div id="nav_interaction" class="nav"></div>
 	<div id="nav_tracklist" class="nav"></div>
 </div>
+
 <div class="before_screen">
 	<p class="before_letter">
 	BINO_AMI<br>
@@ -146,7 +152,6 @@ body {
 
 <script>
 $(document).ready(function(){
-	
 	
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
@@ -163,9 +168,10 @@ $(document).ready(function(){
 			$("#body84").css("transform","translate(10em,-70em) rotate(90deg)");
 			$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 			$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
+			$(".nav_before").hide();
 		},1100);
 	
-	$(".page28_body").mousedown(function(){
+	$("html").mousedown(function(){
 		$(".page28_body").css("-webkit-transition","0.5s ease-in-out");
 		$(".page28_body").css("transition","0.5s ease-in-out");
 		$("#body81").css("-webkit-transform","translate(0,0em) rotate(0deg)");
@@ -178,6 +184,7 @@ $(document).ready(function(){
 		$("#body84").css("transform","translate(0,0em) rotate(0deg)");
 		$("#body85").css("-webkit-transform","translate(0,0em) rotate(0deg)");
 		$("#body85").css("transform","translate(0,0em) rotate(0deg)");
+		document.getElementById("music").play();
 	}).mouseup(function(){
 		$(".page28_body").css("-webkit-transition","8s ease-in-out");
 		$(".page28_body").css("transition","8s ease-in-out");
@@ -191,6 +198,7 @@ $(document).ready(function(){
 		$("#body84").css("transform","translate(10em,-70em) rotate(90deg)");
 		$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 		$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
+		document.getElementById("music").pause();
 		
 		});
 	});
@@ -198,16 +206,19 @@ $(document).ready(function(){
 </script>
 
 
-<div id="page21">
-	
+
 	<img id="body81" class="page28_body" src="source/INTERACTION/8/8_layer_1.png">
 	<img id="body82" class="page28_body" src="source/INTERACTION/8/8_layer_2.png">
 	<img id="body83" class="page28_body" src="source/INTERACTION/8/8_layer_3.png">
 	<img id="body84" class="page28_body" src="source/INTERACTION/8/8_layer_4.png">
 	<img id="body85" class="page28_body" src="source/INTERACTION/8/8_layer_5.png">
 	
-</div>
 
+<div id="nav" class="nav_after">
+	<div id="nav_home" class="nav"></div>
+	<div id="nav_interaction" class="nav"></div>
+	<div id="nav_tracklist" class="nav"></div>
+</div>
 
 
 <p id="info">
