@@ -38,7 +38,7 @@ html {
 	width:357px;
 	height:239px;
 	padding:0px;
-	margin-left:42px;
+	margin-left:16px;
 	margin-top:70px;	
 	float:left;
 }
@@ -130,7 +130,7 @@ body {
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="UTF-8">
-<title>수빈씨 메렁ㅋ</title>
+<title>interaction8</title>
 </head>
 <body>
 <audio id="music" src="source/INTERACTION/8/TJ.mp3"></audio>
@@ -156,8 +156,14 @@ $(document).ready(function(){
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
 	$(".before_screen").click(function(){
+		
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
+			$(".nav_before").hide();	
+		},1000);
+		
+		setTimeout(function(){
+			
 			$("#body81").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 			$("#body81").css("transform","translate(0,-70em) rotate(-90deg)");
 			$("#body82").css("-webkit-transform","translate(0,-77em) rotate(-190deg)");
@@ -168,10 +174,11 @@ $(document).ready(function(){
 			$("#body84").css("transform","translate(10em,-70em) rotate(90deg)");
 			$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 			$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
-			$(".nav_before").hide();
+			
 		},1100);
 	
-	$("html").mousedown(function(){
+	$(this).mousedown(function(){
+		
 		$(".page28_body").css("-webkit-transition","0.5s ease-in-out");
 		$(".page28_body").css("transition","0.5s ease-in-out");
 		$("#body81").css("-webkit-transform","translate(0,0em) rotate(0deg)");
@@ -199,10 +206,23 @@ $(document).ready(function(){
 		$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 		$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
 		document.getElementById("music").pause();
-		
 		});
 	});
+	$("html").keydown(function(event){
+		if(event.keyCode==32)
+			window.location.href="interaction9.html";
+	});
 });
+function goHome(){
+	window.location.href="home.html";
+}
+function goInteraction(){
+	window.location.href="interaction1.html";
+}
+function goTracklist(){
+	window.location.href="page3-1.html";
+}
+
 </script>
 
 
@@ -215,9 +235,9 @@ $(document).ready(function(){
 	
 
 <div id="nav" class="nav_after">
-	<div id="nav_home" class="nav"></div>
-	<div id="nav_interaction" class="nav"></div>
-	<div id="nav_tracklist" class="nav"></div>
+	<div id="nav_home" class="nav" onclick="goHome()"></div>
+	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
+	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
 
 

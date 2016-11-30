@@ -111,7 +111,7 @@ margin-bottom:200px;
 	position:absolute;
 	bottom:0px;
 	right:0px;
-	margin-bottom:-80px;
+	
 	z-index:-1;
 }
 #content_body {
@@ -128,28 +128,7 @@ margin-bottom:200px;
 	padding-bottom:83px;
 	font-size:28px;
 	line-height:2em;
-	margin-bottom:0px;
-	
-}
-.before_screen {
-	background-color:#000000;
-	opacity:0.6;
-		
-	margin-left:-0.46%;
-	margin-top:0px;
-	padding-top:0px;
-	z-index:4;
-	color:#FFFFFF;
-}
-.before_letter{
-	margin-left:0px;
-	margin-top:0px;
-	text-align:center;
-	font-size:24px;
-	padding-top:612px;
-	
-	line-height:2em;
-	
+	margin-bottom:0px;	
 }
 </style>
 <html>
@@ -165,25 +144,6 @@ margin-bottom:200px;
 	<div id="nav_tracklist" class="nav"></div>
 </div>
 
-<div class="before_screen">
-	<p class="before_letter">
-	윤수빈님. 글씨체 적용 잘 되는것 같아요~ <br>
-	링마스터 주면 이거 내려줄게요 ㅋㅋㅋ<br>
-	---<br>
-	링마가 너무 작아졌어..↘<br>
-	링마야..<br>
-	</p>
-</div>
-
-<script>
-$(document).ready(function(){
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);	
-	$(".before_screen").click(function(){
-		$(".before_screen").fadeOut(1000);
-	});
-});
-</script>
 
 
 <div id="content_area" class="content">
@@ -208,7 +168,7 @@ $(document).ready(function(){
 
 </div>
 
-<img id="ring_master" src="source/HOME/ring_master.png"/>
+<img id="ring_master" src="source/HOME/ringma.png"/>
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193

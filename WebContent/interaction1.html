@@ -15,6 +15,7 @@ html {
 	 width:357px;
 	 height:55px;
 	 margin-bottom:24px;
+	
 }
 
 #nav_interaction {
@@ -23,22 +24,18 @@ html {
 	width:357px;
 	height:55px;
 	margin-bottom:24px;
-	
-	
 }
 #nav_tracklist {
 	background-image:url("source/HOME/nav_tracklist.png");
 	background-size:cover;
 	width:357px;
 	height:55px;
-	
-	
 }
 #nav { 
 	width:357px;
 	height:239px;
 	padding:0px;
-	margin-left:42px;
+	margin-left:16px;
 	margin-top:70px;	
 	float:left;
 }
@@ -234,9 +231,9 @@ body {
 <audio id="music" src="source/INTERACTION/1/AMI.mp3"></audio>
 
 <div id="nav">
-	<div id="nav_home" class="nav"></div>
-	<div id="nav_interaction" class="nav"></div>
-	<div id="nav_tracklist" class="nav"></div>
+	<div id="nav_home" class="nav" onclick="goHome()"></div>
+	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
+	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
@@ -272,9 +269,7 @@ $(document).ready(function(){
 			$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 			$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
 		},1100);
-		
 	});
-	
 	$(this).mousedown(function(){
 		$(".page21_body").css("-webkit-transition","0.5s ease-in-out");
 		$(".page21_body").css("transition","0.5s ease-in-out");
@@ -309,9 +304,21 @@ $(document).ready(function(){
 		$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 		$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
 		document.getElementById("music").pause();
-		
+	});
+	$("html").keydown(function(event){
+		if(event.keyCode==32)
+			window.location.href="interaction2.html";
 	});
 });
+function goHome(){
+	window.location.href="home.html";
+}
+function goInteraction(){
+	window.location.href="interaction1.html";
+}
+function goTracklist(){
+	window.location.href="page3-1.html";
+}
 </script>
 
 
