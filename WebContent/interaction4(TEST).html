@@ -118,7 +118,6 @@ body {
 	position: relative;
 }
 
-
 .box img{
 	position:absolute;
 	margin-top:7%;
@@ -140,19 +139,18 @@ img.rotate {
 	transform-style: preserve-3D;
 	transform-origin: bottom;
 	transition-timing-function: linear;
-	transition-duration: .2s, 1s;
+	transition-duration: 10s, 1s;
 	transition: transform .8s ease-in-out;
 }
 
-img.rotate:hover {
-	-webkit-transform: rotate(360deg);
-	transform: rotate(360deg);
+#music {
+	display:none;
 }
-
 </style>
 <title>Insert title here</title>
 </head>
 <body>
+<audio id="music" src="source/INTERACTION/4/WL.mp3"></audio>
 <div id="nav">
 	<div id="nav_home" class="nav"></div>
 	<div id="nav_interaction" class="nav"></div>
@@ -168,6 +166,7 @@ img.rotate:hover {
 	</p>
 </div>
 <script>
+
 $(document).ready(function(){
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
@@ -180,16 +179,21 @@ $(document).ready(function(){
 	});
 });
 
+var timeoutHandle;
+
 $("html").mousedown(function(){
-	document.getElementById("music").play();
+	document.getElementById("music").play(); 
+	document.getElementById("img_rotation").style.transform = "rotate(0deg)";
 }).mouseup(function(){
 	document.getElementById("music").pause();
+	document.getElementById("img_rotation").style.transform = "rotate(45deg)";
 });
+
 $("html").keydown(function(event){
 	if(event.keyCode==32)
-		window.location.href="interaction3.html";
+		window.location.href="interaction5.html";
 });
-});
+
 function goHome(){
 window.location.href="home.html";
 }
@@ -201,14 +205,12 @@ window.location.href="page3-1.html";
 }
 
 </script>
-	<div id="box" class="box">
+<div id="box" class="box">
 				<img class="body1" src="source/INTERACTION/4/4_layer_4.png">
 				<img class="body3" src="source/INTERACTION/4/4_layer_1.png">
 				<img class="body3" src="source/INTERACTION/4/4_layer_3.png">
-				<img class="body1 rotate" src="source/INTERACTION/4/4_layer_2.png" >
-				
-		</div>
-
+				<img id="img_rotation" class="body1 rotate" src="source/INTERACTION/4/4_layer_2.png" >
+</div>
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193
