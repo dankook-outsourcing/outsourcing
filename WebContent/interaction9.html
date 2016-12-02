@@ -156,6 +156,8 @@ $(document).ready(function(){
 	
 	
 	var clickable = false;
+	var music1playing = true;
+	playMusic1();
 	
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
@@ -174,27 +176,42 @@ $(document).ready(function(){
 		rotation: 5
 	});
 	
-	
 	$('.content').bind({
 		'mousedown': function(){
-		
 			if (clickable) {
 				$('#img9_1').trigger('startRumble');
 				$('#img9_1').removeClass("g");
-			}
-			
-			
+				
+				playMusic2();
+				music1playing = false;
+			}	
 		},
 		'mouseup': function(){
-			
-			//if (clickable) {
-				
-				$('#img9_1').trigger('stopRumble');
-				$('#img9_1').addClass("g");
-			//}
-			
+			if (!music1playing) {
+				playMusic1();
+				music1playing = true;
+			}
+			$('#img9_1').trigger('stopRumble');
+			$('#img9_1').addClass("g");		
 		}
 	});
+
+	function playMusic1 () {
+		$('#music1')[0].volume = 0.7;
+		$('#music1')[0].load();
+		$('#music1')[0].play();
+		  
+		$('#music2')[0].pause();
+		$('#music2')[0].currentTime = 0; 
+	}
+	function playMusic2 () {
+		$('#music2')[0].volume = 0.7;
+		$('#music2')[0].load();
+		$('#music2')[0].play();
+		  
+		$('#music1')[0].pause();
+		$('#music1')[0].currentTime = 0; 
+	}
 	/*
 	$('.content').mousedown(function(){
 		$('#img9_1').animate($('#img9_1').css("-webkit-filter" , "grayscale('0'%)"), 300);
@@ -219,7 +236,8 @@ $(document).ready(function(){
 </head>
 <body>
 
-<audio id="music" src="source/INTERACTION/9/KK.mp3" autoplay loop></audio>
+<audio id="music1" src="source/TRACKLIST/AUDIO/9.mp3" autoplay loop></audio>
+<audio id="music2" src="source/INTERACTION/9/KK.mp3" autoplay loop></audio>
 
 <div class="content">
 
