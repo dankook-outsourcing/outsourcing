@@ -12,7 +12,7 @@
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/INTERACTION/2/bg_2.jpg");
+	/* background-image: url("source/INTERACTION/2/bg_2.jpg"); */
 	background-color:#555555;
 	/*  background-size: cover;  */
 	overflow-y:hidden;
@@ -308,7 +308,26 @@ function Stop(id){
 
 <img src="source/HOME/logo.png" id="logo">
 <!-- 스크립트 영역 -->
+
 		<script type="text/javascript">
+//마우스 휠업 이벤트
+	 $(function(){
+            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
+                var E = e.originalEvent;
+                delta = 0;
+                if (E.detail) {
+                }else{
+                	if(window.event.wheelDelta<0){
+                		window.location.href="page3-3.html";
+                	}
+                	else {
+                		window.location.href="page3-1.html";
+                	}
+                }
+             });
+        }); 	 
+
+//모달이벤트
 		$(document).ready(function(){
 			  var modalLayer = $("#modalLayer");
 			  var img = $("#lyrics_open");
@@ -339,16 +358,6 @@ function Stop(id){
 			if(event.keyCode==32)
 				window.location.href="page3-2.html";
 		});
-	$(function(){
-            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-                var E = e.originalEvent;
-                delta = 0;
-                if (E.detail) {
-                }else{
-                	window.location.href="page3-2.html";
-                };
-            });
-        }); 
 		</script>
 </body>
 </html>
