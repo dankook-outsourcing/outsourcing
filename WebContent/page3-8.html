@@ -2,7 +2,6 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <head>
-
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="UTF-8">
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -12,11 +11,10 @@
 *{
 font-family: 'Noto Sans KR', sans-serif;
 }
-
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/INTERACTION/2/bg_2.jpg");
+	background-image: url("source/INTERACTION/5/bg_5.jpg"); 
 	background-color:#555555;
 	/*  background-size: cover;  */
 	overflow-y:hidden;
@@ -247,8 +245,8 @@ function Stop(id){
 	<div id="nav_tracklist" class="nav"></div>
 </div>
 	<div id="box" class="box">
-				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd1.png" >
-				<audio id="music" src="source/TRACKLIST/AUDIO/1.mp3"></audio>
+				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd8.png" >
+				<audio id="music" src="source/TRACKLIST/AUDIO/8.mp3"></audio>
 	</div>
 	<div class="nav_play">
 						<img src="source/TRACKLIST/play.png" onclick="Play('cd1')">
@@ -256,49 +254,40 @@ function Stop(id){
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
 	<div>
-	<!-- <img id="lyricsbtn" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click"> -->
 	<a href="#modalLayer" class="modalLink">
 				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
 			</a>
 				<div id="modalLayer">
 				  <div class="modalContent">
 				    	<div class="lyrics">
-				    <br> 선경 <br>
-					<br>멍하니 누워있다
-					<br>우연히 바라본 하늘
-					<br>희미한 보라색 불빛이
-					<br>창문을 두드려
-					<br>
-					<br>침묵을 깨는 너의
-					<br>숨소리가 날 부를때
-					<br>너의 속삭임에 가만히
-					<br>뺨을 대곤 해
-					<br>
-					<br>잠이 오지 않는 이유엔
-					<br>어쩌면 너도 있을까
-					<br>잠들지 못하는 이유는
-					<br>너의 걱정 때문인가
-					<br>
-					<br>울리는 냉장고 소리
-					<br>익숙한 향기밴 이불
-					<br>잠이 든 너를 보며
-					<br>따라 눈을 감아
-					<br>
-					<br>어떤 이유에서인지
-					<br>잠에 들지 못할땐
-					<br>곤히 잠든 너의 얼굴에
-					<br>나의 시선이 닿아
-					<br>
-					<br>잠이 오지 않는 이유엔
-					<br>어쩌면 너도 있을까
-					<br>잠들지 못하는 이유는
-					<br>너의 걱정 때문인가
-					<br>
-					<br>파란색 한숨이 바람에 흩어져가
-					<br>발목을 스치는 서늘한 밤이구나
-					<br>				     
+				<br>예은
+<br>
+<br>내가 부족하다고 버릇 처럼 말하던 너
+<br>내 앞에만 서면 늘 작아 진다고 했던 너
+<br>세상 모든 아픔이 다 내것이라 느낄때
+<br>숨죽여 우는 나의 손을 꼭 잡아주던 너
+<br>
+<br>이렇게 힘들어 하면서
+<br>또 너를 원하고 있는 나
+<br>내마음 나조차 헷갈려
+<br>그래서 힘들어
+<br>
+<br>두려운 현실앞에 도망 치고만 싶을때
+<br>쉴수 있는 그늘이 항상 되어주던 너
+<br>이렇게 힘들어 하면서 (이렇게 힘들었어)
+<br>또 너를 원하고 있는 나 (또 너를 원하는 나)
+<br>내마음 나조차 헷갈려 (더이상 모르겠어)
+<br>그래서 (점점더) 힘들어 (지쳐가)
+<br>
+<br>하지만 그만하자 이젠 (기다리기 힘들어)
+<br>아파하지말고 평소와 (아파하지 말고)
+<br>별다를 거 없이 우리 (별다를 거없이)
+<br>그렇게 (이제는) 지내자 (지쳤어)
+<br>
+<br>기다리며 설레하는 사랑을
+<br>할 수 있게 해준 너에게
+<br>감사하며
 				    	</div>  
-
 				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
 				  </div>
 				</div>
@@ -341,7 +330,7 @@ function Stop(id){
 			});
 		$("html").keydown(function(event){
 			if(event.keyCode==32)
-				window.location.href="page3-2.html";
+				window.location.href="page3-1.html";
 		});
 		$(function(){
             $("html, body").on('mousewheel DOMMouseScroll', function(e) {
@@ -353,9 +342,9 @@ function Stop(id){
                 	alret("over");
                 }else{
                 	   if (delta < 0) {
-                		   window.location.href="page3-2.html";
-                	   }else{
                 		   window.location.href="page3-9.html";
+                	   }else{
+                		   window.location.href="page3-7.html";
                 	   }
                 };
             });

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/mousewheel.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/rotation.js"></script>
+		<style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* 	{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+html {
+	width:100%;
+	height:100%;
+	background-image: url("source/INTERACTION/5/bg_5.jpg");
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+	overflow-x: hidden;
+	
+}
+
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:357px;
+	 height:55px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:357px;
+	height:55px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:357px;
+	height:55px;
+	
+	
+}
+#nav { 
+	width:357px;
+	height:239px;
+	padding:0px;
+	margin-left:34px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:42px;
+	margin-bottom:40px;
+	font-size:21px;
+	line-height:1.7em;
+	opacity:0.6;
+	
+}
+#logo {
+	width:214px;
+	height:158.812px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:40px;
+	margin-bottom:42px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+body {
+	margin-top:0px;
+}
+.before_screen {
+	background-color:#000000;
+	opacity:0.9;
+		
+	margin-left:-0.46%;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:4;
+	color:#FFFFFF;
+}
+.before_letter{
+	margin-left:50px;
+	margin-top:0px;
+	text-align:center;
+	font-size:21px;
+	padding-top:595px;
+	padding-bottom:612px;
+	line-height:1.3em;
+	animation:blk-txt ease-in-out 1s 0s infinite;
+}
+
+.box{
+	margin: 0 auto;
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 3em;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative;
+}
+
+
+.box img{
+	position:absolute;
+	margin-top:3%;
+	margin-left:-25%;
+	height:950px;
+}
+
+.box img.body3{
+	position:absolute;
+	margin-top: 0%;
+	margin-left:-39%;
+	height:950px;
+	
+}
+
+/* 이미지 회전함수 */
+.rotate
+{
+transform-style: preserve-3D;
+}
+@-webkit-keyframes spin {
+	to {
+		-webkit-transform: rotate(1turn);
+	}
+}
+
+@-webkit-keyframes spin1 {
+0% { -webkit-transform: rotate(0); }
+100% { -webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spinfull {
+0% { -webkit-transform: rotate(0); }
+10%{ -webkit-transform: rotate(3680deg);}
+/*910(180)deg*/
+20%{ -webkit-transform: rotate(2770deg);}
+/*730(150)deg*/
+30%{ -webkit-transform: rotate(2040deg);}
+/*580(120)deg*/
+40%{ -webkit-transform: rotate(1460deg);}
+/*460(100)deg*/
+50%{ -webkit-transform: rotate(1000deg);}
+/*360(90)deg*/
+60%{ -webkit-transform: rotate(640deg);}
+/*270(80)deg*/
+70%{ -webkit-transform: rotate(370deg);}
+/*190deg*/
+80%{ -webkit-transform: rotate(180deg);}
+/*120deg*/
+90%{ -webkit-transform: rotate(60deg);}
+/* 60deg */
+100% { -webkit-transform: rotate(0deg);}
+}
+
+@-webkit-keyframes spinhalf {
+0% { -webkit-transform: rotate(0); }
+10%{ -webkit-transform: rotate(1440deg);}
+/*360deg*/
+20%{ -webkit-transform: rotate(1080deg);}
+/*240deg*/
+30%{ -webkit-transform: rotate(840deg);}
+/*210deg*/
+40%{ -webkit-transform: rotate(630deg);}
+/*180deg*/
+50%{ -webkit-transform: rotate(450deg);}
+/*150deg*/
+60%{ -webkit-transform: rotate(300deg);}
+/*120deg*/
+70%{ -webkit-transform: rotate(180deg);}
+/*90deg*/
+80%{ -webkit-transform: rotate(90deg);}
+/*60deg*/
+90%{ -webkit-transform: rotate(30deg);}
+/* 30deg */
+100% { -webkit-transform: rotate(0deg);}
+}
+
+
+@-webkit-keyframes spinhalf2 {
+0% { -webkit-transform: rotate(0); }
+10%{ -webkit-transform: rotate(360deg);}
+30%{-webkit-transform: rotate(240deg);}
+50%{-webkit-transform: rotate(120deg);}
+70%{ -webkit-transform: rotate(30deg);}
+100% { -webkit-transform: rotate(0deg);}
+}
+
+@-webkit-keyframes spinon {
+0% { -webkit-transform: rotate(0); }
+100%{-webkit-transform: rotate(0);}
+}
+
+
+#music {
+	display:none;
+}
+#music2 {
+	display:none;
+}
+</style>
+<title>5</title>
+</head>
+<body>
+<audio id="music" src="source/INTERACTION/5/YE.mp3"></audio>
+<audio id="music2" src="source/INTERACTION/5/interact_5.mp3"></audio>
+<div id="nav">
+	<div id="nav_home" class="nav"></div>
+	<div id="nav_interaction" class="nav"></div>
+	<div id="nav_tracklist" class="nav"></div>
+</div>
+
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_예은<br>
+	2016.09.20<br>
+	——<br>
+	Hold click to make<br>
+	the dart-board rotate<br>
+	</p>
+</div>
+<script>
+
+$(document).ready(function(){
+	$(".before_screen").css("width",window.innerWidth);
+	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").click(function(){
+		$(".before_screen").fadeOut(1000);
+		var wt=0;
+		setTimeout(function(){
+			var el = document.getElementById("img_rotation");  // el doesn't change
+			var timeoutHandle;
+			
+			$("html").mousedown(function(){
+				document.getElementById("music").play();
+				document.getElementById("music2").pause();
+				var istrue=true;
+			  	var pics = [ "5s", "4s", "3s",  "1s"];
+			
+			  	/* el.style.WebkitAnimation = "spin1 1s infinite linear"; */
+			  	el.style.WebkitAnimation = "spin1 5s infinite Linear";
+			  	wt=1;
+			  	if(timeoutHandle){
+			  	    clearTimeout(timeoutHandle);
+			  	    timeoutHandle = null;
+			  	}
+			  	timeoutHandle = setTimeout(function () {
+			  		el.style.WebkitAnimationDuration = "1s";
+			  			wt=2;
+			  		timeoutHandle = setTimeout(function () {
+			  	  			el.style.WebkitAnimationDuration = "0.5s";
+			  	  			wt=3;
+			  	  				timeoutHandle = setTimeout(function () {
+			  	  					el.style.WebkitAnimationDuration = "0.2s";
+			  	  					wt=4;
+			  	  			}, 4000);
+			  		}, 3000);
+			  	}, 2000);
+			}).mouseup(function(){
+				document.getElementById("music").pause();
+				document.getElementById("music2").play();
+				if(timeoutHandle){
+			  	    clearTimeout(timeoutHandle);
+			  	    timeoutHandle = null;
+			  	}
+				if(wt==4){	
+				el.style.WebkitAnimation = "spinfull 10s Linear";}
+				
+				else if (wt==3){
+				el.style.WebkitAnimation = "spinhalf 10s Linear";}
+					
+				else if (wt==2){
+				el.style.WebkitAnimation = "spinhalf2 10s Linear";}
+					
+				else if (wt==1){
+					el.style.WebkitAnimation = "spinon 10s Linear";}
+					else
+						el.style.WebkitAnimation = "spinon 10s Linear";
+			  	
+			  	istrue=false;
+			});
+			
+			function goHome(){
+				window.location.href="home.html";
+			}
+			function goInteraction(){
+				window.location.href="interaction1.html";
+			}
+			function goTracklist(){
+				window.location.href="page3-1.html";
+			}
+		},1100);
+	});
+});
+
+</script>
+	<div id="box" class="box">
+				<img id="img_rotation" class="body1 rotate" src="source/INTERACTION/5/5_layer_1.png" >
+		</div>
+
+<p id="info">
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+<img src="source/HOME/logo.png" id="logo">
+</body>
+</html>
