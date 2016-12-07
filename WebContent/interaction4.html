@@ -136,9 +136,15 @@ body {
 .box img.body3{
 	position:absolute;
 	margin-top: 0%;
-	margin-left:-39%;
-	height:950px;
-	
+	margin-left:-49%;
+	height:1250px;
+}
+
+.box img.body1{
+	position:absolute;
+	margin-top: 5%;
+	margin-left:-49%;
+	height:1250px;
 }
 
 /* 이미지 회전함수 */
@@ -150,6 +156,15 @@ img.rotate {
 	transition-duration: 10s, 1s;
 	transition: transform .8s ease-in-out;
 }
+img.rotate2 {
+	transform: translateZ(0) perspective(1px) rotate(-45deg);
+	transform-style: preserve-3D;
+	transform-origin: bottom;
+	transition-timing-function: linear;
+	transition-duration: 10s, 1s;
+	transition: transform .8s ease-in-out;
+}
+
 
 #music {
 	display:none;
@@ -189,13 +204,18 @@ $(document).ready(function(){
 		setTimeout(function(){
 			var timeoutHandle;
 			$("html").mousedown(function(){
+				
 				document.getElementById("music").play(); 
 				document.getElementById("music2").pause();
 				document.getElementById("img_rotation").style.transform = "rotate(0deg)";
 			}).mouseup(function(){
+				var i = generateRandom(0,100);
 				document.getElementById("music").pause();
 				document.getElementById("music2").play();
-				document.getElementById("img_rotation").style.transform = "rotate(45deg)";
+				if(i>50)
+					document.getElementById("img_rotation").style.transform = "rotate(45deg)";
+				else 
+					document.getElementById("img_rotation").style.transform = "rotate(-45deg)";
 			});
 			$("html").keydown(function(event){
 				if(event.keyCode==32)
@@ -210,6 +230,10 @@ $(document).ready(function(){
 			function goTracklist(){
 			window.location.href="page3-1.html";
 			}
+			function generateRandom(min, max) {
+				 var ranNum = Math.floor(Math.random()*(max-min+1)) + min;
+				 return ranNum;
+				    }
 		},1100);
 	});
 });
@@ -219,7 +243,7 @@ $(document).ready(function(){
 				<img class="body1" src="source/INTERACTION/4/4_layer_4.png">
 				<img class="body3" src="source/INTERACTION/4/4_layer_1.png">
 				<img class="body3" src="source/INTERACTION/4/4_layer_3.png">
-				<img id="img_rotation" class="body1 rotate" src="source/INTERACTION/4/4_layer_2.png" >
+				<img id="img_rotation" class="body1 rotate2" src="source/INTERACTION/4/4_layer_2.png" >
 </div>
 <p id="info">
 	sbyoon92@gmail.com<br>
