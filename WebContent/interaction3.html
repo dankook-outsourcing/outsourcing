@@ -169,10 +169,12 @@ body {
 
 <script>
 $(document).ready(function(){
-	
-	
+
 	var clickable = false;
 	var music1playing = true;
+	var snowIntervalID;
+	var isSnowing = true;
+	startSnow();
 	playMusic1();
 	
 	$(".before_screen").css("width",window.innerWidth);
@@ -180,27 +182,32 @@ $(document).ready(function(){
 	$(".before_screen").mousedown(function(){
 		$(".before_screen").fadeOut(1000);
 		$(".content").addClass("disabled");
+		
 	});
 	$(".before_screen").mouseup(function(){
 		$(".content").removeClass("disabled");
 		clickable = true;
 	});
 	
-
+	$("html").keydown(function(event){
+		if(event.keyCode==32)
+			window.location.href="interaction4.html";
+	});
 	
 	
 	$('.content').bind({
 		'mousedown': function(){
 			if (clickable) {
-				
-				$('#snowCanvas').fadeOut(3000);
-				$('#fogCanvas').fadeOut(2000);
-				
 				playMusic2();
 				music1playing = false;
 				
-				(function(){stopFog();})();
+				$('#fogCanvas').fadeOut(2000);
 				
+				if(isSnowing) {
+					isSnowing = !isSnowing;
+					window.clearInterval(snowIntervalID);
+					drawSnow();
+				}
 				
 			}	
 		},
@@ -209,15 +216,18 @@ $(document).ready(function(){
 				playMusic1();
 				music1playing = true;
 			}
-			$('#snowCanvas').fadeIn(2000);
-			$('#fogCanvas').fadeIn(20000);
 			
+			$('#fogCanvas').fadeIn(5000);
+			
+			if(!isSnowing) {
+				isSnowing = !isSnowing;
+				startSnow();
+			}
 		}
 	});
 
-	
-	
 	function playMusic1 () {
+		
 		$('#music1')[0].volume = 0.7;
 		$('#music1')[0].load();
 		$('#music1')[0].play();
@@ -234,31 +244,41 @@ $(document).ready(function(){
 		$('#music1')[0].currentTime = 0; 
 	}
 	
-	/*** Snow Animation ***/
-	//canvas init
-	var canvas = document.getElementById("snowCanvas");
-	var ctx = canvas.getContext("2d");
 	
 	//canvas dimensions
 	var W = window.innerWidth;
 	var H = window.innerHeight;
+	
+	
+	/*** Snow Animation ***/
+	
+	// snow canvas init
+	var canvas = document.getElementById("snowCanvas");
+	var ctx = canvas.getContext("2d");
+	
+	var mp = 500; //max particles
+	var particles = [];
 	canvas.width = W;
 	canvas.height = H;
 	
-	//snowflake particles
-	var mp = 250; //max particles
-	var particles = [];
-	for(var i = 0; i < mp; i++)
-	{
-		particles.push({
-			x: Math.random()*W, //x-coordinate
-			y: Math.random()*H, //y-coordinate
-			r: Math.random()*4+1, //radius
-			d: Math.random()*mp //density
-		})
+	initSnow();
+	function initSnow() {
+		
+		//snowflake particles
+		for(var i = 0; i < mp; i++)
+		{
+			particles.push({
+				x: Math.random()*W, //x-coordinate
+				y: Math.random()*H, //y-coordinate
+				r: Math.random()*4+1, //radius
+				d: Math.random()*mp //density
+			})
+		}
+		
+		//drawSnow(ctx);
 	}
 	
-	//Lets draw the flakes
+	// draw the snow flakes
 	function drawSnow()
 	{
 		ctx.clearRect(0, 0, W, H);
@@ -274,41 +294,24 @@ $(document).ready(function(){
 		ctx.fill();
 		updateSnow();
 	}
-	
-	//Function to move the snowflakes
-	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
+
+	// update the snow flakes
 	var angle = 0;
-	function updateSnow()
-	{
+	function updateSnow() {
 		angle += 0.01;
-		for(var i = 0; i < mp; i++)
-		{
+		for(var i = 0; i < mp; i++) {
 			var p = particles[i];
-			//Updating X and Y coordinates
-			//We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
-			//Every particle has its own density which can be used to make the downward movement different for each flake
-			//Lets make it more random by adding in the radius
+			
 			p.y += Math.cos(angle+p.d) + 1 + p.r/2;
 			p.x += Math.sin(angle) * 2;
 			
-			//Sending flakes back from the top when it exits
-			//Lets make it a bit more organic and let flakes enter from the left and right also.
-			if(p.x > W+5 || p.x < -5 || p.y > H)
-			{
-				if(i%3 > 0) //66.67% of the flakes
-				{
+			if(p.x > W+5 || p.x < -5 || p.y > H) {
+				if(i%3 > 0) {
 					particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
-				}
-				else
-				{
-					//If the flake is exitting from the right
-					if(Math.sin(angle) > 0)
-					{
-						//Enter from the left
+				} else {
+					if(Math.sin(angle) > 0) {
 						particles[i] = {x: -5, y: Math.random()*H, r: p.r, d: p.d};
-					}
-					else
-					{
+					} else {
 						//Enter from the right
 						particles[i] = {x: W+5, y: Math.random()*H, r: p.r, d: p.d};
 					}
@@ -317,72 +320,60 @@ $(document).ready(function(){
 		}
 	}
 	
-	//animation loop
-	setInterval(drawSnow, 33);
+	function startSnow() {
+		//animation loop
+		snowIntervalID = setInterval(drawSnow, 33);
+	}
 	
-	
-	
-	
-	
+
 	
 	/*** Fog Animation ***/
 	
-	// Create an array to store our particles
+	// Create particles
 	var fogParticles = [];
-
-	// The amount of particles to render
+	// particles to render
 	var fogParticleCount = 15;
-
-	// The maximum velocity in each direction
+	// maximum velocity
 	var maxVelocity = 2;
-
-	// The target frames per second (how often do we want to update / redraw the scene)
+	// The target frames per second
 	var targetFPS = 33;
 
-	// Set the dimensions of the canvas as variables so they can be used.
-	var canvasWidth = 200;
-	var canvasHeight = 50;
-	
-	// Create an image object (only need one instance)
-	var imageObj = new Image(10,10);
+	// Set the fogCanvas dimensions 
+	var canvasWidth = 400;
+	var canvasHeight = 400;
 
-	// Once the image has been downloaded then set the image on all of the particles
+	// Create fog image object
+	var imageObj = new Image(10,10);
 	imageObj.onload = function() {
 		fogParticles.forEach(function(particle) {
 	            particle.setImage(imageObj);
 	    });
 	};
 
-	// Once the callback is arranged then set the source of the image
-	imageObj.src = "http://www.blog.jonnycornwell.com/wp-content/uploads/2012/07/Smoke10.png";
-
-	// A function to create a particle object.
+	// fog image from 
+	imageObj.src = "http://www.blog.jonnycornwell.com/wp-content/uploads/2012/07/Smoke10.png"
+	
+	// create particle object.
 	function Particle(context) {
 
-	    // Set the initial x and y positions
+	    // Set initial x, y
 	    this.x = 0;
 	    this.y = 0;
-
 	    // Set the initial velocity
 	    this.xVelocity = 0;
 	    this.yVelocity = 0;
-
 	    // Set the radius
 	    this.radius = 5;
-
 	    // Store the context which will be used to draw the particle
 	    this.context = context;
-
-	    // The function to draw the particle on the canvas.
+	    // draw Fog
 	    this.draw = function() {
 	        
-	        // If an image is set draw it
 	        if(this.image){
 	            this.context.drawImage(this.image, this.x-128, this.y-128);         
-	            // If the image is being rendered do not draw the circle so break out of the draw function                
 	            return;
 	        }
-	        // Draw the circle as before, with the addition of using the position and the radius from this object.
+	        
 	        this.context.beginPath();
 	        this.context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
 	        this.context.fillStyle = "rgba(0, 255, 255, 0.1)";
@@ -390,121 +381,100 @@ $(document).ready(function(){
 	        this.context.closePath();
 	    };
 
-	    // Update the particle.
+	    // Update Fog
 	    this.update = function() {
-	        // Update the position of the particle with the addition of the velocity.
+	        
 	        this.x += this.xVelocity;
 	        this.y += this.yVelocity;
 
-	        // Check if has crossed the right edge
 	        if (this.x >= canvasWidth) {
 	            this.xVelocity = -this.xVelocity;
 	            this.x = canvasWidth;
 	        }
-	        // Check if has crossed the left edge
 	        else if (this.x <= 0) {
 	            this.xVelocity = -this.xVelocity;
 	            this.x = 0;
 	        }
 
-	        // Check if has crossed the bottom edge
 	        if (this.y >= canvasHeight) {
 	            this.yVelocity = -this.yVelocity;
 	            this.y = canvasHeight;
 	        }
 	        
-	        // Check if has crossed the top edge
 	        else if (this.y <= 0) {
 	            this.yVelocity = -this.yVelocity;
 	            this.y = 0;
 	        }
 	    };
 
-	    // A function to set the position of the particle.
 	    this.setPosition = function(x, y) {
 	        this.x = x;
 	        this.y = y;
 	    };
-
-	    // Function to set the velocity.
 	    this.setVelocity = function(x, y) {
 	        this.xVelocity = x;
 	        this.yVelocity = y;
 	    };
-	    
 	    this.setImage = function(image){
 	        this.image = image;
 	    }
 	}
-
-	// A function to generate a random number between 2 values
+	// generate random
 	function generateRandom(min, max){
 	    return Math.random() * (max - min) + min;
 	}
 
-	// The canvas context if it is defined.
+	// fog canvas context
 	var context;
 
-	// Initialise the scene and set the context if possible
+	// init fog canvas
 	function init() {
 	    var fogCanvas = document.getElementById('fogCanvas');
 	    if (fogCanvas.getContext) {
 
-	        // Set the context variable so it can be re-used
 	        context = fogCanvas.getContext('2d');
 
-	        // Create the particles and set their initial positions and velocities
-	        for(var i=0; i < fogParticleCount; ++i){
+	        for(var i=0; i < fogParticleCount; ++i) {
 	            var particle = new Particle(context);
 	            
-	            // Set the position to be inside the canvas bounds
-	            particle.setPosition(generateRandom(0, canvasWidth), generateRandom(0, canvasHeight));
-	            
-	            // Set the initial velocity to be either random and either negative or positive
+	            particle.setPosition(generateRandom(0, canvasWidth), generateRandom(200, canvasHeight));
+	        
 	            particle.setVelocity(generateRandom(-maxVelocity, maxVelocity), generateRandom(-maxVelocity, maxVelocity));
 	            fogParticles.push(particle);            
 	        }
-	    }
-	    else {
+	    } else {
 	        alert("Please use a modern browser");
 	    }
 	}
 
-	// The function to draw the scene
+	// draw the fog scene
 	function draw() {
-	    // Clear the drawing surface and fill it with a black background
+	    
 	    context.fillStyle = "rgba(0, 0, 0, 0.1)";
 	    context.fillRect(0, 0, 0, 0);
 
-	    // Go through all of the particles and draw them.
 	    fogParticles.forEach(function(particle) {
 	        particle.draw();
 	    });
 	}
 
-	// Update the scene
+	// update the fog scene
 	function update() {
 		fogParticles.forEach(function(particle) {
 	        particle.update();
 	    });
 	}
 	
-	
-
-	// Initialize the scene
-	init();
-
-	// If the context is set then we can draw the scene (if not then the browser does not support canvas)
+	// init the fog scene
+	init();	
 	if (context) {
 	    setInterval(function() {
-	        // Update the scene befoe drawing
 	        update();
-
-	        // Draw the scene
+	        // Draw the fog scene
 	        draw();
-	    }, 1000 / targetFPS);
+	    }, 1500 / targetFPS);
 	}
-
+	
 });
 
 </script>
@@ -514,7 +484,7 @@ $(document).ready(function(){
 <body>
 
 <audio id="music1" src="source/INTERACTION/3/interact_3.mp3" autoplay loop></audio>
-<audio id="music2" src="source/INTERACTION/3/JH.mp3" loop></audio>
+<audio id="music2" src="source/INTERACTION/3/JH.mp3" autoplay loop></audio> 
 
 <div class="content">
 
@@ -539,11 +509,8 @@ $(document).ready(function(){
 </div>
 
 <div id="wrapper">
-
 	<canvas id="snowCanvas"></canvas>
   	<canvas id="fogCanvas"></canvas>
-
-	
 </div>
 
 

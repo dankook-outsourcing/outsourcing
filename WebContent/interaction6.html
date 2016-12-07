@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* 	{
+	font-family: 'Noto Sans KR', sans-serif;
+}
 html {
 	width:100%;
 	height:100%;
-	/*background-image: url("source/INTERACTION/6/bg_6.jpg");*/
+	background-image: url("source/INTERACTION/6/bg_6.jpg");
 	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
+	overflow-x: hidden;
 	
 }
+
 #nav_home {
 	 background-image:url("source/HOME/nav_home.png");
 	 background-size:cover;
-	 width:150px;
-	 height:50px;
+	 width:357px;
+	 height:55px;
 	 margin-bottom:24px;
 }
 
 #nav_interaction {
 	background-image:url("source/HOME/nav_interaction.png");
 	background-size:cover;
-	width:250px;
-	height:50px;
+	width:357px;
+	height:55px;
 	margin-bottom:24px;
 	
 	
@@ -30,16 +37,16 @@ html {
 #nav_tracklist {
 	background-image:url("source/HOME/nav_tracklist.png");
 	background-size:cover;
-	width:250px;
-	height:50px;
+	width:357px;
+	height:55px;
 	
 	
 }
-#nav {
-	width:254px;
-	height:156px;
+#nav { 
+	width:357px;
+	height:239px;
 	padding:0px;
-	margin-left:70px;
+	margin-left:34px;
 	margin-top:70px;	
 	float:left;
 }
@@ -58,19 +65,21 @@ html {
 	bottom:0;
 	left:0;
 	color:#FFFFFF;
-	margin-left:70px;
-	margin-bottom:50px;
-	color:#B3000000;
+	margin-left:42px;
+	margin-bottom:40px;
+	font-size:21px;
+	line-height:1.7em;
+	opacity:0.6;
 	
 }
 #logo {
-	width:180px;
-	height:128px;
+	width:214px;
+	height:158.812px;
 	position:absolute;
 	bottom:0;
 	right:0;
-	margin-right:70px;
-	margin-bottom:50px;
+	margin-right:40px;
+	margin-bottom:42px;
 	opacity:0.7;
 }
 #logo:hover {
@@ -79,10 +88,12 @@ html {
 	-webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
 }
-
+body {
+	margin-top:0px;
+}
 .before_screen {
 	background-color:#000000;
-	opacity:0.6;
+	opacity:0.9;
 		
 	margin-left:-0.46%;
 	margin-top:0px;
@@ -91,11 +102,14 @@ html {
 	color:#FFFFFF;
 }
 .before_letter{
-	margin-left:0px;
+	margin-left:50px;
 	margin-top:0px;
 	text-align:center;
-	
-	padding-top:480px;
+	font-size:21px;
+	padding-top:595px;
+	padding-bottom:612px;
+	line-height:1.3em;
+	animation:blk-txt ease-in-out 1s 0s infinite;
 }
 
 audio { 
@@ -109,41 +123,29 @@ audio {
 <meta charset="UTF-8">
 
 <style>
-
-	html, body, #wrapper {
+	html, body, .content {
     	height:100%;
     	width: 100%;
     	margin: 0;
     	padding: 0;
     	border: 0;
 	}
-	.content {
-		height:100%;
-    	width: 100%;
-	}
- 	#wrapper td {
-    	vertical-align: middle;
-    	text-align: center;
-	}
-	#img6_1{
-    	position: absolute;
-    	top: 50%;
-    	left: 43%;
-    	height: 800px;
-    	margin-top: -400px;
-    	margin-left: -600px;
-    	z-index:-2;
- 	}
- 	#img6_2{
-    	position: absolute;
-    	top: 50%;
-    	left: 43%;
-    	height: 800px;
-    	margin-top: -400px;
-    	margin-left: -600px;
+
+	#wrapper{
+    	position: fixed;
+    	top: 0%;
+    	left:0%;
+    	margin-left: 3%;
     	z-index:-1;
  	}
-
+	#img6_1{
+		position: fixed;
+    	height: 1400px;
+ 	}
+ 	#img6_2{
+ 		position: fixed;
+    	height: 1400px;
+ 	}
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -160,6 +162,10 @@ $(document).ready(function(){
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
 		clickable = true;
+	});
+	$("html").keydown(function(event){
+		if(event.keyCode==32)
+			window.location.href="interaction7.html";
 	});
 	
 	$('.content').bind({
@@ -198,14 +204,6 @@ $(document).ready(function(){
 		$('#music1')[0].currentTime = 0; 
 	}
 	
-	/*
-	$('.content').mousedown(function(){
-	    $('#img6_2').fadeOut(2000);
-	});
-	$('.content').mouseup(function(){
-	    $('#img6_2').fadeIn(2000);
-	});*/
-
 });
 
 </script>
@@ -214,8 +212,8 @@ $(document).ready(function(){
 </head>
 <body>
 
-<audio id="music1" src="source/TRACKLIST/AUDIO/6.mp3" autoplay loop></audio>
-<audio id="music2" src="source/INTERACTION/6/KY.mp3" autoplay loop></audio>
+<audio id="music1" src="source/INTERACTION/6/interact_6.mp3" autoplay loop></audio>
+<audio id="music2" src="source/INTERACTION/6/KY.mp3" loop></audio>
 
 <div class="content">
 
@@ -235,23 +233,17 @@ $(document).ready(function(){
 	</p>
 </div>
 
-	<table id="wrapper">
-      <tr>
-      	
-         <td><img src="source/INTERACTION/6/6_layer_2.png" id="img6_2"></td>
-         <td><img src="source/INTERACTION/6/6_layer_1.png" id="img6_1"></td> 
-      </tr>
-   </table>
+<div id="wrapper">
+	<img src="source/INTERACTION/6/6_layer_1.png" id="img6_1">
+	<img src="source/INTERACTION/6/6_layer_2.png" id="img6_2">
+	
+</div>
 
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193
 </p>
 <img src="source/HOME/logo.png" id="logo">
-
-
-
-
 </div> <!-- End of content -->
 
 </body>
