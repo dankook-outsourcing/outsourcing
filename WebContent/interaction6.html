@@ -111,6 +111,33 @@ body {
 	line-height:1.3em;
 	animation:blk-txt ease-in-out 1s 0s infinite;
 }
+.spacebar {
+	bottom:0;
+	margin-bottom:40px;
+	margin-left:700px;
+
+}
+#spacebar1 {	
+	position:absolute;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
+@keyframes blk-txt {
+	0% { transform:scale(1);opacity:0.6;}
+	50% { transform:scale(1.05);opacity:1;}
+	100% {transform:scale(1);opacity:0.6;}
+}
 
 audio { 
    display:none;
@@ -139,10 +166,12 @@ audio {
     	z-index:-1;
  	}
 	#img6_1{
+		margin-top: -3%;
 		position: fixed;
     	height: 1400px;
  	}
  	#img6_2{
+ 		margin-top: -3%;
  		position: fixed;
     	height: 1400px;
  	}
@@ -155,17 +184,22 @@ $(document).ready(function(){
 	
 	var clickable = false;
 	var music1playing = true;
-	playMusic1();
+	//playMusic1();
 	
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
 		clickable = true;
+		playMusic1();
 	});
 	$("html").keydown(function(event){
-		if(event.keyCode==32)
-			window.location.href="interaction7.html";
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline");
+			setTimeout(function(){
+				window.location.href="interaction7.html";	
+			},50);
+		}
 	});
 	
 	$('.content').bind({
@@ -178,9 +212,8 @@ $(document).ready(function(){
 			}	
 		},
 		'mouseup': function(){
-			if (!music1playing) {
+			if (clickable) {
 				playMusic1();
-				music1playing = true;
 			}
 			$('#img6_2').fadeOut(2000);
 			
@@ -220,7 +253,7 @@ function goTracklist(){
 </head>
 <body>
 
-<audio id="music1" src="source/INTERACTION/6/interact_6.mp3" autoplay loop></audio>
+<audio id="music1" src="source/INTERACTION/6/interact_6.mp3" loop></audio>
 <audio id="music2" src="source/INTERACTION/6/KY.mp3" loop></audio>
 
 <div class="content">
@@ -230,6 +263,9 @@ function goTracklist(){
 		<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
 		<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 	</div>
+	
+	<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png">
+	<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png">
 
 <div class="before_screen">
 	<p class="before_letter">
