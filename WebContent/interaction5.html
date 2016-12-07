@@ -257,8 +257,9 @@ transform-style: preserve-3D;
 <script>
 
 $(document).ready(function(){
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
+	var durationTime=5;
+	$(".before_screen").css("width",window.innerWidth+5);
+	$(".before_screen").css("height",window.innerHeight+5);
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
 		var wt=0;
@@ -279,38 +280,34 @@ $(document).ready(function(){
 			  	    clearTimeout(timeoutHandle);
 			  	    timeoutHandle = null;
 			  	}
-			  	timeoutHandle = setTimeout(function () {
-			  		el.style.WebkitAnimationDuration = "1s";
-			  			wt=2;
-			  		timeoutHandle = setTimeout(function () {
-			  	  			el.style.WebkitAnimationDuration = "0.5s";
-			  	  			wt=3;
-			  	  				timeoutHandle = setTimeout(function () {
-			  	  					el.style.WebkitAnimationDuration = "0.2s";
-			  	  					wt=4;
-			  	  			}, 4000);
-			  		}, 3000);
-			  	}, 2000);
+			  	durationTime=5;
+			  	timeoutHandle = setInterval(function () {
+			  		//el.style.WebkitAnimationDuration = "1s";
+			  		 
+			  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=0.0025)+"s");
+			  			
+			  	}, 5);
 			}).mouseup(function(){
+				
 				document.getElementById("music").pause();
 				document.getElementById("music2").play();
-				if(timeoutHandle){
-			  	    clearTimeout(timeoutHandle);
-			  	    timeoutHandle = null;
-			  	}
-				if(wt==4){	
-				el.style.WebkitAnimation = "spinfull 10s Linear";}
+			  	    clearInterval(timeoutHandle);
+			  	   
+				if(durationTime>=5){	
+				el.style.WebkitAnimation = "spinon 10s Linear";
+				}
 				
-				else if (wt==3){
-				el.style.WebkitAnimation = "spinhalf 10s Linear";}
+				else if (durationTime>=2.5){
+				el.style.WebkitAnimation = "spinhalf 10s Linear";
+				}
 					
-				else if (wt==2){
-				el.style.WebkitAnimation = "spinhalf2 10s Linear";}
-					
-				else if (wt==1){
-					el.style.WebkitAnimation = "spinon 10s Linear";}
-					else
+				else if (durationTime<1){
+					el.style.WebkitAnimation = "spinfull 10s Linear";
+				}
+					else {
 						el.style.WebkitAnimation = "spinon 10s Linear";
+					}
+					
 			  	
 			  	istrue=false;
 			});
