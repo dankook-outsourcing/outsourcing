@@ -47,8 +47,6 @@ html {
 	background-size:cover;
 	width:357px;
 	height:55px;
-	
-	
 }
 #nav { 
 	width:357px;
@@ -119,7 +117,11 @@ body {
 	line-height:1.3em;
 	animation:blk-txt ease-in-out 1s 0s infinite;
 }
-
+@keyframes blk-txt {
+	0% { transform:scale(1);opacity:0.6;}
+	50% { transform:scale(1.05);opacity:1;}
+	100% {transform:scale(1);opacity:0.6;}
+}
 .box{
 	margin: 0 auto;
 	position: relative;
@@ -136,7 +138,7 @@ body {
 
 .box img{
 	position:absolute;
-	margin-top:3%;
+	margin-top:5%;
 	margin-left:-25%;
 	height:950px;
 }
@@ -223,10 +225,35 @@ transform-style: preserve-3D;
 
 @-webkit-keyframes spinon {
 0% { -webkit-transform: rotate(0); }
-100%{-webkit-transform: rotate(0);}
+}
+@-webkit-keyframes spinon1 {
+0% { -webkit-transform: rotate(0); }
+50% { -webkit-transform: rotate(180deg); }
+100%{-webkit-transform: rotate(360deg);}
 }
 
+.spacebar {
+	bottom:0;
+	margin-bottom:40px;
+	margin-left:700px;
 
+}
+#spacebar1 {	
+	position:absolute;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
 #music {
 	display:none;
 }
@@ -240,11 +267,12 @@ transform-style: preserve-3D;
 <audio id="music" src="source/INTERACTION/5/YE.mp3"></audio>
 <audio id="music2" src="source/INTERACTION/5/interact_5.mp3"></audio>
 <div id="nav">
-	<div id="nav_home" class="nav"></div>
-	<div id="nav_interaction" class="nav"></div>
-	<div id="nav_tracklist" class="nav"></div>
+	<div id="nav_home" class="nav" onclick="goHome()"></div>
+	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
+	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
-
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
 <div class="before_screen">
 	<p class="before_letter">
 	BINO_예은<br>
@@ -258,7 +286,7 @@ transform-style: preserve-3D;
 
 $(document).ready(function(){
 	var durationTime=5;
-	$(".before_screen").css("width",window.innerWidth+5);
+	$(".before_screen").css("width",window.innerWidth+10);
 	$(".before_screen").css("height",window.innerHeight+5);
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
@@ -270,61 +298,56 @@ $(document).ready(function(){
 			$("html").mousedown(function(){
 				document.getElementById("music").play();
 				document.getElementById("music2").pause();
-				var istrue=true;
-			  	var pics = [ "5s", "4s", "3s",  "1s"];
 			
-			  	/* el.style.WebkitAnimation = "spin1 1s infinite linear"; */
-			  	el.style.WebkitAnimation = "spin1 5s infinite Linear";
+			  	document.getElementById("img_rotation").style.WebkitAnimation = "spin1 5s infinite Linear";
 			  	wt=1;
-			  	if(timeoutHandle){
-			  	    clearTimeout(timeoutHandle);
-			  	    timeoutHandle = null;
-			  	}
-			  	durationTime=5;
+			  	clearInterval(timeoutHandle);
 			  	timeoutHandle = setInterval(function () {
-			  		//el.style.WebkitAnimationDuration = "1s";
-			  		 
-			  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=0.0025)+"s");
-			  			
+			  		if(durationTime>20){
+				  		$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=10)+"s");
+				  	}
+			  		if(durationTime<0.2)
+			  			 durationTime=0.2;
+			  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=0.005)+"s");
 			  	}, 5);
 			}).mouseup(function(){
-				
 				document.getElementById("music").pause();
 				document.getElementById("music2").play();
 			  	    clearInterval(timeoutHandle);
-			  	   
-				if(durationTime>=5){	
-				el.style.WebkitAnimation = "spinon 10s Linear";
-				}
-				
-				else if (durationTime>=2.5){
-				el.style.WebkitAnimation = "spinhalf 10s Linear";
-				}
-					
-				else if (durationTime<1){
-					el.style.WebkitAnimation = "spinfull 10s Linear";
-				}
-					else {
-						el.style.WebkitAnimation = "spinon 10s Linear";
-					}
-					
-			  	
-			  	istrue=false;
+			  	  timeoutHandle = setInterval(function () {
+				  		 if(durationTime>10) {
+				  			 if(durationTime>70){
+				  				clearInterval(timeoutHandle);
+				  				 el.style.animationPlayState = "paused";
+				  			 }
+				  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime+=0.05)+"s");
+			  	 		}
+				  		 else{
+				  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime+=0.05)+"s");
+				  		 }
+				  	}, 5);
 			});
-			
-			function goHome(){
-				window.location.href="home.html";
-			}
-			function goInteraction(){
-				window.location.href="interaction1.html";
-			}
-			function goTracklist(){
-				window.location.href="page3-1.html";
-			}
-		},1100);
+			$("html").keydown(function(event){
+				if(event.keyCode==32) {
+					$("#spacebar2").css("display","inline")
+					setTimeout(function(){
+						window.location.href="interaction6.html";	
+					},50);
+				}
+			});
+			},1100);
 	});
 });
 
+function goHome(){
+	window.location.href="home.html";
+}
+function goInteraction(){
+	window.location.href="interaction1.html";
+}
+function goTracklist(){
+	window.location.href="page3-1.html";
+}
 </script>
 	<div id="box" class="box">
 				<img id="img_rotation" class="body1 rotate" src="source/INTERACTION/5/5_layer_1.png" >

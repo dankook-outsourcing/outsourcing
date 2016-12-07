@@ -6,7 +6,13 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="UTF-8">
 <script src="js/jquery-3.1.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="tracklist.css"/>
+<link rel="stylesheet" type="text/css" href="tracklist.css">
+<style>
+html {
+	background-image: url("source/INTERACTION/2/bg_2.jpg");
+}
+
+</style>
 <script>
 function Play(id){
 		document.getElementById(id).style.WebkitAnimation = "spin1 5s infinite linear";
@@ -32,9 +38,9 @@ function Stop(id){
 </head>
 <body>
 <div id="nav">
-	<div id="nav_home" class="nav"></div>
-	<div id="nav_interaction" class="nav"></div>
-	<div id="nav_tracklist" class="nav"></div>
+	<div id="nav_home" class="nav" onclick="goHome()"></div>
+	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
+	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
 <img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
 <img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
@@ -49,21 +55,33 @@ function Stop(id){
 </div>
 <script>
 $(document).ready(function(){
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").css("width",window.innerWidth+5);
+	$(".before_screen").css("height",window.innerHeight+5);
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
-			
+			$("html").keydown(function(event){
+				if(event.keyCode==32) {
+					$("#spacebar2").css("display","inline")
+					setTimeout(function(){
+						window.location.href="page3-2.html";	
+					},50);
+				}
+			});
 		},1100);
 	});
 });		
-		
+function goHome(){
+	window.location.href="home.html";
+}
+function goInteraction(){
+	window.location.href="interaction1.html";
+}
+function goTracklist(){
+	window.location.href="page3-1.html";
+}
 		
 </script>
-
-<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
-<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
 	<div id="box" class="box">
 				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd1.png" >
 				<audio id="music" src="source/TRACKLIST/AUDIO/1.mp3"></audio>
@@ -157,10 +175,6 @@ $(document).ready(function(){
 			     modalLink.focus();
 			  });		
 			});
-		$("html").keydown(function(event){
-			if(event.keyCode==32)
-				window.location.href="page3-2.html";
-		});
 		$(function(){
             $("html, body").on('mousewheel DOMMouseScroll', function(e) {
                 var E = e.originalEvent;
