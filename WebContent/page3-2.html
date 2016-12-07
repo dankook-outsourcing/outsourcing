@@ -12,6 +12,7 @@
 *{
 font-family: 'Noto Sans KR', sans-serif;
 }
+
 html {
 	width:100%;
 	height:100%;
@@ -160,6 +161,23 @@ body {
 	margin-right: 3px;
 	margin-top: 49%;
 }
+ .spacebar {
+	position:absolute;
+	margin-left:1087px;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	margin-left:1087px;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
 
 audio { 
    display:none;
@@ -245,6 +263,34 @@ function Stop(id){
 	<div id="nav_interaction" class="nav"></div>
 	<div id="nav_tracklist" class="nav"></div>
 </div>
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_울렁울렁<br>
+	2016.06.11<br>
+	---<br>
+	Hold click to stop<br>
+	the people from falling<br>
+	</p>
+</div>
+<script>
+$(document).ready(function(){
+	$(".before_screen").css("width",window.innerWidth);
+	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").click(function(){
+		$(".before_screen").fadeOut(1000);
+		setTimeout(function(){
+			
+		},1100);
+	});
+});		
+		
+		
+</script>
+
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
 	<div id="box" class="box">
 				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd2.png" >
 				<audio id="music" src="source/TRACKLIST/AUDIO/2.mp3"></audio>
@@ -255,7 +301,6 @@ function Stop(id){
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
 	<div>
-	<!-- <img id="lyricsbtn" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click"> -->
 	<a href="#modalLayer" class="modalLink">
 				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
 			</a>
@@ -298,7 +343,7 @@ function Stop(id){
 							<br>	i'm breathing your breathe
 							<br>	catching your scent
 							<br>	am i beating your heart
-							<br>	or losing your mind	     
+							<br>	or losing your mind			     
 				    	</div>  
 
 				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
