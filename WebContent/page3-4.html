@@ -2,6 +2,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <head>
+
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="UTF-8">
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -11,10 +12,11 @@
 *{
 font-family: 'Noto Sans KR', sans-serif;
 }
+
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/INTERACTION/3/bg_3.jpg");
+	/* background-image: url("source/INTERACTION/9/bg_9.jpg"); */
 	background-color:#555555;
 	/*  background-size: cover;  */
 	overflow-y:hidden;
@@ -159,6 +161,23 @@ body {
 	margin-right: 3px;
 	margin-top: 49%;
 }
+ .spacebar {
+	position:absolute;
+	margin-left:1087px;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	margin-left:1087px;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
 
 audio { 
    display:none;
@@ -244,6 +263,34 @@ function Stop(id){
 	<div id="nav_interaction" class="nav"></div>
 	<div id="nav_tracklist" class="nav"></div>
 </div>
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_울렁울렁<br>
+	2016.06.11<br>
+	---<br>
+	Hold click to stop<br>
+	the people from falling<br>
+	</p>
+</div>
+<script>
+$(document).ready(function(){
+	$(".before_screen").css("width",window.innerWidth);
+	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").click(function(){
+		$(".before_screen").fadeOut(1000);
+		setTimeout(function(){
+			
+		},1100);
+	});
+});		
+		
+		
+</script>
+
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
 	<div id="box" class="box">
 				<img id="cd1" class="body1 rotate" src="source/TRACKLIST/cd4.png" >
 				<audio id="music" src="source/TRACKLIST/AUDIO/4.mp3"></audio>
@@ -260,7 +307,7 @@ function Stop(id){
 				<div id="modalLayer">
 				  <div class="modalContent">
 				    	<div class="lyrics">
-				   <br> 정현
+				  <br> 정현
 <br> 
 <br> 나와 닮은 것이 싫은 걸요
 <br> 거울 앞에 서있는 것 같죠
@@ -296,6 +343,7 @@ function Stop(id){
 <br> I turn away turn away the more I turn away
 <br> on & on & on & on I see myself sadden
 				    	</div>  
+
 				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
 				  </div>
 				</div>
