@@ -249,7 +249,15 @@ $(document).ready(function(){
 	});*/
 
 });
-
+function goHome(){
+	window.location.href="home.html";
+}
+function goInteraction(){
+	window.location.href="interaction1.html";
+}
+function goTracklist(){
+	window.location.href="page3-1.html";
+}
 </script>
 
 <title> 9. KK </title>
@@ -262,9 +270,9 @@ $(document).ready(function(){
 <div class="content">
 
 	<div id="nav">
-		<div id="nav_home" class="nav"></div>
-		<div id="nav_interaction" class="nav"></div>
-		<div id="nav_tracklist" class="nav"></div>
+		<div id="nav_home" class="nav" onclick="goHome()"></div>
+		<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
+		<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 	</div>
 
 
