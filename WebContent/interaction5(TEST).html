@@ -152,7 +152,9 @@ transform-style: preserve-3D;
 100% { -webkit-transform: rotate(360deg);}
 }
 
-
+#music {
+	display:none;
+}
 </style>
 <title>5</title>
 <script>
@@ -168,6 +170,7 @@ $(function() {
 </script>
 </head>
 <body>
+<audio id="music" src="source/INTERACTION/5/YE.mp3"></audio>
 <div id="nav">
 	<div id="nav_home" class="nav"></div>
 	<div id="nav_interaction" class="nav"></div>
@@ -198,7 +201,7 @@ $(document).ready(function(){
 var timeoutHandle;
 
 $("html").mousedown(function(){
-	/* document.getElementById("music").play(); */
+	document.getElementById("music").play();
 	var istrue=true;
   	var pics = [ "5s", "4s", "3s",  "1s"];
   	var el = document.getElementById("img_rotation");  // el doesn't change
@@ -219,7 +222,7 @@ $("html").mousedown(function(){
   		}, 6000);
   	}, 3000);
 }).mouseup(function(){
-	/* document.getElementById("music").pause(); */
+	document.getElementById("music").pause();
 	if(timeoutHandle){
   	    clearTimeout(timeoutHandle);
   	    timeoutHandle = null;
