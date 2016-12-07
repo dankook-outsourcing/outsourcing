@@ -159,17 +159,21 @@ $(document).ready(function(){
 	var clickable = false;
 	var music1playing = true;
 	playMusic1();
+	var snowIntervalID;
+	var snowIntervalID2;
+	var snowIndex = 0;
 	
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
 	$(".before_screen").mousedown(function(){
 		$(".before_screen").fadeOut(1000);
 		$(".content").addClass("disabled");
+		
 	});
 	$(".before_screen").mouseup(function(){
 		$(".content").removeClass("disabled");
 		clickable = true;
-		startFog()
+		snowIntervalID = setInterval(initSnow, 33);
 	});
 	
 
@@ -178,7 +182,9 @@ $(document).ready(function(){
 		'mousedown': function(){
 			if (clickable) {
 				
-				$('#snowCanvas').fadeOut(3000);
+				clearInterval(snowIntervalID);
+				snowIntervalID = null;
+				//$('#snowCanvas').fadeOut(3000);
 				$('#fogCanvas').fadeOut(2000);
 				
 				playMusic2();
@@ -186,11 +192,16 @@ $(document).ready(function(){
 			}	
 		},
 		'mouseup': function(){
+			snowIndex++;
 			if (!music1playing) {
 				playMusic1();
 				music1playing = true;
 			}
-			$('#snowCanvas').fadeIn(2000);
+			
+			snowIntervalID = null;
+			snowIntervalID = setInterval(initSnow, 33);
+			//initSnow();
+			//$('#snowCanvas').fadeIn(2000);
 			$('#fogCanvas').fadeIn(6000);
 			
 		}
@@ -214,20 +225,20 @@ $(document).ready(function(){
 		$('#music1')[0].currentTime = 0; */
 	}
 	
-	/*** Snow Animation ***/
-	//canvas init
+	var W = window.innerWidth;
+	var H = window.innerHeight;
+	var mp = 500; //max particles
+	var particles = [];
 	var canvas = document.getElementById("snowCanvas");
 	var ctx = canvas.getContext("2d");
 	
 	//canvas dimensions
-	var W = window.innerWidth;
-	var H = window.innerHeight;
+	
 	canvas.width = W;
 	canvas.height = H;
 	
 	//snowflake particles
-	var mp = 25; //max particles
-	var particles = [];
+	
 	for(var i = 0; i < mp; i++)
 	{
 		particles.push({
@@ -238,6 +249,9 @@ $(document).ready(function(){
 		})
 	}
 	
+	
+	/*** Snow Animation ***/
+
 	//Lets draw the flakes
 	function drawSnow()
 	{
@@ -257,9 +271,10 @@ $(document).ready(function(){
 	
 	//Function to move the snowflakes
 	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
-	var angle = 0;
+	
 	function updateSnow()
 	{
+		var angle = 0;
 		angle += 0.01;
 		for(var i = 0; i < mp; i++)
 		{
@@ -298,7 +313,7 @@ $(document).ready(function(){
 	}
 	
 	//animation loop
-	setInterval(drawSnow, 33);
+	//snowIntervalID = setInterval(drawSnow, 33);
 	
 	
 	
@@ -476,7 +491,7 @@ $(document).ready(function(){
 	function stopFog() {
 		context.clearRect(0, 0, canvasWidth, canvasHeight);
 	}
-	function startFog() {
+	//function startFog() {
 		if (context) {
 		    setInterval(function() {
 		        // Update the scene befoe drawing
@@ -486,7 +501,7 @@ $(document).ready(function(){
 		        draw();
 		    }, 1500 / targetFPS);
 		}
-	}
+	//}
 	// If the context is set then we can draw the scene (if not then the browser does not support canvas)
 	
 	

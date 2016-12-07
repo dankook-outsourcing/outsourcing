@@ -156,15 +156,41 @@ html {
 $(document).ready(function(){
 	
 	
+	function RecurringTimer(callback, delay) {
+	    var timerId, start, remaining = delay;
+	    this.pause = function() {
+	        window.clearTimeout(timerId);
+	        remaining -= new Date() - start;
+	    };
+	    var resume = function() {
+	        start = new Date();
+	        timerId = window.setTimeout(function() {
+	            remaining = delay;
+	            resume();
+	            //callback();
+	            initSnow();
+	        }, remaining);
+	    };
+	    
+	    this.resume = resume;
+	    this.resume();
+	}
+	
+	var timer = new RecurringTimer(initSnow, 33);
+	
+	
 	var clickable = false;
 	var music1playing = true;
 	playMusic1();
+	var snowIntervalID;
+	var snowIndex = 0;
 	
 	$(".before_screen").css("width",window.innerWidth);
 	$(".before_screen").css("height",window.innerHeight);
 	$(".before_screen").mousedown(function(){
 		$(".before_screen").fadeOut(1000);
 		$(".content").addClass("disabled");
+		
 	});
 	$(".before_screen").mouseup(function(){
 		$(".content").removeClass("disabled");
@@ -173,39 +199,39 @@ $(document).ready(function(){
 	
 
 	
-	
 	$('.content').bind({
 		'mousedown': function(){
 			if (clickable) {
 				
-				$('#snowCanvas').fadeOut(3000);
+				timer.pause();
+				//clearInterval(snowIntervalID);
+				//snowIntervalID = null;
 				$('#fogCanvas').fadeOut(2000);
 				
 				playMusic2();
 				music1playing = false;
-				
-				(function(){stopFog();})();
-				
-				
 			}	
 		},
 		'mouseup': function(){
+			snowIndex++;
 			if (!music1playing) {
 				playMusic1();
 				music1playing = true;
 			}
-			$('#snowCanvas').fadeIn(2000);
-			$('#fogCanvas').fadeIn(20000);
+			
+			timer.resume();
+			//initSnow();
+			//setInterval(initSnow, 33);
+			$('#fogCanvas').fadeIn(6000);
 			
 		}
 	});
 
-	
-	
 	function playMusic1 () {
+		/*
 		$('#music1')[0].volume = 0.7;
 		$('#music1')[0].load();
-		$('#music1')[0].play();
+		$('#music1')[0].play();*/
 		  
 		$('#music2')[0].pause();
 		$('#music2')[0].currentTime = 0; 
@@ -215,36 +241,46 @@ $(document).ready(function(){
 		$('#music2')[0].load();
 		$('#music2')[0].play();
 		  
-		$('#music1')[0].pause();
-		$('#music1')[0].currentTime = 0; 
+		/*$('#music1')[0].pause();
+		$('#music1')[0].currentTime = 0; */
 	}
+	
+	var W = window.innerWidth;
+	var H = window.innerHeight;
+	var mp = 500; //max particles
+	var particles = [];
 	
 	/*** Snow Animation ***/
 	//canvas init
-	var canvas = document.getElementById("snowCanvas");
-	var ctx = canvas.getContext("2d");
-	
-	//canvas dimensions
-	var W = window.innerWidth;
-	var H = window.innerHeight;
-	canvas.width = W;
-	canvas.height = H;
-	
-	//snowflake particles
-	var mp = 250; //max particles
-	var particles = [];
-	for(var i = 0; i < mp; i++)
-	{
-		particles.push({
-			x: Math.random()*W, //x-coordinate
-			y: Math.random()*H, //y-coordinate
-			r: Math.random()*4+1, //radius
-			d: Math.random()*mp //density
-		})
+	function initSnow() {
+		
+		var canvas = document.getElementById("snowCanvas");
+		var ctx = canvas.getContext("2d");
+		
+		//canvas dimensions
+		
+		canvas.width = W;
+		canvas.height = H;
+		
+		//snowflake particles
+		
+		for(var i = 0; i < mp; i++)
+		{
+			particles.push({
+				x: Math.random()*W, //x-coordinate
+				y: Math.random()*H, //y-coordinate
+				r: Math.random()*4+1, //radius
+				d: Math.random()*mp //density
+			})
+		}
+		
+		drawSnow(ctx);
+		
 	}
 	
+	
 	//Lets draw the flakes
-	function drawSnow()
+	function drawSnow(ctx)
 	{
 		ctx.clearRect(0, 0, W, H);
 		
@@ -262,9 +298,10 @@ $(document).ready(function(){
 	
 	//Function to move the snowflakes
 	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
-	var angle = 0;
+	
 	function updateSnow()
 	{
+		var angle = 0;
 		angle += 0.01;
 		for(var i = 0; i < mp; i++)
 		{
@@ -303,8 +340,8 @@ $(document).ready(function(){
 	}
 	
 	//animation loop
-	setInterval(drawSnow, 33);
-	
+	//snowIntervalID = setInterval(drawSnow, 33);
+	//snowIntervalID = setInterval(initSnow, 33);
 	
 	
 	
@@ -325,9 +362,9 @@ $(document).ready(function(){
 	var targetFPS = 33;
 
 	// Set the dimensions of the canvas as variables so they can be used.
-	var canvasWidth = 200;
-	var canvasHeight = 50;
-	
+	var canvasWidth = 400;
+	var canvasHeight = 400;
+
 	// Create an image object (only need one instance)
 	var imageObj = new Image(10,10);
 
@@ -339,8 +376,8 @@ $(document).ready(function(){
 	};
 
 	// Once the callback is arranged then set the source of the image
-	imageObj.src = "http://www.blog.jonnycornwell.com/wp-content/uploads/2012/07/Smoke10.png";
-
+	//imageObj.src = "https://lh5.googleusercontent.com/y6T_TVIxOFIvRLAeVEeYFcLeKWeoW5J_NuHEhDVNVW_9mtMbrpwmcQATddeurGUrikj0ww-ms9GXHCk=w2560-h1290";
+	imageObj.src = "http://www.blog.jonnycornwell.com/wp-content/uploads/2012/07/Smoke10.png"
 	// A function to create a particle object.
 	function Particle(context) {
 
@@ -443,7 +480,7 @@ $(document).ready(function(){
 	            var particle = new Particle(context);
 	            
 	            // Set the position to be inside the canvas bounds
-	            particle.setPosition(generateRandom(0, canvasWidth), generateRandom(0, canvasHeight));
+	            particle.setPosition(generateRandom(0, canvasWidth), generateRandom(200, canvasHeight));
 	            
 	            // Set the initial velocity to be either random and either negative or positive
 	            particle.setVelocity(generateRandom(-maxVelocity, maxVelocity), generateRandom(-maxVelocity, maxVelocity));
@@ -474,22 +511,30 @@ $(document).ready(function(){
 	    });
 	}
 	
-	
-
 	// Initialize the scene
 	init();
-
-	// If the context is set then we can draw the scene (if not then the browser does not support canvas)
-	if (context) {
-	    setInterval(function() {
-	        // Update the scene befoe drawing
-	        update();
-
-	        // Draw the scene
-	        draw();
-	    }, 1000 / targetFPS);
+	
+	
+	function stopFog() {
+		context.clearRect(0, 0, canvasWidth, canvasHeight);
 	}
+	//function startFog() {
+		if (context) {
+		    setInterval(function() {
+		        // Update the scene befoe drawing
+		        update();
 
+		        // Draw the scene
+		        draw();
+		    }, 1500 / targetFPS);
+		}
+	//}
+	// If the context is set then we can draw the scene (if not then the browser does not support canvas)
+	
+	
+	
+
+	
 });
 
 </script>
@@ -498,8 +543,8 @@ $(document).ready(function(){
 </head>
 <body>
 
-<audio id="music1" src="source/TRACKLIST/AUDIO/3.mp3" autoplay loop></audio>
-<audio id="music2" src="source/INTERACTION/3/JH.mp3" autoplay loop></audio>
+<!-- <audio id="music1" src="source/TRACKLIST/AUDIO/3.mp3" autoplay loop></audio>-->
+<audio id="music2" src="source/INTERACTION/3/JH.mp3" autoplay loop></audio> 
 
 <div class="content">
 
