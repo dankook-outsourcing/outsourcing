@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* 	{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+html {
+	width:100%;
+	height:100%;
+	background-image: url("source/INTERACTION/2/GGU/GGU2560-75_Layer-1.png");
+	
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+	overflow-x:hidden;
+	
+	/* animation: giffy 0.1s infinite steps(1);
+    animation-play-state: paused; */
+}
+/* html:active {
+	animation-play-state:running;
+} */
+@keyframes giffy {
+/* 노가다의 흔적.. */
+/*   0.7142857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-1.png'); }
+1.4285714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-2.png'); }
+2.142857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-3.png'); }
+2.857142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-4.png'); }
+3.5714285714285716%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-5.png'); }
+4.285714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-6.png'); }
+5.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-7.png'); }
+5.714285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-8.png'); }
+6.428571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-9.png'); }
+7.142857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-10.png'); }
+7.857142857142858%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-11.png'); }
+8.571428571428571%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-12.png'); }
+9.285714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-13.png'); }
+10.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-14.png'); }
+10.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-15.png'); }
+11.428571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-16.png'); }
+12.142857142857142%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-17.png'); }
+12.857142857142858%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-18.png'); }
+13.571428571428571%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-19.png'); }
+14.285714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-20.png'); }
+15.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-21.png'); }
+15.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-22.png'); }
+16.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-23.png'); }
+17.142857142857142%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-24.png'); }
+17.857142857142858%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-25.png'); }
+18.571428571428573%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-26.png'); }
+19.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-27.png'); }
+20.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-28.png'); }
+20.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-29.png'); }
+21.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-30.png'); }
+22.142857142857142%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-31.png'); }
+22.857142857142858%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-32.png'); }
+23.571428571428573%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-33.png'); }
+24.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-34.png'); }
+25.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-35.png'); }
+25.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-36.png'); }
+26.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-37.png'); }
+27.142857142857142%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-38.png'); }
+27.857142857142858%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-39.png'); }
+28.571428571428573%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-40.png'); }
+29.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-41.png'); }
+30.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-42.png'); }
+30.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-43.png'); }
+31.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-44.png'); }
+32.142857142857146%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-45.png'); }
+32.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-46.png'); }
+33.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-47.png'); }
+34.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-48.png'); }
+35.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-49.png'); }
+35.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-50.png'); }
+36.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-51.png'); }
+37.142857142857146%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-52.png'); }
+37.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-53.png'); }
+38.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-54.png'); }
+39.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-55.png'); }
+40.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-56.png'); }
+40.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-56.png'); }
+41.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-57.png'); }
+42.142857142857146%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-58.png'); }
+42.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-69.png'); }
+43.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-60.png'); }
+44.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-61.png'); }
+45.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-62.png'); }
+45.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-63.png'); }
+46.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-64.png'); }
+47.142857142857146%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-65.png'); }
+47.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-66.png'); }
+48.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-67.png'); }
+49.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-68.png'); }
+50.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-69.png'); }
+50.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-70.png'); }
+51.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-71.png'); }
+52.142857142857146%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-72.png'); }
+52.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-73.png'); }
+53.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-74.png'); }
+54.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-75.png'); }
+55.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-76.png'); }
+55.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-77.png'); }
+56.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-78.png'); }
+57.142857142857146%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-79.png'); }
+57.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-80.png'); }
+58.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-81.png'); }
+59.285714285714285%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-82.png'); }
+60.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-83.png'); }
+60.714285714285715%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-84.png'); }
+61.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-85.png'); }
+62.142857142857146%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-86.png'); }
+62.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-87.png'); }
+63.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-88.png'); }
+64.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-89.png'); }
+65.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-90.png'); }
+65.71428571428572%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-91.png'); }
+66.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-92.png'); }
+67.14285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-93.png'); }
+67.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-94.png'); }
+68.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-95.png'); }
+69.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-96.png'); }
+70.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-97.png'); }
+70.71428571428572%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-98.png'); }
+71.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-99.png'); }
+72.14285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-101.png'); }
+72.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-102.png'); }
+73.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-103.png'); }
+74.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-104.png'); }
+75.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-105.png'); }
+75.71428571428572%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-106.png'); }
+76.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-107.png'); }
+77.14285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-108.png'); }
+77.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-109.png'); }
+78.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-110.png'); }
+79.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-111.png'); }
+80.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-112.png'); }
+80.71428571428572%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-113.png'); }
+81.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-114.png'); }
+82.14285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-115.png'); }
+82.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-116.png'); }
+83.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-117.png'); }
+84.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-118.png'); }
+85.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-119.png'); }
+85.71428571428572%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-120.png'); }
+86.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-121.png'); }
+87.14285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-122.png'); }
+87.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-123.png'); }
+88.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-124.png'); }
+89.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-125.png'); }
+90.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-126.png'); }
+90.71428571428572%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-127.png'); }
+91.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-128.png'); }
+92.14285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-129.png'); }
+92.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-130.png'); }
+93.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-131.png'); }
+94.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-132.png'); }
+95.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-133.png'); }
+95.71428571428572%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-134.png'); }
+96.42857142857143%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-135.png'); }
+97.14285714285714%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-136.png'); }
+97.85714285714286%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-137.png'); }
+98.57142857142857%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-138.png'); }
+99.28571428571429%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-139.png'); }
+100.0%   { background-image: url('source/INTERACTION/2/GGU/GGU2560-75_Layer-140.png'); }
+	 */
+}
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:357px;
+	 height:55px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:357px;
+	height:55px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:357px;
+	height:55px;
+	
+	
+}
+#nav { 
+	width:357px;
+	height:239px;
+	padding:0px;
+	margin-left:34px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:42px;
+	margin-bottom:40px;
+	font-size:21px;
+	line-height:1.7em;
+	opacity:0.6;
+	
+}
+#logo {
+	width:214px;
+	height:158.812px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:40px;
+	margin-bottom:42px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+body {
+	margin-top:0px;
+}
+.before_screen {
+	background-color:#000000;
+	opacity:0.9;
+		
+	margin-left:-0.46%;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:4;
+	color:#FFFFFF;
+}
+.before_letter{
+	margin-left:50px;
+	margin-top:0px;
+	text-align:center;
+	font-size:21px;
+	padding-top:595px;
+	padding-bottom:612px;
+	line-height:1.3em;
+	animation:blk-txt ease-in-out 1s 0s infinite;
+}
+.spacebar {
+	bottom:0;
+	margin-bottom:40px;
+	margin-left:700px;
+
+}
+#spacebar1 {	
+	position:absolute;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
+@keyframes blk-txt {
+	0% { transform:scale(1);opacity:0.6;}
+	50% { transform:scale(1.05);opacity:1;}
+	100% {transform:scale(1);opacity:0.6;}
+}
+#music,#music2 {
+	display:none;
+}
+
+#preloader {
+display:none;
+}
+</style>
+
+<html >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+
+
+</head>
+<body>
+<audio id="music" src="source/INTERACTION/2/SK.mp3" loop></audio>
+<audio id="music2" src="source/INTERACTION/2/interact_2.mp3" loop></audio>
+
+<div id="nav">
+	<div id="nav_home" class="nav" onclick="goHome()"></div>
+	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
+	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
+</div>
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
+<div class="before_screen">
+	<p class="before_letter">
+	BINO_선경<br>
+	2016.06.22<br>
+	---<br>
+	Hold click to make<br>
+	the person ride<br>
+	</p>
+</div>
+<script>
+
+$(document).ready(function(){
+	var i=1;
+	var j=2;
+	var intervar;
+	var intervar2;
+	var mutax=true;
+	
+	$(".before_screen").css("width",(window.innerWidth+5));
+	$(".before_screen").css("height",(window.innerHeight+5));
+	$(".before_screen").click(function(){
+		$(".before_screen").fadeOut(1000);
+		setTimeout(function(){
+			document.getElementById("music2").play();
+			/*이미지가 사라지고나서 가동될 화면,행동,행위들 기입해주시면 됩니다.
+			page1/8.html 참고하셔도 됩니다.*/
+		},1100);
+	});
+	$("html").mousedown(function(){
+		document.getElementById("music2").pause();
+		document.getElementById("music").play();
+		intervar = setInterval(function(){
+			$("html").css("background-image","url('source/INTERACTION/2/GGU/GGU2560-75_Layer-"+((++i%141)+1)+".png')");
+		},20);
+		/* intervar2 = setInterval(function(){
+			j+=2;
+			$("html").css("background-image","url('source/INTERACTION/2/GGU/GGU2560-75_Layer-"+(j%141+1)+".png')");
+		},20); */
+		/* interval = setInterval(intervalMethod(i+=2));
+		interval2 = setInterval(intervalMethod(j+=2)); */
+	}).mouseup(function(){
+		document.getElementById("music").pause();
+		document.getElementById("music2").play();
+		
+		
+		clearInterval(intervar);
+		/* clearInterval(intervar2); */
+	});
+	/* function intervalMethod(value){
+		while(true) {
+			if(mutax) {
+				mutax=false;
+				$("html").css("background-image","url('source/INTERACTION/2/GGU/GGU2560-75_Layer-"+(value%141+1)+".png')");
+				mutax=true;
+			}
+			
+		}
+	} */
+	$("html").keydown(function(event){
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline")
+			setTimeout(function(){
+				
+				window.location.href="interaction3.html";	
+			},50);
+		}
+	});
+});
+function goHome(){
+	window.location.href="home.html";
+}
+function goInteraction(){
+	window.location.href="interaction1.html";
+}
+function goTracklist(){
+	window.location.href="page3-1.html";
+}
+</script>
+<div id="here">
+
+
+
+</div>
+
+
+<p id="info">
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+<img src="source/HOME/logo.png" id="logo">
+
+</body>
+<div id="preloader">
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-1.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-2.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-3.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-4.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-5.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-6.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-7.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-8.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-9.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-10.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-11.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-12.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-13.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-14.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-15.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-16.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-17.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-18.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-19.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-20.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-21.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-22.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-23.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-24.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-25.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-26.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-27.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-28.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-29.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-30.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-31.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-32.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-33.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-34.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-35.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-36.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-37.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-38.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-39.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-40.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-41.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-42.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-43.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-44.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-45.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-46.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-47.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-48.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-49.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-50.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-51.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-52.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-53.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-54.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-55.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-56.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-57.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-58.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-59.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-60.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-61.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-62.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-63.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-64.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-65.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-66.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-67.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-68.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-69.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-70.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-71.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-72.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-73.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-74.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-75.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-76.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-77.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-78.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-79.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-80.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-81.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-82.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-83.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-84.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-85.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-86.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-87.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-88.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-89.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-90.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-91.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-92.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-93.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-94.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-95.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-96.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-97.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-98.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-99.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-100.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-101.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-102.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-103.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-104.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-105.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-106.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-107.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-108.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-109.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-110.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-111.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-112.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-113.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-114.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-115.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-116.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-117.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-118.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-119.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-120.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-121.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-122.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-123.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-124.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-125.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-126.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-127.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-128.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-129.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-130.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-131.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-132.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-133.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-134.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-135.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-136.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-137.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-138.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-139.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-140.png' width='1' height='1' />
+<img src='source/INTERACTION/2/GGU/GGU2560-75_Layer-141.png' width='1' height='1' />
+
+
+
+</div>
+</html>

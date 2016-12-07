@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* 	{
+	font-family: 'Noto Sans KR', sans-serif;
+}
 html {
 	width:100%;
 	height:100%;
-	background-image: url("source/INTERACTION/7/HG2560.gif");
+	background-image: url("source/INTERACTION/7/HG/HG2560-75_Layer-1.png");
 	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
+	overflow-x: hidden;
 	
 }
+
 #nav_home {
 	 background-image:url("source/HOME/nav_home.png");
 	 background-size:cover;
@@ -60,9 +67,9 @@ html {
 	color:#FFFFFF;
 	margin-left:42px;
 	margin-bottom:40px;
-	color:#B3000000;
-	font-size:25px;
+	font-size:21px;
 	line-height:1.7em;
+	opacity:0.6;
 	
 }
 #logo {
@@ -86,7 +93,7 @@ body {
 }
 .before_screen {
 	background-color:#000000;
-	opacity:0.6;
+	opacity:0.9;
 		
 	margin-left:-0.46%;
 	margin-top:0px;
@@ -95,18 +102,50 @@ body {
 	color:#FFFFFF;
 }
 .before_letter{
-	margin-left:0px;
+	margin-left:50px;
 	margin-top:0px;
 	text-align:center;
-	font-size:24px;
-	padding-top:612px;
+	font-size:21px;
+	padding-top:595px;
+	padding-bottom:612px;
 	line-height:1.3em;
+	animation:blk-txt ease-in-out 1s 0s infinite;
 }
 
-#music {
+#music,#misic2{
+	display:none;
+}
+#preloader {
 	display:none;
 }
 
+.spacebar {
+	bottom:0;
+	margin-bottom:40px;
+	margin-left:700px;
+
+}
+#spacebar1 {	
+	position:absolute;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
+@keyframes blk-txt {
+	0% { transform:scale(1);opacity:0.6;}
+	50% { transform:scale(1.05);opacity:1;}
+	100% {transform:scale(1);opacity:0.6;}
+}
 </style>
 
 <html>
@@ -120,41 +159,76 @@ body {
 
 </head>
 <body>
-<audio id="music" src="source/INTERACTION/7/HG.mp3"></audio>
+<audio id="music" src="source/INTERACTION/7/HG.mp3" loop></audio>
+<audio id="music2" src="source/INTERACTION/7/interact_7.mp3" loop></audio>
 <div id="nav">
 	<div id="nav_home" class="nav" onclick="goHome()"></div>
 	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
 	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
+
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
+
 <div class="before_screen">
 	<p class="before_letter">
-	BINO_AMI<br>
-	2016.05.26<br>
+	BINO_해강<br>
+	2016.07.06<br>
 	---<br>
-	Hold click to stop<br>
-	the people from falling<br>
+	Hold click to make<br>
+	the person dance<br>
 	</p>
 </div>
 <script>
 $(document).ready(function(){
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
+	var intervar,
+	 	intervar2,
+	 	intervar3,
+	 	i=1,
+	 	j=2,
+	 	k=3;
+	
+	$(".before_screen").css("width",(window.innerWidth+5));
+	$(".before_screen").css("height",(window.innerHeight+5));
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
 			/*이미지가 사라지고나서 가동될 화면,행동,행위들 기입해주시면 됩니다.
 			page1/8.html 참고하셔도 됩니다.*/
+			document.getElementById("music2").play();
 		},1100);
 	});
 	$("html").mousedown(function(){
-
+		
+		document.getElementById("music2").pause();
 		document.getElementById("music").play();
+		intervar = setInterval(function(){
+			i+=3;
+			$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(i%92+1)+".png')");
+		},10);
+		intervar2 = setInterval(function(){
+			j+=3;
+			$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(j%92+1)+".png')");
+		},10);
+		intervar3 = setInterval(function(){
+			k+=3;
+			$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(k%92+1)+".png')");
+		},10)
 	}).mouseup(function(){
 		document.getElementById("music").pause();
+		document.getElementById("music2").play();
+		clearInterval(intervar);
+		clearInterval(intervar2);
+		clearInterval(intervar3);
 	});
 	$("html").keydown(function(event){
-		if(event.keyCode==32)
-			window.location.href="interaction8.html";
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline");
+			setTimeout(function(){
+				
+				window.location.href="interaction8.html";	
+			},50);
+		}
 	});
 });
 function goHome(){
@@ -181,4 +255,101 @@ function goTracklist(){
 </p>
 <img src="source/HOME/logo.png" id="logo">
 </body>
+<div id="preloader">
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-1.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-2.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-3.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-4.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-5.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-6.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-7.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-8.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-9.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-10.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-11.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-12.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-13.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-14.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-15.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-16.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-17.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-18.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-19.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-20.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-21.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-22.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-23.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-24.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-25.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-26.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-27.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-28.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-29.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-30.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-31.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-32.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-33.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-34.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-35.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-36.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-37.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-38.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-39.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-40.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-41.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-42.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-43.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-44.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-45.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-46.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-47.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-48.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-49.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-50.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-51.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-52.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-53.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-54.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-55.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-56.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-57.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-58.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-59.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-60.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-61.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-62.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-63.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-64.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-65.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-66.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-67.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-68.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-69.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-70.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-71.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-72.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-73.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-74.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-75.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-76.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-77.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-78.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-79.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-80.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-81.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-82.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-83.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-84.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-85.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-86.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-87.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-88.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-89.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-90.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-91.png' width='1' height='1' />
+	<img src='source/INTERACTION/7/HG/HG2560-75_Layer-92.png' width='1' height='1' />
+
+
+
+</div>
 </html>

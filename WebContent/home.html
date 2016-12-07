@@ -97,12 +97,6 @@ html {
 	height:100%;	
 	margin-bottom:0px;
 }
-#video {
-width:1571px;
-margin-top:0px;
-margin-bottom:200px;
-
-}
 #content_area::-webkit-scrollbar {
 	display:none;
 }
@@ -128,7 +122,10 @@ margin-bottom:200px;
 	padding-bottom:83px;
 	font-size:28px;
 	line-height:2em;
-	margin-bottom:0px;	
+	margin-bottom:100px;	
+}
+#music {
+	display:none;
 }
 </style>
 <html>
@@ -138,6 +135,7 @@ margin-bottom:200px;
 <title>Insert title here</title>
 </head>
 <body>
+<audio id="music" src="source/HOME/HOME.mp3" loop autoplay></audio>
 <div id="nav">
 	<div id="nav_home" class="nav"></div>
 	<div id="nav_interaction" class="nav"></div>
@@ -162,9 +160,7 @@ margin-bottom:200px;
 	
 	
 	</p>
-	<video id="video" controls>
-	  <source src="source/HOME/movie.mp4" type="video/mp4">
-	</video>
+	
 
 </div>
 

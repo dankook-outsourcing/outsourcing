@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* 	{
+	font-family: 'Noto Sans KR', sans-serif;
+}
 html {
 	width:100%;
 	height:100%;
@@ -7,6 +12,7 @@ html {
 	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
+	overflow-x:hidden;
 	
 }
 #nav_home {
@@ -56,9 +62,9 @@ html {
 	color:#FFFFFF;
 	margin-left:42px;
 	margin-bottom:40px;
-	color:#B3000000;
-	font-size:25px;
+	font-size:21px;
 	line-height:1.7em;
+	opacity:0.6;
 	
 }
 #logo {
@@ -82,7 +88,7 @@ body {
 }
 .before_screen {
 	background-color:#000000;
-	opacity:0.6;
+	opacity:0.9;
 		
 	margin-left:-0.46%;
 	margin-top:0px;
@@ -91,15 +97,17 @@ body {
 	color:#FFFFFF;
 }
 .before_letter{
-	margin-left:0px;
+	margin-left:50px;
 	margin-top:0px;
 	text-align:center;
-	font-size:24px;
-	padding-top:612px;
+	font-size:21px;
+	padding-top:595px;
+	padding-bottom:612px;
 	line-height:1.3em;
+	animation:blk-txt ease-in-out 1s 0s infinite;
 }
 /*  page 21   */
-#music {
+#music,#music2 {
 	display:none;
 }
 
@@ -219,6 +227,33 @@ body {
 	/* -webkit-transition: 3s ease-in-out;
     transition: 3s ease-in-out;     */
 }
+.spacebar {
+	bottom:0;
+	margin-bottom:40px;
+	margin-left:700px;
+
+}
+#spacebar1 {	
+	position:absolute;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
+@keyframes blk-txt {
+	0% { transform:scale(1);opacity:0.6;}
+	50% { transform:scale(1.05);opacity:1;}
+	100% {transform:scale(1);opacity:0.6;}
+}
 </style>
 
 <html>
@@ -228,13 +263,16 @@ body {
 <title>INTERACTION-1</title>
 </head>
 <body>
-<audio id="music" src="source/INTERACTION/1/AMI.mp3"></audio>
+<audio id="music" src="source/INTERACTION/1/AMI.mp3" loop></audio>
+<audio id="music2" src="source/INTERACTION/1/interact_1.mp3" loop></audio>
 
 <div id="nav">
 	<div id="nav_home" class="nav" onclick="goHome()"></div>
 	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
 	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
 <div class="before_screen">
@@ -251,8 +289,8 @@ body {
 $(document).ready(function(){
 	
 	
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").css("width",(window.innerWidth+5));
+	$(".before_screen").css("height",(window.innerHeight+5));
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
@@ -268,6 +306,7 @@ $(document).ready(function(){
 			$("#body25").css("transform","translate(0,75em) rotate(-90deg)");
 			$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 			$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
+			document.getElementById("music2").play();
 		},1100);
 	});
 	$(this).mousedown(function(){
@@ -287,6 +326,7 @@ $(document).ready(function(){
 		$("#body26").css("transform","translate(0,0em) rotate(0deg)");
 		$(".page21_body").css("-webkit-transition","0.7s ease-in-out");
 		$(".page21_body").css("transition","0.7s ease-in-out");
+		document.getElementById("music2").pause();
 		document.getElementById("music").play();
 	}).mouseup(function(){
 		$(".page21_body").css("-webkit-transition","3s ease-in-out");
@@ -304,10 +344,16 @@ $(document).ready(function(){
 		$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 		$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
 		document.getElementById("music").pause();
+		document.getElementById("music2").play();
 	});
 	$("html").keydown(function(event){
-		if(event.keyCode==32)
-			window.location.href="interaction2.html";
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline");
+			setTimeout(function(){
+				
+				window.location.href="interaction2.html";	
+			},50);
+		}
 	});
 });
 function goHome(){

@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* 	{
+	font-family: 'Noto Sans KR', sans-serif;
+}
 html {
 	width:100%;
 	height:100%;
@@ -7,6 +12,7 @@ html {
 	background-color:#555555;
 	background-size:cover;
 	overflow-y:hidden;
+	overflow-x:hidden;
 	
 }
 #nav_home {
@@ -59,10 +65,9 @@ html {
 	color:#FFFFFF;
 	margin-left:42px;
 	margin-bottom:40px;
-	color:#B3000000;
-	font-size:25px;
+	font-size:21px;
 	line-height:1.7em;
-	
+	opacity:0.6;
 }
 #logo {
 	width:214px;
@@ -85,7 +90,7 @@ body {
 }
 .before_screen {
 	background-color:#000000;
-	opacity:0.6;
+	opacity:0.9;
 		
 	margin-left:-0.46%;
 	margin-top:0px;
@@ -94,14 +99,16 @@ body {
 	color:#FFFFFF;
 }
 .before_letter{
-	margin-left:0px;
+	margin-left:50px;
 	margin-top:0px;
 	text-align:center;
-	font-size:24px;
-	padding-top:612px;
+	font-size:21px;
+	padding-top:595px;
+	padding-bottom:612px;
 	line-height:1.3em;
+	animation:blk-txt ease-in-out 1s 0s infinite;
 }
-#music {
+#music,#misic2 {
 	display:none;
 }
 .page28_body {
@@ -120,7 +127,33 @@ body {
 	/* height:962.5px; */
 	height:1608.125px;
 }
+.spacebar {
+	bottom:0;
+	margin-bottom:40px;
+	margin-left:700px;
 
+}
+#spacebar1 {	
+	position:absolute;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
+@keyframes blk-txt {
+	0% { transform:scale(1);opacity:0.6;}
+	50% { transform:scale(1.05);opacity:1;}
+	100% {transform:scale(1);opacity:0.6;}
+}
 
 
 
@@ -133,33 +166,38 @@ body {
 <title>interaction8</title>
 </head>
 <body>
-<audio id="music" src="source/INTERACTION/8/TJ.mp3"></audio>
+<audio id="music" src="source/INTERACTION/8/TJ.mp3" loop></audio>
+<audio id="music2" src="source/INTERACTION/8/interact_8.mp3" loop></audio>
 <div id="nav" class="nav_before">
 	<div id="nav_home" class="nav"></div>
 	<div id="nav_interaction" class="nav"></div>
 	<div id="nav_tracklist" class="nav"></div>
 </div>
-
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
 <div class="before_screen">
 	<p class="before_letter">
-	BINO_AMI<br>
-	2016.05.26<br>
+	BINO_태정<br>
+	2016.09.05<br>
 	---<br>
 	Hold click to stop<br>
-	the people from falling<br>
+	the person from floating<br>
 	</p>
 </div>
 
 <script>
 $(document).ready(function(){
 	
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").css("width",(window.innerWidth+5));
+	$(".before_screen").css("height",(window.innerHeight+5));
 	$(".before_screen").click(function(){
 		
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
-			$(".nav_before").hide();	
+			$(".nav_before").hide();
+			$(".spacebar").css("margin-left","1087px");
+			document.getElementById("music2").play();
+			
 		},1000);
 		
 		setTimeout(function(){
@@ -177,7 +215,7 @@ $(document).ready(function(){
 			
 		},1100);
 	
-	$(this).mousedown(function(){
+	$("html").mousedown(function(){
 		
 		$(".page28_body").css("-webkit-transition","0.5s ease-in-out");
 		$(".page28_body").css("transition","0.5s ease-in-out");
@@ -191,6 +229,7 @@ $(document).ready(function(){
 		$("#body84").css("transform","translate(0,0em) rotate(0deg)");
 		$("#body85").css("-webkit-transform","translate(0,0em) rotate(0deg)");
 		$("#body85").css("transform","translate(0,0em) rotate(0deg)");
+		document.getElementById("music2").pause();
 		document.getElementById("music").play();
 	}).mouseup(function(){
 		$(".page28_body").css("-webkit-transition","8s ease-in-out");
@@ -206,11 +245,16 @@ $(document).ready(function(){
 		$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 		$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
 		document.getElementById("music").pause();
+		document.getElementById("music2").play();
 		});
 	});
 	$("html").keydown(function(event){
-		if(event.keyCode==32)
-			window.location.href="interaction9.html";
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline");
+			setTimeout(function(){
+				window.location.href="interaction9.html";	
+			},50);
+		}
 	});
 });
 function goHome(){
@@ -248,3 +292,4 @@ function goTracklist(){
 <img src="source/HOME/logo.png" id="logo">
 </body>
 </html>
+
