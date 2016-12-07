@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<style>
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* 	{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+html {
+	width:100%;
+	height:100%;
+	background-image: url("source/HOME/bg.jpg");
+	background-color:#555555;
+	background-size:cover;
+	overflow-y:hidden;
+	
+}
+#nav_home {
+	 background-image:url("source/HOME/nav_home.png");
+	 background-size:cover;
+	 width:357px;
+	 height:55px;
+	 margin-bottom:24px;
+}
+
+#nav_interaction {
+	background-image:url("source/HOME/nav_interaction.png");
+	background-size:cover;
+	width:357px;
+	height:55px;
+	margin-bottom:24px;
+	
+	
+}
+#nav_tracklist {
+	background-image:url("source/HOME/nav_tracklist.png");
+	background-size:cover;
+	width:357px;
+	height:55px;
+	
+	
+}
+#nav { 
+	width:357px;
+	height:239px;
+	padding:0px;
+	margin-left:42px;
+	margin-top:70px;	
+	float:left;
+}
+.nav {
+	cursor:pointer;
+	opacity:0.7;
+	-webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+.nav:hover {
+	opacity:1;
+	transform:scale(1.1);
+}
+#info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	color:#FFFFFF;
+	margin-left:42px;
+	margin-bottom:40px;
+	color:#B3000000;
+	font-size:25px;
+	line-height:1.7em;
+	
+}
+#logo {
+	width:214px;
+	height:158.812px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:40px;
+	margin-bottom:42px;
+	opacity:0.7;
+}
+#logo:hover {
+	opacity:1;
+	transform:scale(1.1);
+	-webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+#content_area {
+	margin:auto;
+	position:absolute;
+	margin-left:494px;	
+	overflow:scroll;
+	width:1572px;
+	color:#FFFFFF;
+	height:100%;	
+	margin-bottom:0px;
+}
+#content_area::-webkit-scrollbar {
+	display:none;
+}
+
+#ring_master {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	
+	z-index:-1;
+}
+#content_body {
+	background-color:#000000;
+	
+	opacity:0.8;
+	padding-right:115px;
+	padding-left:115px;
+	/* border-top-left-radius:10px;
+	border-top-right-radius:10px; */
+	border-radius:10px;
+	padding:71px;
+	margin-top:58px;
+	padding-bottom:83px;
+	font-size:28px;
+	line-height:2em;
+	margin-bottom:100px;	
+}
+#music {
+	display:none;
+}
+</style>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<audio id="music" src="source/HOME/HOME.mp3" loop autoplay></audio>
+<div id="nav">
+	<div id="nav_home" class="nav"></div>
+	<div id="nav_interaction" class="nav"></div>
+	<div id="nav_tracklist" class="nav"></div>
+</div>
+
+
+
+<div id="content_area" class="content">
+	<p id="content_body" >안녕, 나는 비노 서커스단에서 단장을 맡고 있는 비노라고 한다. 난 너희들이 모르는 비밀을 고백하려고 한다. 인간들의 눈에 보이지는 않지만, 우리는 태어날 때 감정 수치를 몸에 지니고 태어난다. 감정 100%로 태어나는 사람들은 극히 드물고, 평균적으로 85%~90%의 감정을 지니고 태어난다. 그렇게 살다 청소년기를 지날 때쯤, 학업에 매진하다보면 감정 수치가 70%대로 내려간다.
+	그리고 성인이 되어 사회에 나가 살다보면, 학생 때처럼 사람들과의 깊은 소통을 할 수가 없게 되어, 더더욱 감정 수치는 내려간다.<br><br> 
+	
+	여기서 주의해야 할 점은, 감정 수치가 20% 이하가 되면, 사람은 더이상 사람이 아니게 된다는 것이다. 몸은 사람이지만, 행동은 로봇과 같이 행동을 하게 되는데, 우리는 이 병을 ‘멕케닉병’이라고 말한다. 이러한 증상에 대한 백신은 없다. 불치병이다. 하지만 예방은 가능하다. 이 사실을 아는 인간들은 자신들의 감정 수치가 내려가면, 소통을 하기 위해 밖을 돌아다닌다. 슬픔이든, 기쁨이든, 분노든, 다양한 감정들을 서로 공유하여 자신들의 몸 속에 감정수치를 다시 채워넣는다. 하지만 이 사실을 모르는 사람들은, 병원을 오가게 되며, 상태가 더더욱 악화되면, 마약, 술, 도박에 손을 대기 시작한다.<br><br> 
+	
+	그러하여 나는 메케닉병을 예방하기 위해, 예전부터 서커스단을 운영하고 있었다. 감정이 필요한 이가 찾아오면, 우린 이야기를 공유했고, 이 과정을 노래로 기록하여, 기록집을 그 사람에게 전달해주어, 서로의 감정 수치를 채워주는 일을 했었다. 하지만, 세상이 혼란스러워서 그런지, 아니면 자신의 감정수치가 내려가고 있음을 인지하지 못해서 그런지,  더이상 서커스단을 찾아오는 이가 없다.<br><br>
+	
+	세상은 더욱 살기가 어려워지고, 사람들의 여유가 사라지면서, 현재는 인구 60% 이상이 메케닉병에 걸려 불치병자가 되었다. 이러한 환경에서 지내다보니, 나의 감정 수치 또한 내려가기 시작했다. 나는 현재 감정 43%이며, 이런 삶을 지속적으로 살다보면 나도 곧 메케닉병에 걸릴 게 분명하다.<br><br>
+	
+	그러하여, 나는 비노 서커스단을 홍보하기로 결심했다. 메카닉병자의 수가 더이상 늘어나지 않게, 나 또한 메카닉병에 걸리지 않게, 서로의 이야기를 나누고, 감정 수치를 공유하고 싶어하는 사람들을 찾기 시작했다. 현재까지는 다행히도  7명의 사람들에게 연락이 왔고, 나는 그들의 이야기와 나의 아야기를 공유하며 서로 감정수치를 채워 넣었다. 나는 메케닉병에 걸릴 위기에 처한 사람들에게 지금의 사태를 알리기 위해 7명의 사람들과의 소통 과정을 아카이빙 하였다.이야기를 들으며 기록을 하였고, 기록한 것으로 가사를 만들어 총 7개의 노래를 제작했다. 그렇게 만든 노래를 다시 이야기를 공유해준 7명의 사람들에게 들려주면서, 우리는 서로의 감정 수치를 올려주었다. 나의 바람이지만, 7명의 사람들이 나의 노래를 들으며 나중에도 지금 느꼈던 감정들을 회상하며 자신들의 감정 수치를 채워넣었음 한다.<br><br> 
+	
+	그리고 지금 이 아카이빙을 보고 있는 당신은 아직 메카닉병자가 아니었음 한다. 나 또한, 이 시점에서 이 작업을 중단하게 된다면 나 또한 메카닉병자가 될 것을 알기 때문에, 나는 비노 서커스단 운영을 중단할 수가 없다. 자신이 진실된 소통을 하고 있는지 생각해보자. 그렇지 않다면, 당신은 곧 불치병자가 될 것이다. 비노의 서커스단은 항상 열려있으니 망설이지 말고, 문을 두드려주길 바란다. 너와 나 모두를 위해.
+	
+	
+	</p>
+	
+
+</div>
+
+<img id="ring_master" src="source/HOME/ringma.png"/>
+<p id="info">
+	sbyoon92@gmail.com<br>
+	010.9182.6193
+</p>
+<img src="source/HOME/logo.png" id="logo">
+</body>
+</html>
+
