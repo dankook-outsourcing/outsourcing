@@ -196,8 +196,8 @@ img.rotate2 {
 <script>
 
 $(document).ready(function(){
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
+	$(".before_screen").css("width",window.innerWidth+5);
+	$(".before_screen").css("height",window.innerHeight+5);
 	$(".before_screen").click(function(){
 		$(".before_screen").fadeOut(1000);
 		document.getElementById("music2").play();
