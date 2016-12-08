@@ -113,6 +113,11 @@ body {
 	animation:blk-txt ease-in-out 1s 0s infinite;
 }
 
+@keyframes blk-txt {
+	0% { transform:scale(1);opacity:0.6;}
+	50% { transform:scale(1.05);opacity:1;}
+	100% {transform:scale(1);opacity:0.6;}
+}
 .box{
 	margin: 0 auto;
 	position: relative;
@@ -142,7 +147,7 @@ body {
 
 .box img.body1{
 	position:absolute;
-	margin-top: 5%;
+	margin-top: -3%;
 	margin-left:-49%;
 	height:1250px;
 }
@@ -164,7 +169,28 @@ img.rotate2 {
 	transition-duration: 10s, 1s;
 	transition: transform .8s ease-in-out;
 }
+.spacebar {
+	bottom:0;
+	margin-bottom:40px;
+	margin-left:700px;
 
+}
+#spacebar1 {	
+	position:absolute;
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+}
+#spacebar2 {
+	position:absolute;
+	
+	width:416.5px;
+	height:42px;
+	bottom:0;
+	margin-bottom:40px;
+	display:none;
+}
 
 #music {
 	display:none;
@@ -173,6 +199,7 @@ img.rotate2 {
 #music2 {
 	display:none;
 }
+
 </style>
 <title>Insert title here</title>
 </head>
@@ -180,10 +207,13 @@ img.rotate2 {
 <audio id="music" src="source/INTERACTION/4/WL.mp3"></audio>
 <audio id="music2" src="source/INTERACTION/4/interact_4.mp3"></audio>
 <div id="nav">
-	<div id="nav_home" class="nav"></div>
-	<div id="nav_interaction" class="nav"></div>
-	<div id="nav_tracklist" class="nav"></div>
+	<div id="nav_home" class="nav" onclick="goHome()"></div>
+	<div id="nav_interaction" class="nav" onclick="goInteraction()"></div>
+	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
+<img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
+<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
+
 <div class="before_screen">
 	<p class="before_letter">
 	BINO_울렁울렁<br>
@@ -217,27 +247,34 @@ $(document).ready(function(){
 				else 
 					document.getElementById("img_rotation").style.transform = "rotate(-45deg)";
 			});
-			$("html").keydown(function(event){
-				if(event.keyCode==32)
-					window.location.href="interaction5.html";
-			});
-			function goHome(){
-			window.location.href="home.html";
-			}
-			function goInteraction(){
-			window.location.href="interaction1.html";
-			}
-			function goTracklist(){
-			window.location.href="page3-1.html";
-			}
+
+			
 			function generateRandom(min, max) {
 				 var ranNum = Math.floor(Math.random()*(max-min+1)) + min;
 				 return ranNum;
 				    }
+			
+			$("html").keydown(function(event){
+				if(event.keyCode==32) {
+					$("#spacebar2").css("display","inline")
+					setTimeout(function(){
+						
+						window.location.href="interaction5.html";	
+					},50);
+				}
+			});
 		},1100);
 	});
 });
-
+function goHome(){
+	window.location.href="home.html";
+}
+function goInteraction(){
+	window.location.href="interaction1.html";
+}
+function goTracklist(){
+	window.location.href="page3-1.html";
+}
 </script>
 <div id="box" class="box">
 				<img class="body1" src="source/INTERACTION/4/4_layer_4.png">
