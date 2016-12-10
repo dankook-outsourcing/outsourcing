@@ -10,6 +10,8 @@
 <style>
 html {
 	background-image: url("source/INTERACTION/2/bg_2.jpg");
+	clear:both;
+	background-size:cover;
 }
 
 </style>
@@ -44,31 +46,17 @@ function Stop(id){
 </div>
 <img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
 <img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
-<div class="before_screen">
-	<p class="before_letter">
-	BINO_울렁울렁<br>
-	2016.06.11<br>
-	---<br>
-	Hold click to stop<br>
-	the people from falling<br>
-	</p>
-</div>
+
 <script>
 $(document).ready(function(){
-	$(".before_screen").css("width",window.innerWidth+5);
-	$(".before_screen").css("height",window.innerHeight+5);
-	$(".before_screen").click(function(){
-		$(".before_screen").fadeOut(1000);
-		setTimeout(function(){
-			$("html").keydown(function(event){
-				if(event.keyCode==32) {
-					$("#spacebar2").css("display","inline")
-					setTimeout(function(){
-						window.location.href="page3-2.html";	
-					},50);
-				}
-			});
-		},1100);
+	
+	$("html").keydown(function(event){
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline")
+			setTimeout(function(){
+				window.location.href="page3-2.html";	
+			},50);
+		}
 	});
 });		
 function goHome(){
@@ -161,11 +149,11 @@ function goTracklist(){
 			  /* open 버튼 */
 			  modalLink.click(function(){
 				modalLayer.fadeIn("fast");
-			    modalCont.css({"margin-top" : -marginTop, "margin-left" : -marginLeft});
-			    $(".lyricsbtn").hide();
-			    $(this).blur();
-			    $(".modalContent > a").focus(); 
-			    return false;
+				   modalCont.css({"margin-top" : -marginTop, "margin-left" : -marginLeft});
+				   $(".lyricsbtn").hide();
+				   $(this).blur();
+				   $(".modalContent > a").focus(); 
+				   return false;
 			  });
 			  
 				/* close 버튼 */

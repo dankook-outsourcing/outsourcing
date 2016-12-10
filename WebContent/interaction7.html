@@ -186,40 +186,57 @@ $(document).ready(function(){
 	 	intervar3,
 	 	i=1,
 	 	j=2,
-	 	k=3;
-	
+	 	k=3,
+	 	syncStart=false,
+	 	isStarted=false;
+	$("#logo").click(function(){
+		window.location.href="home.html";
+	});
 	$(".before_screen").css("width",(window.innerWidth+5));
 	$(".before_screen").css("height",(window.innerHeight+5));
-	$(".before_screen").click(function(){
+	
+	setTimeout(function(){
 		$(".before_screen").fadeOut(1000);
+		
 		setTimeout(function(){
 			/*이미지가 사라지고나서 가동될 화면,행동,행위들 기입해주시면 됩니다.
 			page1/8.html 참고하셔도 됩니다.*/
 			document.getElementById("music2").play();
-		},1100);
-	});
+			//syncStart=true;
+			isStarted=true;
+		},1000);
+	},3000);
+
 	$("html").mousedown(function(){
-		
+		if(!isStarted)
+			return;
 		document.getElementById("music2").pause();
 		document.getElementById("music").play();
-		intervar = setInterval(function(){
-			i+=3;
-			$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(i%92+1)+".png')");
-		},10);
-		intervar2 = setInterval(function(){
-			j+=3;
-			$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(j%92+1)+".png')");
-		},10);
-		intervar3 = setInterval(function(){
-			k+=3;
-			$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(k%92+1)+".png')");
-		},10)
+		//if(syncStart) {
+			intervar = setInterval(function(){
+				i+=3;
+				//i+=1;
+				$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(i%92+1)+".png')");
+			},20);
+			intervar2 = setInterval(function(){
+				j+=3;
+				//i+=1;
+				$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(i%92+1)+".png')");
+			},20);
+			intervar3 = setInterval(function(){
+				k+=3;
+				//i+=1;
+				$("html").css("background-image","url('source/INTERACTION/7/HG/HG2560-75_Layer-"+(i%92+1)+".png')");
+			},20);
+		//}
 	}).mouseup(function(){
+		if(!isStarted)
+			return;
 		document.getElementById("music").pause();
 		document.getElementById("music2").play();
 		clearInterval(intervar);
 		clearInterval(intervar2);
-		clearInterval(intervar3);
+		//clearInterval(intervar3);
 	});
 	$("html").keydown(function(event){
 		if(event.keyCode==32) {

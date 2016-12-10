@@ -83,6 +83,7 @@ html {
 	-webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
 }
+
 body {
 	margin-top:0px;
 }
@@ -287,13 +288,17 @@ body {
 <script>
 
 $(document).ready(function(){
-	
+	$("#logo").click(function(){
+		window.location.href="home.html";
+	});
 	
 	$(".before_screen").css("width",(window.innerWidth+5));
 	$(".before_screen").css("height",(window.innerHeight+5));
-	$(".before_screen").click(function(){
+	setTimeout(function(){
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
+			$(".page21_body").css("-webkit-transition","3s ease-in-out");
+			$(".page21_body").css("transition","3s ease-in-out");
 			$("#body21").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 			$("#body21").css("transform","translate(0,75em) rotate(-90deg)");
 			$("#body22").css("-webkit-transform","translate(0,82em) rotate(-190deg)");
@@ -307,8 +312,8 @@ $(document).ready(function(){
 			$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 			$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
 			document.getElementById("music2").play();
-		},1100);
-	});
+		},1000);
+	},3000);
 	$(this).mousedown(function(){
 		$(".page21_body").css("-webkit-transition","0.5s ease-in-out");
 		$(".page21_body").css("transition","0.5s ease-in-out");
@@ -382,7 +387,7 @@ function goTracklist(){
 	sbyoon92@gmail.com<br>
 	010.9182.6193
 </p>
-<img src="source/HOME/logo.png" id="logo">
+<img src="source/HOME/logo.png" id="logo" >
 </body>
 </html>
 

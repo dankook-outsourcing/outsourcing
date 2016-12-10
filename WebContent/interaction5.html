@@ -138,8 +138,8 @@ body {
 
 .box img{
 	position:absolute;
-	margin-top:5%;
-	margin-left:-25%;
+	margin-top:7.8%;
+	margin-left:-26.7%;
 	height:950px;
 }
 
@@ -288,56 +288,61 @@ $(document).ready(function(){
 	var durationTime=5;
 	$(".before_screen").css("width",window.innerWidth+10);
 	$(".before_screen").css("height",window.innerHeight+5);
-	$(".before_screen").click(function(){
-		$(".before_screen").fadeOut(1000);
-		var wt=0;
-		setTimeout(function(){
-			var el = document.getElementById("img_rotation");  // el doesn't change
-			var timeoutHandle;
-			
-			$("html").mousedown(function(){
-				document.getElementById("music").play();
-				document.getElementById("music2").pause();
-			
-			  	document.getElementById("img_rotation").style.WebkitAnimation = "spin1 5s infinite Linear";
-			  	wt=1;
-			  	clearInterval(timeoutHandle);
-			  	timeoutHandle = setInterval(function () {
-			  		if(durationTime>20){
-				  		$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=10)+"s");
-				  	}
-			  		if(durationTime<0.2)
-			  			 durationTime=0.2;
-			  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=0.005)+"s");
-			  	}, 5);
-			}).mouseup(function(){
-				document.getElementById("music").pause();
-				document.getElementById("music2").play();
-			  	    clearInterval(timeoutHandle);
-			  	  timeoutHandle = setInterval(function () {
-				  		 if(durationTime>10) {
-				  			 if(durationTime>70){
-				  				clearInterval(timeoutHandle);
-				  				 el.style.animationPlayState = "paused";
-				  			 }
-				  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime+=0.05)+"s");
-			  	 		}
-				  		 else{
-				  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime+=0.05)+"s");
-				  		 }
-				  	}, 5);
-			});
-			$("html").keydown(function(event){
-				if(event.keyCode==32) {
-					$("#spacebar2").css("display","inline")
-					setTimeout(function(){
-						window.location.href="interaction6.html";	
-					},50);
-				}
-			});
-			},1100);
+	$("#logo").click(function(){
+		window.location.href="home.html";
 	});
-});
+		setTimeout(function(){
+			$(".before_screen").fadeOut(1000);
+			var wt=0;
+			setTimeout(function(){
+				var el = document.getElementById("img_rotation");  // el doesn't change
+				var timeoutHandle;
+				
+				$("html").mousedown(function(){
+					document.getElementById("music").play();
+					document.getElementById("music2").pause();
+				
+				  	document.getElementById("img_rotation").style.WebkitAnimation = "spin1 5s infinite Linear";
+				  	wt=1;
+				  	clearInterval(timeoutHandle);
+				  	timeoutHandle = setInterval(function () {
+				  		if(durationTime>20){
+					  		$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=10)+"s");
+					  	}
+				  		if(durationTime<0.2)
+				  			 durationTime=0.2;
+				  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime-=0.005)+"s");
+				  	}, 5);
+				}).mouseup(function(){
+					document.getElementById("music").pause();
+					document.getElementById("music2").play();
+				  	    clearInterval(timeoutHandle);
+				  	  timeoutHandle = setInterval(function () {
+					  		 if(durationTime>10) {
+					  			 if(durationTime>70){
+					  				clearInterval(timeoutHandle);
+					  				 el.style.animationPlayState = "paused";
+					  			 }
+					  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime+=0.05)+"s");
+				  	 		}
+					  		 else{
+					  			$("#img_rotation").css("WebkitAnimationDuration",(durationTime+=0.05)+"s");
+					  		 }
+					  	}, 5);
+				});
+				
+			},1100);
+		},3000);
+		$("html").keydown(function(event){
+			if(event.keyCode==32) {
+				$("#spacebar2").css("display","inline")
+				setTimeout(function(){
+					window.location.href="interaction6.html";	
+				},50);
+			}
+		});
+	});
+
 
 function goHome(){
 	window.location.href="home.html";

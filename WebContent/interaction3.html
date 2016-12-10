@@ -202,14 +202,17 @@ $(document).ready(function(){
 	var snowIntervalID;
 	var isSnowing = true;
 	startSnow();
-	
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
-	$(".before_screen").click(function(){
+	$("#logo").click(function(){
+		window.location.href="home.html";
+	});
+	$(".before_screen").css("width",window.innerWidth+15);
+	$(".before_screen").css("height",window.innerHeight+5);
+	setTimeout(function(){
 		$(".before_screen").fadeOut(1000);
 		clickable = true;
 		playMusic1();
-	});
+	},3000);
+	
 	
 	$("html").keydown(function(event){
 		if(event.keyCode==32) {
@@ -403,7 +406,6 @@ $(document).ready(function(){
 	        this.context.fill();
 	        this.context.closePath();
 	    };
-
 	    // Update Fog
 	    this.update = function() {
 	        
@@ -429,7 +431,6 @@ $(document).ready(function(){
 	            this.y = 0;
 	        }
 	    };
-
 	    this.setPosition = function(x, y) {
 	        this.x = x;
 	        this.y = y;

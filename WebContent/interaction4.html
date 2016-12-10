@@ -147,9 +147,9 @@ body {
 
 .box img.body1{
 	position:absolute;
-	margin-top: -3%;
-	margin-left:-49%;
-	height:1250px;
+	margin-top: -5.2%;
+	margin-left:-60%;
+	height:1500px;
 }
 
 /* 이미지 회전함수 */
@@ -173,6 +173,7 @@ img.rotate2 {
 	bottom:0;
 	margin-bottom:40px;
 	margin-left:700px;
+	z-index:10;
 
 }
 #spacebar1 {	
@@ -228,42 +229,51 @@ img.rotate2 {
 $(document).ready(function(){
 	$(".before_screen").css("width",window.innerWidth+5);
 	$(".before_screen").css("height",window.innerHeight+5);
-	$(".before_screen").click(function(){
+	$("#logo").click(function(){
+		window.location.href="home.html";
+	});
+	document.getElementById("img_rotation").style.transform = "rotate(0deg)";
+	//$(".before_screen").click(function(){
+	setTimeout(function(){
+		
 		$(".before_screen").fadeOut(1000);
 		document.getElementById("music2").play();
-		setTimeout(function(){
-			var timeoutHandle;
-			$("html").mousedown(function(){
-				
-				document.getElementById("music").play(); 
-				document.getElementById("music2").pause();
-				document.getElementById("img_rotation").style.transform = "rotate(0deg)";
-			}).mouseup(function(){
-				var i = generateRandom(0,100);
-				document.getElementById("music").pause();
-				document.getElementById("music2").play();
-				if(i>50)
+			setTimeout(function(){
+				var timeoutHandle;
+				if(generateRandom(0,100)>50)
 					document.getElementById("img_rotation").style.transform = "rotate(45deg)";
-				else 
+				else
 					document.getElementById("img_rotation").style.transform = "rotate(-45deg)";
-			});
-
-			
-			function generateRandom(min, max) {
-				 var ranNum = Math.floor(Math.random()*(max-min+1)) + min;
-				 return ranNum;
-				    }
-			
-			$("html").keydown(function(event){
-				if(event.keyCode==32) {
-					$("#spacebar2").css("display","inline")
-					setTimeout(function(){
-						
-						window.location.href="interaction5.html";	
-					},50);
+				$("html").mousedown(function(){
+					
+					document.getElementById("music").play(); 
+					document.getElementById("music2").pause();
+					document.getElementById("img_rotation").style.transform = "rotate(0deg)";
+				}).mouseup(function(){
+					var i = generateRandom(0,100);
+					document.getElementById("music").pause();
+					document.getElementById("music2").play();
+					if(i>50)
+						document.getElementById("img_rotation").style.transform = "rotate(45deg)";
+					else 
+						document.getElementById("img_rotation").style.transform = "rotate(-45deg)";
+				});
+				function generateRandom(min, max) {
+					 var ranNum = Math.floor(Math.random()*(max-min+1)) + min;
+					 return ranNum;
 				}
-			});
-		},1100);
+				
+			},1100);
+	},3000);
+	//});
+	$("html").keydown(function(event){
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline")
+			setTimeout(function(){
+				
+				window.location.href="interaction5.html";	
+			},50);
+		}
 	});
 });
 function goHome(){

@@ -10,8 +10,10 @@ html {
 	height:100%;
 	
 	background-color:#555555;
-	/*  background-size: cover;  */
+	
+	
 	overflow-y:hidden;
+	overflow-x:hidden;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 #nav_home {
@@ -92,7 +94,7 @@ body {
 	margin-top:0px;
 	padding-top:0px;
 	z-index:4;
-	color:#FFFFFF;
+	color:#FFFFFF;	
 }
 .before_letter{
 	margin-left:50px;

@@ -185,14 +185,18 @@ $(document).ready(function(){
 	var clickable = false;
 	var music1playing = true;
 	//playMusic1();
-	
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
-	$(".before_screen").click(function(){
+	$('#img6_2').fadeOut(0);
+	$(".before_screen").css("width",window.innerWidth+15);
+	$(".before_screen").css("height",window.innerHeight+5);
+	$("#logo").click(function(){
+		window.location.href="home.html";
+	});
+	setTimeout(function(){
 		$(".before_screen").fadeOut(1000);
+		
 		clickable = true;
 		playMusic1();
-	});
+	},3000);
 	$("html").keydown(function(event){
 		if(event.keyCode==32) {
 			$("#spacebar2").css("display","inline");

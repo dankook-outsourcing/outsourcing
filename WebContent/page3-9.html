@@ -44,32 +44,16 @@ function Stop(id){
 </div>
 <img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
 <img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" > 
-<div class="before_screen">
-	<p class="before_letter">
-	BINO_울렁울렁<br>
-	2016.06.11<br>
-	---<br>
-	Hold click to stop<br>
-	the people from falling<br>
-	</p>
-</div>
+
 <script>
 $(document).ready(function(){
-	$(".before_screen").css("width",window.innerWidth+5);
-	$(".before_screen").css("height",window.innerHeight+5);
-	$(".before_screen").click(function(){
-		$(".before_screen").fadeOut(1000);
-		setTimeout(function(){
-			
-			$("html").keydown(function(event){
-				if(event.keyCode==32) {
-					$("#spacebar2").css("display","inline")
-					setTimeout(function(){
-						window.location.href="page3-1.html";	
-					},50);
-				}
-			});
-		},1100);
+	$("html").keydown(function(event){
+		if(event.keyCode==32) {
+			$("#spacebar2").css("display","inline")
+			setTimeout(function(){
+				window.location.href="page3-1.html";	
+			},50);
+		}
 	});
 });		
 function goHome(){

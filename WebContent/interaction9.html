@@ -180,14 +180,22 @@ body {
 $(document).ready(function(){
 	
 	var clickable = false;
+	$("#logo").click(function(){
+		window.location.href="home.html";
+	});
+	$(".before_screen").css("width",window.innerWidth+15);
+	$(".before_screen").css("height",window.innerHeight+5);
+	$("#img9_1").css("-webkit-transition","-webkit-filter 0.0s ease-in-out");
+	$('#img9_1').addClass("g");
 	
-	$(".before_screen").css("width",window.innerWidth);
-	$(".before_screen").css("height",window.innerHeight);
-	$(".before_screen").click(function(){
+	setTimeout(function(){
+		$("#img9_1").css("-webkit-transition","-webkit-filter 1.0s ease-in-out");
 		$(".before_screen").fadeOut(1000);
 		clickable = true;
 		playMusic1();
-	});
+	},3000);
+		
+	
 	$("html").keydown(function(event){
 		if(event.keyCode==32) {
 			$("#spacebar2").css("display","inline");
