@@ -137,7 +137,7 @@ body {
 	position: absolute;
 	text-align: center;
 	margin-top:43%;
-	margin-left:1100px;
+	margin-left:1090px;
 }
 .nav_play img {
 	width: 57px;
@@ -162,12 +162,11 @@ body {
 .spacebar {
 	bottom:0;
 	margin-bottom:40px;
-	margin-left:600px;
-
+	margin-left:625px;
 }
 #spacebar1 {	
 	position:absolute;
-	width:416.5px;
+	width:350px;
 	height:42px;
 	bottom:0;
 	margin-bottom:40px;
@@ -217,7 +216,7 @@ audio {
 	position:fixed; 
 	width: 435px;
 	height:100%; 
-	top: -79px;
+	top: -80px;
 	right: 0px;
 	z-index:1002;
 	background:#000; 
