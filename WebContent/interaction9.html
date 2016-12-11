@@ -257,15 +257,15 @@ $(document).ready(function(){
 		$('#music1')[0].load();
 		$('#music1')[0].play();
 		  
-		$('#music2')[0].stop();
+		$('#music2')[0].pause();
 		$('#music2')[0].currentTime = 0; 
 	}
 	function playMusic2 () {
-		$('#music2')[0].volume = 0.7;
+		$('#music2')[0].volume = 0.35;
 		$('#music2')[0].load();
 		$('#music2')[0].play();
 		  
-		$('#music1')[0].stop();
+		$('#music1')[0].pause();
 		$('#music1')[0].currentTime = 0; 
 	}
 
