@@ -79,11 +79,7 @@ function goTracklist(){
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
 	<div>
-	<a href="#modalLayer" class="modalLink">
-				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
-			</a>
-				<div id="modalLayer">
-				  <div class="modalContent">
+	<div class="modal">
 				    	<div class="lyrics">
 			<br>규연
 <br>
@@ -125,7 +121,6 @@ function goTracklist(){
 				  </div>
 				</div>
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
-	</div>
 
 <p id="info">
 	sbyoon92@gmail.com<br>
@@ -162,23 +157,6 @@ function goTracklist(){
 			  });		
 			});
 		
-		$(function(){
-            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-                var E = e.originalEvent;
-                if (!event) event = window.event;
-                delta = 0;
-                delta = event.wheelDelta / 120;
-                if (E.detail) {
-                	alret("over");
-                }else{
-                	   if (delta < 0) {
-                		   window.location.href="page3-8.html";
-                	   }else{
-                		   window.location.href="page3-6.html";
-                	   }
-                };
-            });
-        }); 
 		</script>
 </body>
 </html>

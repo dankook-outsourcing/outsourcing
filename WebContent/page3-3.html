@@ -79,57 +79,43 @@ function goTracklist(){
 						<img src="source/TRACKLIST/pause.png" onclick="Pause('cd1')">
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
-	<div>
-	<a href="#modalLayer" class="modalLink">
-				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
-			</a>
-				<div id="modalLayer">
-				  <div class="modalContent">
-				    	<div class="lyrics">
-				    <br> AMI
-							<br>
-							<br>	벗어날수록 너에게 깊이 빠져들어가
-							<br>	시간이 흐를수록 내 맘엔 물이 차올라
-							<br>	마치 안개가 내려앉은 너와 나의 chemistry
-							<br>	무거운 공기속에서 널 찾으려고 난 헤매지
-							<br>	
-							<br>	i'm breathing your breathe
-							<br>	catching your scent
-							<br>	am i beating your heart
-							<br>	or losing your mind
-							<br>	wish i could see you all night,
-							<br>	like a book in my shelf
-							<br>	wish i could hear you all night
-							<br>	like a song in my ear oh oh
-							<br>	
-							<br>	다가갈수록 잡히지 않는 무지개처럼
-							<br>	비가오고 빛이 나도 바라보는 수 밖에
-							<br>	어느세 어두운 터널에 들어왔다 싶었어
-							<br>	복잡한 너의 미로속에 난 갈길을 잃었어
-								
-							<br>	i'm breathing your breathe
-							<br>	catching your scent
-							<br>	am i beating your heart
-							<br>	or losing your mind
-							<br>	wish i could see you all night,
-							<br>	like a book in my shelf
-							<br>	wish i could hear you all night
-							<br>	like a song in my ear oh oh
-							<br>	
-							<br>	i'm breathing, catching, 
-							<br>	am i beating, or losing
-							<br>	
-							<br>	i'm breathing your breathe
-							<br>	catching your scent
-							<br>	am i beating your heart
-							<br>	or losing your mind			     
-				    	</div>  
+<div class="modal">
+				    	<div class="lyrics2">
+				   <br> 규건
 
-				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
-				  </div>
-				</div>
+ <br>날 밀쳐내던 친구들의 사과문자가 왔어
+ <br>미워했던 이유는 모르겠지만 미안하다는 말
+ <br>받아드려야하나 어떻게 받아드려야하나
+ <br>
+ <br>우린 너무 쉽게 잊고 사는건 아닐까
+ <br>우린 너무 쉽게 말하며 사는건 아닐까
+ <br>새벽속의 나, 생각했어
+ <br>불꺼진 방의 나, 생각했어
+ <br>
+ <br>예측할 수 없는 반응들이 문제였을까
+ <br>두려워 내뱉지 못하고 끝내입을 다물어
+ <br>담아둬야하나 누굴 위해 담아둬야하나
+ <br>
+ <br>우린 너무 쉽게 잊고 사는건 아닐까
+ <br>우린 너무 쉽게 말하며 사는건 아닐까
+ <br>새벽속의 나, 생각했어
+ <br>불꺼진 방의 나, 생각했어
+ <br>
+ <br>가라앉은 기억들이 쏟아져 들어와
+ <br>언제쯤이면 멈출수있.을까 생각했어
+ <br>
+ <br>우린 너무 쉽게 잊고 사는건 아닐까
+ <br>우린 너무 쉽게 말하며 사는건 아닐까
+ <br>새벽속의 나, 생각했어
+ <br>불꺼진 방의 나, 생각했어
+ <br>
+ <br>우린 너무 쉽게 잊고 사는건 아닐까
+ <br>우린 너무 쉽게 말하며 사는건 아닐까
+ <br>새벽속의 나, 생각했어
+ <br>불꺼진 방의 나, 생각했어
+		</div>  
+		</div>
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
-	</div>
 
 <p id="info">
 	sbyoon92@gmail.com<br>
@@ -169,23 +155,6 @@ function goTracklist(){
 			if(event.keyCode==32)
 				window.location.href="page3-4.html";
 		});
-		$(function(){
-            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-                var E = e.originalEvent;
-                if (!event) event = window.event;
-                delta = 0;
-                delta = event.wheelDelta / 120;
-                if (E.detail) {
-                	alret("over");
-                }else{
-                	   if (delta < 0) {
-                		   window.location.href="page3-4.html";
-                	   }else{
-                		   window.location.href="page3-2.html";
-                	   }
-                };
-            });
-        }); 
 		</script>
 </body>
 </html>

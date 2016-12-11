@@ -75,13 +75,8 @@ function goTracklist(){
 						<img src="source/TRACKLIST/pause.png" onclick="Pause('cd1')">
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
-	<div>
-	<a href="#modalLayer" class="modalLink">
-				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
-			</a>
-				<div id="modalLayer">
-				  <div class="modalContent">
-				    	<div class="lyrics">
+	<div class="modal">
+		<div class="lyrics2">
 				  <br> 정현
 <br> 
 <br> 나와 닮은 것이 싫은 걸요
@@ -118,12 +113,8 @@ function goTracklist(){
 <br> I turn away turn away the more I turn away
 <br> on & on & on & on I see myself sadden
 				    	</div>  
-
-				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
-				  </div>
-				</div>
+				    	</div>
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
-	</div>
 
 <p id="info">
 	sbyoon92@gmail.com<br>
@@ -163,23 +154,6 @@ function goTracklist(){
 			if(event.keyCode==32)
 				window.location.href="page3-5.html";
 		});
-		$(function(){
-            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-                var E = e.originalEvent;
-                if (!event) event = window.event;
-                delta = 0;
-                delta = event.wheelDelta / 120;
-                if (E.detail) {
-                	alret("over");
-                }else{
-                	   if (delta < 0) {
-                		   window.location.href="page3-5.html";
-                	   }else{
-                		   window.location.href="page3-3.html";
-                	   }
-                };
-            });
-        }); 
 		</script>
 </body>
 </html>
