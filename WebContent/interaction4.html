@@ -251,7 +251,8 @@ $(document).ready(function(){
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
-	$('#music')[0].volume = 0.35;
+	var vid = document.getElementById("music");
+	vid.volume = 0.3;
 	$(document).bind('contextmenu', function (e) {
         e.preventDefault();
       });

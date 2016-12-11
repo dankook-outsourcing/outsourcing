@@ -225,6 +225,8 @@ $(document).ready(function(){
 	$(document).bind('contextmenu', function (e) {
         e.preventDefault();
       });
+	var vid = document.getElementById("music2");
+	vid.volume = 0.3;
 	$(".before_screen").css("width",window.innerWidth+15);
 	$(".before_screen").css("height",window.innerHeight+5);
 	setTimeout(function(){
