@@ -94,7 +94,7 @@ body {
 	margin-left:-0.46%;
 	margin-top:0px;
 	padding-top:0px;
-	z-index:4;
+	
 	color:#FFFFFF;
 }
 .before_letter{
@@ -240,8 +240,7 @@ body {
 
 }
 .page21_body {
-	/* -webkit-transition: 3s ease-in-out;
-    transition: 3s ease-in-out;     */
+	z-index:7;
 }
 .spacebar {
 	bottom:0;
@@ -300,6 +299,7 @@ body {
 <script>
 
 $(document).ready(function(){
+	var isNotStarted=true;
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
@@ -329,9 +329,12 @@ $(document).ready(function(){
 			$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 			$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
 			document.getElementById("music2").play();
+			isNotStarted=false;
 		},1000);
 	},7000);
 	$(this).mousedown(function(){
+		if(isNotStarted)
+			return ;
 		$(".page21_body").css("-webkit-transition","0.5s ease-in-out");
 		$(".page21_body").css("transition","0.5s ease-in-out");
 		$("#body21").css("-webkit-transform","translate(0,0em) rotate(0deg)");
@@ -351,6 +354,8 @@ $(document).ready(function(){
 		document.getElementById("music2").pause();
 		document.getElementById("music").play();
 	}).mouseup(function(){
+		if(isNotStarted)
+			return ;
 		$(".page21_body").css("-webkit-transition","3s ease-in-out");
 		$(".page21_body").css("transition","3s ease-in-out");
 		$("#body21").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
