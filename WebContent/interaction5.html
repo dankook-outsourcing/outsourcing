@@ -307,6 +307,7 @@ $(document).ready(function(){
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
+	$('#music')[0].volume = 0.35;
 	$(document).bind('contextmenu', function (e) {
         e.preventDefault();
       });
@@ -316,7 +317,7 @@ $(document).ready(function(){
 			
 			var wt=0;
 			setTimeout(function(){
-				document.getElementById("music").play();
+				document.getElementById("music2").play();
 				var el = document.getElementById("img_rotation");  // el doesn't change
 				var timeoutHandle;
 				
