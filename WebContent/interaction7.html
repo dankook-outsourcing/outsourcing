@@ -212,6 +212,7 @@ $(document).ready(function(){
 	$(".before_screen").css("height",(window.innerHeight+5));
 	$("#before_gif2").hide();
 	setTimeout(function(){
+		return ;
 		$(".before_screen").fadeOut(1000);
 		
 		setTimeout(function(){
@@ -222,7 +223,7 @@ $(document).ready(function(){
 			isStarted=true;
 			$("#before_gif2").show();
 		},1000);
-	},3000);
+	},7000);
 
 	$("html").mousedown(function(){
 		if(!isStarted)

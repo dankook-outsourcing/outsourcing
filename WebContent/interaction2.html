@@ -362,6 +362,7 @@ $(document).ready(function(){
 	$(".before_screen").css("height",(window.innerHeight+5));
 	
 	setTimeout(function(){
+		return ;
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
 			$("#before_gif2").show();
@@ -370,7 +371,7 @@ $(document).ready(function(){
 			page1/8.html 참고하셔도 됩니다.*/
 			isStarted=true;
 		},1100);
-	},3000);
+	},7000);
 	
 	$("html").mousedown(function(){
 		if(!isStarted)

@@ -209,13 +209,14 @@ $(document).ready(function(){
 		window.location.href="home.html";
 	});
 	setTimeout(function(){
+		return ;
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
 			$("#before_gif2").show();
 		},1000);
 		clickable = true;
 		playMusic1();
-	},3000);
+	},7000);
 	$("html").keydown(function(event){
 		if(event.keyCode==32) {
 			$("#spacebar2").css("display","inline");

@@ -225,13 +225,14 @@ $(document).ready(function(){
 	$(".before_screen").css("width",window.innerWidth+15);
 	$(".before_screen").css("height",window.innerHeight+5);
 	setTimeout(function(){
+		return ;
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
 			$("#before_gif2").show();
 		},990);
 		clickable = true;
 		playMusic1();
-	},3000);
+	},7000);
 	
 	
 	$("html").keydown(function(event){
