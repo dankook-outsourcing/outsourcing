@@ -351,12 +351,15 @@ $(document).ready(function(){
 		intervar2,
 		mutax=true,
 		isStarted=false;
+	
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
 	$(document).bind('contextmenu', function (e) {
         e.preventDefault();
       });
+	var vid = document.getElementById("music");
+	vid.volume = 0.3;
 	$("#before_gif2").hide();
 	$(".before_screen").css("width",(window.innerWidth+5));
 	$(".before_screen").css("height",(window.innerHeight+5));
@@ -367,6 +370,7 @@ $(document).ready(function(){
 		setTimeout(function(){
 			$("#before_gif2").show();
 			document.getElementById("music2").play();
+			
 			/*이미지가 사라지고나서 가동될 화면,행동,행위들 기입해주시면 됩니다.
 			page1/8.html 참고하셔도 됩니다.*/
 			isStarted=true;
@@ -378,6 +382,7 @@ $(document).ready(function(){
 			return ;
 		document.getElementById("music2").pause();
 		document.getElementById("music2").currentTime=0;
+		
 		document.getElementById("music").play();
 		intervar = setInterval(function(){
 			$("html").css("background-image","url('source/INTERACTION/2/GGU/GGU2560-75_Layer-"+((++i%141)+1)+".png')");

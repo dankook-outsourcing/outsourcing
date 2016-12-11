@@ -80,12 +80,8 @@ function goTracklist(){
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
 	<div>
-	<a href="#modalLayer" class="modalLink">
-				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
-			</a>
-				<div id="modalLayer">
-				  <div class="modalContent">
-				    	<div class="lyrics">
+				  <div class="modal">
+				    	<div class="lyrics2">
 				<br> 해강
 <br>
 <br>엄마는 내게 씻지 않은 김치를 줬지
@@ -123,12 +119,10 @@ function goTracklist(){
 <br>무슨 별종인 것 처럼 보네 참나
 <br>무슨 별종인 것 처럼 보네 참나 어이없네
 				    	</div>  
-
 				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
 				  </div>
 				</div>
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
-	</div>
 
 <p id="info">
 	sbyoon92@gmail.com<br>
@@ -168,23 +162,6 @@ function goTracklist(){
 			if(event.keyCode==32)
 				window.location.href="page3-6.html";
 		});
-		$(function(){
-            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-                var E = e.originalEvent;
-                if (!event) event = window.event;
-                delta = 0;
-                delta = event.wheelDelta / 120;
-                if (E.detail) {
-                	alret("over");
-                }else{
-                	   if (delta < 0) {
-                		   window.location.href="page3-6.html";
-                	   }else{
-                		   window.location.href="page3-4.html";
-                	   }
-                };
-            });
-        }); 
 		</script>
 </body>
 </html>

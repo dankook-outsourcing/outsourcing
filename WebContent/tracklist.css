@@ -8,10 +8,7 @@ font-family: 'Noto Sans KR', sans-serif;
 html {
 	width:100%;
 	height:100%;
-	
 	background-color:#555555;
-	
-	
 	overflow-y:hidden;
 	overflow-x:hidden;
 	font-family: 'Noto Sans KR', sans-serif;
@@ -201,11 +198,49 @@ audio {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
+#modalLayer2{
+	postion:relative;
+	width: 435px;
+	height:100%; 
+	position:fixed; 
+	top: 50px;
+	right: 0px;
+	z-index:1002; 
+	background:#000;
+	opacity: 0.7;
+	text-align:center;
+	border-radius: 30px;
+	color: white;
+	font-size: 20px;
+	
+}
+.modal{
+	position:fixed; 
+	width: 435px;
+	height:100%; 
+	top: -81px;
+	right: 0px;
+	z-index:1002;
+	background:#000; 
+	opacity: 0.7;
+	border-radius: 30px;
+	margin-top:80px;
+	margin-left:65px;
+}
+.lyrics2
+{   
+	text-align:left;
+	color: white;
+	font-size : 15px;
+	line-height:1.7em;
+	margin-top:80px;
+	margin-left:65px;
+}
 
 /* 모달창 */
 a{color:#000;}
 .mask{width:100%; height:100%; position:fixed; left:0; top:0; z-index:10; background:#000; opacity:.5; filter:alpha(opacity=50);}
-#modalLayer{display:none; position:relative;}
+#modalLayer{position:relative;}
 
 #modalLayer .modalContent{
 	width: 435px;
@@ -221,13 +256,7 @@ a{color:#000;}
 	color: white;
 	font-size: 20px;
 }
-#modalLayer .modalContent .lyrics{
-	text-align:left;
-	margin-top:80px;
-	margin-left:65px;
-	font-size : 15px;
-	line-height:1.7em;
-}
+#modalLayer .modalContent 
 /* close 버튼 */
 #modalLayer .modalContent img{
 	width: 68.5px;

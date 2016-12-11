@@ -209,6 +209,8 @@ $(document).ready(function(){
 	$(document).bind('contextmenu', function (e) {
         e.preventDefault();
       });
+	var vid = document.getElementById("music");
+	vid.volume = 0.3;
 	$(".before_screen").css("width",(window.innerWidth+5));
 	$(".before_screen").css("height",(window.innerHeight+5));
 	$("#before_gif2").hide();

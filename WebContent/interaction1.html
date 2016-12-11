@@ -329,6 +329,9 @@ $(document).ready(function(){
 			$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 			$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
 			document.getElementById("music2").play();
+			$('#music')[0].volume = 0.35;
+			
+			
 			isNotStarted=false;
 		},1000);
 	},7000);
@@ -354,6 +357,8 @@ $(document).ready(function(){
 		document.getElementById("music2").pause();
 		document.getElementById("music2").currentTime=0;
 		document.getElementById("music").play();
+		
+		
 	}).mouseup(function(){
 		if(isNotStarted)
 			return ;
@@ -374,6 +379,8 @@ $(document).ready(function(){
 		document.getElementById("music").pause();
 		document.getElementById("music").currentTime=0;
 		document.getElementById("music2").play();
+		
+		
 	});
 	$("html").keydown(function(event){
 		if(event.keyCode==32) {

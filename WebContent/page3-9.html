@@ -77,11 +77,7 @@ function goTracklist(){
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
 	<div>
-	<a href="#modalLayer" class="modalLink">
-				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
-			</a>
-				<div id="modalLayer">
-				  <div class="modalContent">
+				  <div class="modal">
 				    	<div class="lyrics">
 			<br>울렁울렁
 <br>
@@ -115,12 +111,10 @@ function goTracklist(){
 <br>울렁울렁울렁울렁울렁 계속 하늘 땅은 빙빙도네
 <br>울렁울렁울렁울렁울렁 울렁, 울렁, 울렁
 				    	</div>  
-
 				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
 				  </div>
 				</div>
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
-	</div>
 
 <p id="info">
 	sbyoon92@gmail.com<br>
@@ -160,23 +154,6 @@ function goTracklist(){
 			if(event.keyCode==32)
 				window.location.href="page3-1.html";
 		});
-		$(function(){
-            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-                var E = e.originalEvent;
-                if (!event) event = window.event;
-                delta = 0;
-                delta = event.wheelDelta / 120;
-                if (E.detail) {
-                	alret("over");
-                }else{
-                	   if (delta < 0) {
-                		   window.location.href="page3-1.html";
-                	   }else{
-                		   window.location.href="page3-8.html";
-                	   }
-                };
-            });
-        }); 
 		</script>
 </body>
 </html>

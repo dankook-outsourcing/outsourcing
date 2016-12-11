@@ -50,16 +50,10 @@ $(document).ready(function(){
 		if(event.keyCode==32) {
 			$("#spacebar2").css("display","inline")
 			setTimeout(function(){
-				
 				window.location.href="page3-3.html";	
 			},50);
 		}
 	});
-	
-	
-		
-		
-			
 			
 			$(document).ready(function(){
 				  var modalLayer = $("#modalLayer");
@@ -87,23 +81,6 @@ $(document).ready(function(){
 				     modalLink.focus();
 				  });		
 				});
-			$(function(){
-	            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-	                var E = e.originalEvent;
-	                if (!event) event = window.event;
-	                delta = 0;
-	                delta = event.wheelDelta / 120;
-	                if (E.detail) {
-	                	alret("over");
-	                }else{
-	                	   if (delta < 0) {
-	                		   window.location.href="page3-3.html";
-	                	   }else{
-	                		   window.location.href="page3-1.html";
-	                	   }
-	                };
-	            });
-	        });
 	});
 
 function goHome(){
@@ -126,14 +103,9 @@ function goTracklist(){
 						<img src="source/TRACKLIST/play.png" onclick="Play('cd1')">
 						<img src="source/TRACKLIST/pause.png" onclick="Pause('cd1')">
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
-	</div>
-	<div>
-	<a href="#modalLayer" class="modalLink">
-				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
-			</a>
-				<div id="modalLayer">
-				  <div class="modalContent">
-				    	<div class="lyrics">
+		</div>
+		<div class="modal">
+	<div class="lyrics2">
 				    <br> AMI
 							<br>
 							<br>	벗어날수록 너에게 깊이 빠져들어가
@@ -172,12 +144,8 @@ function goTracklist(){
 							<br>	am i beating your heart
 							<br>	or losing your mind			     
 				    	</div>  
-
-				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
-				  </div>
-				</div>
+</div>
 			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
-	</div>
 
 <p id="info">
 	sbyoon92@gmail.com<br>

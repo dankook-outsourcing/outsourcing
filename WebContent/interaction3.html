@@ -225,6 +225,8 @@ $(document).ready(function(){
 	$(document).bind('contextmenu', function (e) {
         e.preventDefault();
       });
+	var vid = document.getElementById("music2");
+	vid.volume = 0.3;
 	$(".before_screen").css("width",window.innerWidth+15);
 	$(".before_screen").css("height",window.innerHeight+5);
 	setTimeout(function(){
@@ -286,7 +288,7 @@ $(document).ready(function(){
 		$('#music2')[0].currentTime = 0; 
 	}
 	function playMusic2 () {
-		$('#music2')[0].volume = 0.7;
+		$('#music2')[0].volume = 0.3;
 		$('#music2')[0].load();
 		$('#music2')[0].play();
 		  
