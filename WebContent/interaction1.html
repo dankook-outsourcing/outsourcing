@@ -352,6 +352,7 @@ $(document).ready(function(){
 		$(".page21_body").css("-webkit-transition","0.7s ease-in-out");
 		$(".page21_body").css("transition","0.7s ease-in-out");
 		document.getElementById("music2").pause();
+		document.getElementById("music2").currentTime=0;
 		document.getElementById("music").play();
 	}).mouseup(function(){
 		if(isNotStarted)
@@ -371,6 +372,7 @@ $(document).ready(function(){
 		$("#body26").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
 		$("#body26").css("transform","translate(0,75em) rotate(-90deg)");
 		document.getElementById("music").pause();
+		document.getElementById("music").currentTime=0;
 		document.getElementById("music2").play();
 	});
 	$("html").keydown(function(event){

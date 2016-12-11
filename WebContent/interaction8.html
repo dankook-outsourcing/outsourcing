@@ -250,6 +250,7 @@ $(document).ready(function(){
 			$("#body85").css("-webkit-transform","translate(0,0em) rotate(0deg)");
 			$("#body85").css("transform","translate(0,0em) rotate(0deg)");
 			document.getElementById("music2").pause();
+			document.getElementById("music2").currentTime=0;
 			document.getElementById("music").play();
 		}).mouseup(function(){
 			$(".page28_body").css("-webkit-transition","8s ease-in-out");
@@ -265,6 +266,7 @@ $(document).ready(function(){
 			$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 			$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
 			document.getElementById("music").pause();
+			document.getElementById("music").currentTime=0;
 			document.getElementById("music2").play();
 			});
 		},7000);
