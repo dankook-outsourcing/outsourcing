@@ -237,6 +237,7 @@ $(document).ready(function(){
 		},990);
 		clickable = true;
 		playMusic1();
+		startFog();
 	},7000);
 	
 	
@@ -254,6 +255,7 @@ $(document).ready(function(){
 			if (clickable) {
 				playMusic2();
 				
+				$('#fogCanvas').stop();
 				$('#fogCanvas').fadeOut(2000);
 				
 				if(isSnowing) {
@@ -269,7 +271,8 @@ $(document).ready(function(){
 				playMusic1();
 			}
 			
-			$('#fogCanvas').fadeIn(5000);
+			$('#fogCanvas').stop();
+			$('#fogCanvas').fadeIn(4000);
 			
 			if(!isSnowing) {
 				isSnowing = !isSnowing;
@@ -380,6 +383,7 @@ $(document).ready(function(){
 
 	
 	/*** Fog Animation ***/
+	function startFog() {
 	
 	// Create particles
 	var fogParticles = [];
@@ -524,6 +528,8 @@ $(document).ready(function(){
 	        draw();
 	    }, 1500 / targetFPS);
 	}
+	
+	} // End of startFog()
 	
 });
 function goHome(){
