@@ -508,7 +508,8 @@ $(document).ready(function(){
 				playMusic2();
 				
 				//$('#fogCanvas').fadeOut(2000);
-				$('#fogCanvas').fadeToggle("slow");
+				$('#fogCanvas').stop();
+				$('#fogCanvas').fadeToggle(2000);
 				//window.clearInterval(fogIntervalID);
 				
 				if(isSnowing) {
@@ -525,7 +526,8 @@ $(document).ready(function(){
 			}
 			
 			//$('#fogCanvas').fadeIn(2000);
-			$('#fogCanvas').fadeToggle("slow");
+			$('#fogCanvas').stop();
+			$('#fogCanvas').fadeToggle(3000);
 			
 			if(!isSnowing) {
 				isSnowing = !isSnowing;
