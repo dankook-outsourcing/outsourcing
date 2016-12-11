@@ -110,21 +110,24 @@ body {
 	padding-top:50px;
 	padding-bottom:612px;
 	line-height:1.3em;
-	animation:blk-txt ease-in-out 1s 0s infinite;
+	
 }
 #before_gif {
-	margin-left:890px;
+	margin-left:769px;
 	width:300px;
 	height:200px;
 	margin-top:500px;
 }
 #before_gif2 {
 	position:absolute;
-	width:300px;
-	height:200px;
+	width:400px;
+	height:266.4px;
 	top:0;
 	right:0;
-	margin-top:67px;
+	margin-top:161px;
+	margin-right:161px;
+	border-radius:15px;
+	background-color:rgba(0,0,0,0.5);
 	z-index:-1;
 }
 .spacebar {
@@ -149,11 +152,7 @@ body {
 	margin-bottom:40px;
 	display:none;
 }
-@keyframes blk-txt {
-	0% { transform:scale(1);opacity:0.6;}
-	50% { transform:scale(1.05);opacity:1;}
-	100% {transform:scale(1);opacity:0.6;}
-}
+
 
 	html, body, .content {
     	height:100%;
@@ -199,6 +198,9 @@ $(document).ready(function(){
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
+	$(document).bind('contextmenu', function (e) {
+        e.preventDefault();
+      });
 	$("#before_gif2").hide();
 	$(".before_screen").css("width",window.innerWidth+15);
 	$(".before_screen").css("height",window.innerHeight+5);
@@ -206,7 +208,6 @@ $(document).ready(function(){
 	$('#img9_1').addClass("g");
 	
 	setTimeout(function(){
-		return ;
 		$("#img9_1").css("-webkit-transition","-webkit-filter 1.0s ease-in-out");
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
@@ -304,8 +305,7 @@ function goTracklist(){
 	BINO_규건<br>
 	2016.07.24<br>
 	---<br>
-	Hold click to make<br>
-	the color come alive<br>
+	<strong>Hold click</strong> to make the color come alive<br>
 	</p>
 </div>
 <div id="wrapper">
