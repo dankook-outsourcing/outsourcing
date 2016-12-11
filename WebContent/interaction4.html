@@ -107,10 +107,26 @@ body {
 	margin-top:0px;
 	text-align:center;
 	font-size:21px;
-	padding-top:595px;
+	/*padding-top:595px;*/
+	padding-top:50px;
 	padding-bottom:612px;
 	line-height:1.3em;
 	animation:blk-txt ease-in-out 1s 0s infinite;
+}
+#before_gif {
+	margin-left:890px;
+	width:300px;
+	height:200px;
+	margin-top:500px;
+}
+#before_gif2 {
+	position:absolute;
+	width:300px;
+	height:200px;
+	top:0;
+	right:0;
+	margin-top:67px;
+	z-index:-1;
 }
 
 @keyframes blk-txt {
@@ -216,6 +232,7 @@ img.rotate2 {
 <img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
 
 <div class="before_screen">
+	<img src="source/outsourcing-gif-real/4.gif" id="before_gif">
 	<p class="before_letter">
 	BINO_울렁울렁<br>
 	2016.06.11<br>
@@ -229,6 +246,7 @@ img.rotate2 {
 $(document).ready(function(){
 	$(".before_screen").css("width",window.innerWidth+5);
 	$(".before_screen").css("height",window.innerHeight+5);
+	$("#before_gif2").hide();
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
@@ -262,7 +280,7 @@ $(document).ready(function(){
 					 var ranNum = Math.floor(Math.random()*(max-min+1)) + min;
 					 return ranNum;
 				}
-				
+				$("#before_gif2").show();
 			},1100);
 	},3000);
 	//});
@@ -292,6 +310,7 @@ function goTracklist(){
 				<img class="body3" src="source/INTERACTION/4/4_layer_3.png">
 				<img id="img_rotation" class="body1 rotate2" src="source/INTERACTION/4/4_layer_2.png" >
 </div>
+<img src="source/outsourcing-gif-real/4.gif" id="before_gif2">
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193

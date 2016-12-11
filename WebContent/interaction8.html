@@ -103,10 +103,26 @@ body {
 	margin-top:0px;
 	text-align:center;
 	font-size:21px;
-	padding-top:595px;
+	/*padding-top:595px;*/
+	padding-top:50px;
 	padding-bottom:612px;
 	line-height:1.3em;
 	animation:blk-txt ease-in-out 1s 0s infinite;
+}
+#before_gif {
+	margin-left:890px;
+	width:300px;
+	height:200px;
+	margin-top:500px;
+}
+#before_gif2 {
+	position:absolute;
+	width:300px;
+	height:200px;
+	top:0;
+	right:0;
+	margin-top:67px;
+	z-index:-1;
 }
 #music,#misic2 {
 	display:none;
@@ -176,6 +192,7 @@ body {
 <img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
 <img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
 <div class="before_screen">
+	<img src="source/outsourcing-gif-real/8.gif" id="before_gif">
 	<p class="before_letter">
 	BINO_태정<br>
 	2016.09.05<br>
@@ -193,10 +210,13 @@ $(document).ready(function(){
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
+	$("#before_gif2").hide();
 	//$(".before_screen").click(function(){
 	setTimeout(function(){
 		$(".before_screen").fadeOut(1000);
 		setTimeout(function(){
+			
+			$("#before_gif2").show();
 			$(".nav_before").hide();
 			$(".spacebar").css("margin-left","1087px");
 			document.getElementById("music2").play();
@@ -211,11 +231,6 @@ $(document).ready(function(){
 			$("#body85").css("-webkit-transform","translate(0,-70em) rotate(-90deg)");
 			$("#body85").css("transform","translate(0,-70em) rotate(-90deg)");
 		},1000);
-		//setTimeout(function(){
-			
-			
-			
-		//},1100);
 	
 		$("html").mousedown(function(){
 			
@@ -288,7 +303,7 @@ function goTracklist(){
 	<div id="nav_tracklist" class="nav" onclick="goTracklist()"></div>
 </div>
 
-
+<img src="source/outsourcing-gif-real/8.gif" id="before_gif2">
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193

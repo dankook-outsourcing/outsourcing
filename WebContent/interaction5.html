@@ -112,10 +112,26 @@ body {
 	margin-top:0px;
 	text-align:center;
 	font-size:21px;
-	padding-top:595px;
+	/*padding-top:595px;*/
+	padding-top:50px;
 	padding-bottom:612px;
 	line-height:1.3em;
 	animation:blk-txt ease-in-out 1s 0s infinite;
+}
+#before_gif {
+	margin-left:890px;
+	width:300px;
+	height:200px;
+	margin-top:500px;
+}
+#before_gif2 {
+	position:absolute;
+	width:300px;
+	height:200px;
+	top:0;
+	right:0;
+	margin-top:67px;
+	z-index:-1;
 }
 @keyframes blk-txt {
 	0% { transform:scale(1);opacity:0.6;}
@@ -274,6 +290,7 @@ transform-style: preserve-3D;
 <img id="spacebar1" class="spacebar" src="source/INTERACTION/spacebar/spacebar_1.png"  >
 <img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png" >
 <div class="before_screen">
+	<img src="source/outsourcing-gif-real/5.gif" id="before_gif">
 	<p class="before_letter">
 	BINO_예은<br>
 	2016.09.20<br>
@@ -288,6 +305,7 @@ $(document).ready(function(){
 	var durationTime=5;
 	$(".before_screen").css("width",window.innerWidth+10);
 	$(".before_screen").css("height",window.innerHeight+5);
+	$("#before_gif2").hide();
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
@@ -330,7 +348,7 @@ $(document).ready(function(){
 					  		 }
 					  	}, 5);
 				});
-				
+				$("#before_gif2").show();
 			},1100);
 		},3000);
 		$("html").keydown(function(event){
@@ -357,7 +375,7 @@ function goTracklist(){
 	<div id="box" class="box">
 				<img id="img_rotation" class="body1 rotate" src="source/INTERACTION/5/5_layer_1.png" >
 		</div>
-
+<img src="source/outsourcing-gif-real/5.gif" id="before_gif2">
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193

@@ -106,10 +106,26 @@ body {
 	margin-top:0px;
 	text-align:center;
 	font-size:21px;
-	padding-top:595px;
+	/*padding-top:595px;*/
+	padding-top:50px;
 	padding-bottom:612px;
 	line-height:1.3em;
 	animation:blk-txt ease-in-out 1s 0s infinite;
+}
+#before_gif {
+	margin-left:890px;
+	width:300px;
+	height:200px;
+	margin-top:500px;
+}
+#before_gif2 {
+	position:absolute;
+	width:300px;
+	height:200px;
+	top:0;
+	right:0;
+	margin-top:67px;
+	z-index:-1;
 }
 .spacebar {
 	bottom:0;
@@ -183,6 +199,7 @@ $(document).ready(function(){
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
+	$("#before_gif2").hide();
 	$(".before_screen").css("width",window.innerWidth+15);
 	$(".before_screen").css("height",window.innerHeight+5);
 	$("#img9_1").css("-webkit-transition","-webkit-filter 0.0s ease-in-out");
@@ -191,6 +208,9 @@ $(document).ready(function(){
 	setTimeout(function(){
 		$("#img9_1").css("-webkit-transition","-webkit-filter 1.0s ease-in-out");
 		$(".before_screen").fadeOut(1000);
+		setTimeout(function(){
+			$("#before_gif2").show();
+		},1000);
 		clickable = true;
 		playMusic1();
 	},3000);
@@ -278,6 +298,7 @@ function goTracklist(){
 	<img id="spacebar2" class="spacebar" src="source/INTERACTION/spacebar/spacebar_2.png">
 
 <div class="before_screen">
+	<img src="source/outsourcing-gif-real/9.gif" id="before_gif">
 	<p class="before_letter">
 	BINO_규건<br>
 	2016.07.24<br>
@@ -290,7 +311,7 @@ function goTracklist(){
 	<img src="source/INTERACTION/9/9_layer_1.png" id="img9_1">
 </div>
 
-
+<img src="source/outsourcing-gif-real/9.gif" id="before_gif2">
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193

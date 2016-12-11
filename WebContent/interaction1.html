@@ -102,11 +102,28 @@ body {
 	margin-top:0px;
 	text-align:center;
 	font-size:21px;
-	padding-top:595px;
+	/*padding-top:595px;*/
+	padding-top:50px;
 	padding-bottom:612px;
 	line-height:1.3em;
 	animation:blk-txt ease-in-out 1s 0s infinite;
 }
+#before_gif {
+	margin-left:890px;
+	width:300px;
+	height:200px;
+	margin-top:500px;
+}
+#before_gif2 {
+	position:absolute;
+	width:300px;
+	height:200px;
+	top:0;
+	right:0;
+	margin-top:67px;
+	z-index:-1;
+}
+
 /*  page 21   */
 #music,#music2 {
 	display:none;
@@ -116,14 +133,9 @@ body {
 	
 	
 }
-/* 노가다 흔적들..  */
+
 #body21 {
 	position:absolute;
-	/* margin-left:54.3%; -- % */ 
-	/* margin-left:781.906px; -- mac air*/
-	/* margin-left:747.3825px; *//* mac air*1.25  */
-	/* margin-left:996.78404px; +135*/
-	/* margin-left:1106px; */
 	margin-left:1020px;
 	
 	/* margin-top:16.8%; */
@@ -277,6 +289,7 @@ body {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
 <div class="before_screen">
+	<img src="source/outsourcing-gif-real/1.gif" id="before_gif">
 	<p class="before_letter">
 	BINO_AMI<br>
 	2016.05.26<br>
@@ -285,18 +298,20 @@ body {
 	the people from falling<br>
 	</p>
 </div>
+
 <script>
 
 $(document).ready(function(){
 	$("#logo").click(function(){
 		window.location.href="home.html";
 	});
-	
+	$("#before_gif2").hide();
 	$(".before_screen").css("width",(window.innerWidth+5));
 	$(".before_screen").css("height",(window.innerHeight+5));
 	setTimeout(function(){
+		$("#before_gif2").show();
 		$(".before_screen").fadeOut(1000);
-		setTimeout(function(){
+		setTimeout(function(){		
 			$(".page21_body").css("-webkit-transition","3s ease-in-out");
 			$(".page21_body").css("transition","3s ease-in-out");
 			$("#body21").css("-webkit-transform","translate(0,75em) rotate(-90deg)");
@@ -374,15 +389,15 @@ function goTracklist(){
 
 
 
-	<img id="body21" class="page21_body" src="source/INTERACTION/1/1_layer_1.png">
-	<img id="body22" class="page21_body" src="source/INTERACTION/1/1_layer_2.png">
-	<img id="body23" class="page21_body" src="source/INTERACTION/1/1_layer_3.png">
-	<img id="body24" class="page21_body" src="source/INTERACTION/1/1_layer_4.png">
-	<img id="body25" class="page21_body" src="source/INTERACTION/1/1_layer_5.png">
-	<img id="body26" class="page21_body" src="source/INTERACTION/1/1_layer_6.png">
+<img id="body21" class="page21_body" src="source/INTERACTION/1/1_layer_1.png">
+<img id="body22" class="page21_body" src="source/INTERACTION/1/1_layer_2.png">
+<img id="body23" class="page21_body" src="source/INTERACTION/1/1_layer_3.png">
+<img id="body24" class="page21_body" src="source/INTERACTION/1/1_layer_4.png">
+<img id="body25" class="page21_body" src="source/INTERACTION/1/1_layer_5.png">
+<img id="body26" class="page21_body" src="source/INTERACTION/1/1_layer_6.png">
 
 
-
+<img src="source/outsourcing-gif-real/1.gif" id="before_gif2">
 <p id="info">
 	sbyoon92@gmail.com<br>
 	010.9182.6193
