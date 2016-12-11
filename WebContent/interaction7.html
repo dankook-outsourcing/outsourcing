@@ -230,6 +230,7 @@ $(document).ready(function(){
 		if(!isStarted)
 			return;
 		document.getElementById("music2").pause();
+		document.getElementById("music").currentTime=0;
 		document.getElementById("music").play();
 		//if(syncStart) {
 			intervar = setInterval(function(){
@@ -252,6 +253,7 @@ $(document).ready(function(){
 		if(!isStarted)
 			return;
 		document.getElementById("music").pause();
+		document.getElementById("music").currentTime=0;
 		document.getElementById("music2").play();
 		clearInterval(intervar);
 		clearInterval(intervar2);

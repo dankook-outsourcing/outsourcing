@@ -323,6 +323,7 @@ $(document).ready(function(){
 				$("html").mousedown(function(){
 					document.getElementById("music").play();
 					document.getElementById("music2").pause();
+					document.getElementById("music2").currentTime=0;
 				
 				  	document.getElementById("img_rotation").style.WebkitAnimation = "spin1 5s infinite Linear";
 				  	wt=1;
@@ -337,6 +338,7 @@ $(document).ready(function(){
 				  	}, 5);
 				}).mouseup(function(){
 					document.getElementById("music").pause();
+					document.getElementById("music").currentTime=0;
 					document.getElementById("music2").play();
 				  	    clearInterval(timeoutHandle);
 				  	  timeoutHandle = setInterval(function () {

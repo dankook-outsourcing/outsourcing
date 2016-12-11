@@ -377,6 +377,7 @@ $(document).ready(function(){
 		if(!isStarted)
 			return ;
 		document.getElementById("music2").pause();
+		document.getElementById("music2").currentTime=0;
 		document.getElementById("music").play();
 		intervar = setInterval(function(){
 			$("html").css("background-image","url('source/INTERACTION/2/GGU/GGU2560-75_Layer-"+((++i%141)+1)+".png')");
@@ -386,6 +387,7 @@ $(document).ready(function(){
 		if(!isStarted)
 			return ;
 		document.getElementById("music").pause();
+		document.getElementById("music").currentTime=0;
 		document.getElementById("music2").play();
 		
 		
