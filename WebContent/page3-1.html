@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="tracklist.css">
 <style>
 html {
-	background-image: url("source/INTERACTION/2/bg_2.jpg");
+	/* background-image: url("source/INTERACTION/2/bg_2.jpg"); */
 	clear:both;
 	background-size:cover;
 }
@@ -79,14 +79,8 @@ function goTracklist(){
 						<img src="source/TRACKLIST/pause.png" onclick="Pause('cd1')">
 						<img src="source/TRACKLIST/stop.png" onclick="Stop('cd1')">
 	</div>
-	<div>
-	<!-- <img id="lyricsbtn" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click"> -->
-	<a href="#modalLayer" class="modalLink">
-				<img id="lyrics_close" class="lyricsbtn" src="source/TRACKLIST/lyrics_open.png" onclick="click">
-			</a>
-				<div id="modalLayer">
-				  <div class="modalContent">
-				    	<div class="lyrics">
+	<div class="modal">
+	<div class="lyrics2">
 				    <br> 선경 <br>
 					<br>멍하니 누워있다
 					<br>우연히 바라본 하늘
@@ -122,12 +116,9 @@ function goTracklist(){
 					<br>발목을 스치는 서늘한 밤이구나
 					<br>				     
 				    	</div>  
-
-				    <img class="lyricsbtn2" src="source/TRACKLIST/lyrics_close.png">
-				  </div>
-				</div>
-			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
 	</div>
+	
+			<img id="logo" src="source/HOME/logo.png" height="50" width="150">
 
 <p id="info">
 	sbyoon92@gmail.com<br>
@@ -163,23 +154,6 @@ function goTracklist(){
 			     modalLink.focus();
 			  });		
 			});
-		$(function(){
-            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
-                var E = e.originalEvent;
-                if (!event) event = window.event;
-                delta = 0;
-                delta = event.wheelDelta / 120;
-                if (E.detail) {
-                	alret("over");
-                }else{
-                	   if (delta < 0) {
-                		   window.location.href="page3-2.html";
-                	   }else{
-                		   window.location.href="page3-9.html";
-                	   }
-                };
-            });
-        }); 
 		</script>
 </body>
 </html>
